@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { logIn } from "../../store/actions/authActions";
+import { Modal, Button } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
 import styled from "styled-components";
 
@@ -46,6 +47,8 @@ class LogIn extends Component {
     if (auth.uid) return <Redirect to="/" />;
     return (
       <Styles>
+        
+
         <div className="container-fluid">
           <div className="row justify-content-center">
             <form className="form-container" onSubmit={this.handleSubmit}>

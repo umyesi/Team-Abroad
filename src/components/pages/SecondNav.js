@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link, withRouter } from "react-router-dom";
 import { Navbar, NavDropdown } from "react-bootstrap";
 import styled from "styled-components";
 
@@ -34,6 +34,16 @@ const SecondNav = () => {
           <NavLink to="/StudyProgrammes" className="nav-link">
             Study Programmes
           </NavLink>
+          <Link
+            className="frontpage-job"
+            to={{
+              pathname: "/modal/1",
+              state: { modal: true }
+            }}
+          >
+            Modal1
+          </Link>
+
           <NavLink to="/Services" className="nav-link">
             Services
           </NavLink>
@@ -62,4 +72,4 @@ const SecondNav = () => {
   );
 };
 
-export default SecondNav;
+export default withRouter(SecondNav);
