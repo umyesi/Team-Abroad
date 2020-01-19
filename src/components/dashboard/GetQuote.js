@@ -11,9 +11,9 @@ class Dashboard extends Component {
         <Carousel />
         <Welcome />
         <Highlights />
-        <div >
-          <h2>Get a Qoute</h2>
-          <img className="prices-image w-100" src={image} alt="image" />
+        <div>
+          <h2 className="prices-image-caption"></h2>
+          <img className="prices-image" src={image} alt="image" />
         </div>
       </div>
     );

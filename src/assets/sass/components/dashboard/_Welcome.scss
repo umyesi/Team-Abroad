@@ -1,0 +1,27 @@
+.welcome {
+  margin-top: 2rem;
+
+  .welcome-header {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #0d0c0cc7;
+    .team {
+      color: #f8d747;
+    }
+    .abroad {
+      color: #79cba9;
+    }
+  }
+  hr {
+    width: 14rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+  .welcome-content {
+    max-width: 50rem;
+    font-size: 19px;
+    color: #000000ab;
+    text-align: justify;
+  }
+}

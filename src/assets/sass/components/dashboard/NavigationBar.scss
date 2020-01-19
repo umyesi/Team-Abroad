@@ -1,0 +1,45 @@
+.navigation-bar {
+  background-color: #371838cc;
+  white-space: nowrap;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0 0;
+  .auth {
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .Logo {
+    width: 9rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 5rem;
+    color: #c1edd3bd;
+    &:hover {
+      color: rgb(89, 144, 121);
+    }
+  }
+  .active {
+    color: black;
+    &:hover {
+      color: black;
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  .navigation-bar {
+    .nav-link {
+      padding: 0.5rem 3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .navigation-bar {
+    .nav-link {
+      padding: 0.5rem 1.5rem;
+    }
+  }
+}
+
+

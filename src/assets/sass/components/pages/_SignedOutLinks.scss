@@ -1,0 +1,38 @@
+.signed-out-links {
+  .icon {
+    color: #606d66b8;
+  }
+
+  .navbar-expand-md .navbar-nav .dropdown-menu {
+    position: absolute;
+  }
+  .dropdown-item:active {
+    border-style: outset;
+    background-color: unset;
+  }
+  .dropdown-signup-button {
+    outline: none;
+  }
+  .dropdown-login-button {
+    padding: 0.5rem 3rem;
+    display: inline-block;
+    width: 141px;
+    margin: 0 0 8px 9px;
+    background-color: #f9da57;
+    border-color: #f9da57;
+    color: #55b885;
+    opacity: 0.7;
+    &:hover {
+      background-color: #f9da57;
+      border-color: #f9da57;
+      color: #55b885;
+      opacity: 1;
+      text-decoration: none;
+      transition: width 6s ease;
+      -webkit-transition: width 6s ease;
+    }
+    &:focus {
+      outline-color: #40ff00;
+    }
+  }
+}

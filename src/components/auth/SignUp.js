@@ -1,28 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { signUp } from "../../store/actions/authActions";
-import { Redirect } from "react-router-dom";
-import styled from "styled-components";
-
-const Styles = styled.div`
-  .container-fluid {
-    background-color: #254c6d;
-    width: 100%;
-    height: 100vh;
-  }
-
-  .form-container {
-    border: 1px solid #e3e8ec;
-    padding: 52px;
-    margin-top: 97px;
-    width: 432px;
-    background-color: white;
-    h2 {
-      text-align: center;
-      padding-bottom: 17px;
-    }
-  }
-`;
+import { Redirect, Link } from "react-router-dom";
+import { Navbar, Form, Button } from "react-bootstrap";
+import Logo from "../../assets/images/loguna.png";
 
 class SignUp extends Component {
   state = {
@@ -32,6 +13,8 @@ class SignUp extends Component {
     lastName: ""
   };
 
+
+
   handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
@@ -40,7 +23,6 @@ class SignUp extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
     this.props.signUp(this.state);
   };
 
@@ -48,57 +30,74 @@ class SignUp extends Component {
     const { auth, authError } = this.props;
     if (auth.uid) return <Redirect to="/" />;
     return (
-      <Styles>
-        <div>
-          <div className="container-fluid">
-            <div className="row justify-content-center">
-              <form className="form-container" onSubmit={this.handleSubmit}>
-                <div className="form-group">
-                  <h2>Sign Up Form</h2>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    aria-describedby="emailHelp"
-                    placeholder="Email"
-                    onChange={this.handleChange}
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="password"
-                    className="form-control"
-                    id="password"
-                    placeholder="Password"
-                    onChange={this.handleChange}
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="firstName"
-                    placeholder="FirstName"
-                    onChange={this.handleChange}
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="lastName"
-                    placeholder="LastName"
-                    onChange={this.handleChange}
-                  />
-                </div>
-                <button type="submit" className="btn btn-success btn-block">
-                  Submit
-                </button>
-              </form>
-            </div>
+      <div>
+        <Navbar className="signup-navbar">
+          <Link to="/">
+            <Navbar.Brand>
+              <img className="Logo" src={Logo} alt="logo" />
+            </Navbar.Brand>
+          </Link>
+        </Navbar>
+        <div className="container-fluid signup-container">
+          <div className="row justify-content-center">
+            <Form className="form-container" onSubmit={this.handleSubmit}>
+              <h2>Sign Up </h2>
+              <Form.Group>
+                <Form.Label htmlFor="Email" className="floatLabel">
+                  Email address
+                </Form.Label>
+                <Form.Control
+                  type="email"
+                  id="email"
+                  className="form-control"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+
+              <Form.Group>
+                <Form.Label htmlFor="Password" className="floatLabel">
+                  {" "}
+                  Password{" "}
+                </Form.Label>
+                <Form.Control
+                  type="password"
+                  id="password"
+                  className="form-control"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label htmlFor="firstname" className="floatLabel">
+                  First Name
+                </Form.Label>
+                <Form.Control
+                  type="text"
+                  className="form-control"
+                  id="firstName"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label htmlFor="lastname" className="floatLabel">
+                  Last Name
+                </Form.Label>
+                <Form.Control
+                  type="text"
+                  id="lastName"
+                  className="form-control"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Button variant="success" type="submit" className="btn btn-block">
+                Create My Account
+              </Button>
+              <div className="text-center text-danger mt-3">
+                {authError ? <p>{authError}</p> : null}
+              </div>
+            </Form>
           </div>
         </div>
-      </Styles>
+      </div>
     );
   }
 }

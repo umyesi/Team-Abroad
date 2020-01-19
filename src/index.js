@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.scss";
 import App from "./App";
 import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
@@ -10,6 +9,7 @@ import { reduxFirestore, getFirestore } from "redux-firestore";
 import { reactReduxFirebase, getFirebase } from "react-redux-firebase";
 import fbConfig from "./config/fbConfig";
 import { BrowserRouter } from "react-router-dom";
+import "./main.scss";
 
 const store = createStore(
   rootReducer,

@@ -1,0 +1,61 @@
+.signin-navbar {
+  padding: 0 0;
+  .Logo {
+    width: 9rem;
+  }
+}
+
+.signin-container {
+  background: #384047;
+  font-family: sans-serif;
+  font-size: 10px;
+  width: 100%;
+  height: 100vh;
+
+  .form-container {
+    background: #fff;
+    padding: 4em 4em 2em;
+    width: 465px;
+    margin: 50px auto 0;
+    box-shadow: 0 0 1em #222;
+    border-radius: 2px;
+
+    .form-group {
+      margin-bottom: 2rem;
+    }
+
+    .form-label {
+      font-size: 13px;
+    }
+
+    .form-control {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      outline: none;
+      margin: 0;
+    }
+
+    h2 {
+      margin: 0 0 1.5rem 0;
+      text-align: center;
+      font-size: 37px;
+    }
+    .forgot-password-input {
+      position: relative;
+
+      a {
+        color: #242727b0;
+        position: absolute;
+        top: 58%;
+        left: 75%;
+        &:hover {
+          color: #242727;
+        }
+      }
+    }
+    .btn {
+      padding: 1rem;
+    }
+  }
+}
