@@ -18,33 +18,42 @@ const NavigationBar = props => {
         </Navbar.Brand>
       </Link>
 
-      <div className="mr-auto">
-        <Navbar.Collapse id="basic-navbar-nav">
-          <NavLink to="/" className="nav-link">
-            Home
-          </NavLink>
-          <NavLink to="/signin" className="nav-link">
-            What We Offer
-          </NavLink>
+      <Navbar.Toggle
+        classname="toggle-button mr-auto"
+        aria-expanded="false"
+        aria-controls="basic-navbar-nav"
+      />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <NavLink to="/" className="nav-link">
+          Home
+        </NavLink>
+        <NavLink to="/signin" className="nav-link">
+          What We Offer
+        </NavLink>
 
-          <NavDropdown title="Services" id="nav-dropdown">
-            <NavDropdown.Item eventKey="4.1">Contact</NavDropdown.Item>
-            <NavDropdown.Item eventKey="4.2">Another Action</NavDropdown.Item>
-            <NavDropdown.Item eventKey="4.3">Something else</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item eventKey="4.4">Separated Link</NavDropdown.Item>
-          </NavDropdown>
+        <NavDropdown title="Services" id="nav-dropdown">
+          <NavDropdown.Item eventKey="4.1">Contact</NavDropdown.Item>
+          <NavDropdown.Item eventKey="4.2">Another Action</NavDropdown.Item>
+          <NavDropdown.Item eventKey="4.3">Something else</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item eventKey="4.4">Separated Link</NavDropdown.Item>
+        </NavDropdown>
 
-          <NavDropdown title="Contact" id="nav-dropdown">
-            <NavDropdown.Item eventKey="4.1">Contact</NavDropdown.Item>
-            <NavDropdown.Item eventKey="4.2">Another Actions</NavDropdown.Item>
-            <NavDropdown.Item eventKey="4.3">Something else</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item eventKey="4.4">Separated Link</NavDropdown.Item>
-          </NavDropdown>
-        </Navbar.Collapse>
-      </div>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <NavDropdown title="Contact" id="nav-dropdown">
+          <NavDropdown.Item eventKey="4.1">Contact</NavDropdown.Item>
+          <NavDropdown.Item eventKey="4.2">Another Actions</NavDropdown.Item>
+          <NavDropdown.Item eventKey="4.3">Something else</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item eventKey="4.4">Separated Link</NavDropdown.Item>
+        </NavDropdown>
+        <NavLink to="/signin" className="nav-link toggle-signin">
+          Sign In
+        </NavLink>
+        <NavLink to="/signup" className="nav-link  toggle-signup">
+          Sign Up
+        </NavLink>
+      </Navbar.Collapse>
+
       <Nav className="auth"> {links} </Nav>
     </Navbar>
   );

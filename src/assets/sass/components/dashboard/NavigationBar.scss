@@ -19,6 +19,12 @@
       color: rgb(89, 144, 121);
     }
   }
+  .toggle-signin {
+    display: none;
+  }
+  .toggle-signup {
+    display: none;
+  }
   .active {
     color: black;
     &:hover {
@@ -42,4 +48,19 @@
   }
 }
 
-
+@media screen and (max-width: 767px) {
+  .navigation-bar {
+    .nav-link {
+      padding: 0.5rem 1.5rem;
+    }
+    .auth {
+      display: none;
+    }
+    .toggle-signin {
+      display: block;
+    }
+    .toggle-signup {
+      display: block;
+    }
+  }
+}

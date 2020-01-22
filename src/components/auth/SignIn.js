@@ -5,6 +5,7 @@ import { Redirect, Link } from "react-router-dom";
 import Logo from "../../assets/images/loguna.png";
 import { Navbar, Form, Button } from "react-bootstrap";
 
+
 class SignIn extends Component {
   state = {
     email: "",
@@ -69,6 +70,10 @@ class SignIn extends Component {
               </Button>
               <div className="text-center text-danger mt-3">
                 {authError ? <p>{authError}</p> : null}
+              </div>
+              <div className="create-account">
+                <Link to='/signup'>Don't have an Account? Sign Up</Link>
+                
               </div>
             </Form>
           </div>

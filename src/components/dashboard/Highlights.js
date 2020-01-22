@@ -27,7 +27,7 @@ const Highlights = () => {
         </div>
       </div>
       <div className="row align-items-center second-highlight-container">
-        <div className="col-md-6 highlight-description">
+        <div className="col-lg-6 highlight-description">
           <h2>A language trip full of experiences</h2>
           <p>
             Meet new friends from your age from around the world with your same
@@ -39,7 +39,7 @@ const Highlights = () => {
         </div>
 
         <iframe
-          className="col-md-6"
+          className="col-lg-6"
           width="560"
           height="315"
           src="https://www.youtube.com/embed/e_M807HAe2c"

@@ -13,8 +13,6 @@ class SignUp extends Component {
     lastName: ""
   };
 
-
-
   handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
@@ -93,6 +91,9 @@ class SignUp extends Component {
               </Button>
               <div className="text-center text-danger mt-3">
                 {authError ? <p>{authError}</p> : null}
+              </div>
+              <div className="already-member">
+                <Link to="/signin">Already a member? Sign In</Link>
               </div>
             </Form>
           </div>

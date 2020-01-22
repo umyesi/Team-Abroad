@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Carousel from "./Carousel";
 import Welcome from "./Welcome";
 import Highlights from "./Highlights";
+import GetQuote from "./GetQuote";
+import Location from "./Location";
 import image from "../../assets/images/courses-prices.jpg";
 
 class Dashboard extends Component {
@@ -11,10 +13,8 @@ class Dashboard extends Component {
         <Carousel />
         <Welcome />
         <Highlights />
-        <div >
-          <h2>Get a Qoute</h2>
-          <img className="prices-image w-100" src={image} alt="image" />
-        </div>
+        <GetQuote />
+        <Location />
       </div>
     );
   }

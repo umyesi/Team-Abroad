@@ -1,12 +1,11 @@
 .highlights {
   margin-top: 5rem;
   .first-highlight-container {
-    background-color: #90ccf473;
+    background-color: #f788888f;
     padding: 29px 19px;
 
     iframe {
       border-radius: 0.3rem;
-      min-width: 400px;
     }
 
     .highlight-description {
@@ -23,7 +22,7 @@
   }
 
   .second-highlight-container {
-    background-color: #f788888f;
+    background-color: #90ccf473;
     padding: 29px 19px;
 
     iframe {
@@ -40,6 +39,26 @@
         font-size: 3rem;
         font-weight: 600;
         color: #000000cf;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .highlights {
+    .first-highlight-container {
+      .highlight-description {
+        h2 {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .second-highlight-container {
+      .highlight-description {
+        h2 {
+          font-size: 2rem;
+        }
       }
     }
   }
