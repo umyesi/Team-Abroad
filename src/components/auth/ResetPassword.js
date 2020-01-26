@@ -11,9 +11,6 @@ class ResetPassword extends Component {
     email: ""
   };
 
-  componentDidMount() {
-    document.body.style.overflow = "hidden";
-  }
 
   handleChange = e => {
     this.setState({

@@ -1,10 +1,22 @@
 .map-container {
-  background-color: #ff00000d;
-  //height: 600px;
-  //text-align: right;
-  // justify-content: center;
+  //background-color: #ff00000d;
+  //padding: 0 30px;
 }
-.contact-info {
-  //padding-top: 200px;
+.contact-info-container {
+  padding-bottom: 65px;
+  .contact-info {
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-row-gap: 50px;
+    grid-column-gap: 20px;
+    .location-icon {
+      margin-left: -2px;
+    }
+    h3 {
+    }
+    hr {
+    }
+    .mobile-number {
+    }
+  }
 }
-

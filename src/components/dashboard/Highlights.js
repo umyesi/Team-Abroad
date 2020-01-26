@@ -5,13 +5,13 @@ const Highlights = () => {
     <div className="highlights container-fluid">
       <div className="row align-items-center first-highlight-container">
         <iframe
-          className="col-lg-6"
+          className="col-lg-6 pb-3"
           width="560"
           height="315"
           src="https://www.youtube.com/embed/B-8fXb8tts0"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
 
         <div className="col-lg-6  highlight-description">
@@ -39,13 +39,13 @@ const Highlights = () => {
         </div>
 
         <iframe
-          className="col-lg-6"
+          className="col-lg-6 pt-3"
           width="560"
           height="315"
           src="https://www.youtube.com/embed/e_M807HAe2c"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </div>
     </div>

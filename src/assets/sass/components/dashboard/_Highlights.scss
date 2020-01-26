@@ -1,8 +1,9 @@
 .highlights {
-  margin-top: 5rem;
+  padding-top: 5rem;
+ // padding-bottom: 6rem;
   .first-highlight-container {
-    background-color: #f788888f;
-    padding: 29px 19px;
+    background-color: #662c4b1f;
+    padding: 70px 30px 50px;
 
     iframe {
       border-radius: 0.3rem;
@@ -15,15 +16,20 @@
         padding-bottom: 1rem;
         font-size: 3rem;
         font-weight: 600;
-        color: #000000cf;
+        color: #d506e3;
         text-align: left;
+        font-weight: 600;
+      }
+      p {
+        color: #595963;
+        line-height: 1.2em;
       }
     }
   }
 
   .second-highlight-container {
-    background-color: #90ccf473;
-    padding: 29px 19px;
+    background-color: #1890361a;
+    padding: 50px 30px 70px;
 
     iframe {
       border-radius: 0.3rem;
@@ -38,7 +44,11 @@
         text-align: left;
         font-size: 3rem;
         font-weight: 600;
-        color: #000000cf;
+        color: #ee8f20;
+      }
+      p {
+        color: #595963;
+        line-height: 1.2em;
       }
     }
   }

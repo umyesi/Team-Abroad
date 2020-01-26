@@ -45,6 +45,10 @@ class SignInModal extends Component {
   render() {
     const { authError, onHide, switchModal, showModal } = this.props;
 
+    const isMobile = window.innerWidth < 720;
+    
+    
+
     if (showModal) {
       return (
         <div

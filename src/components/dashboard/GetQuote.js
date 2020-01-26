@@ -15,7 +15,7 @@ class GetQuote extends Component {
             <h2>ideal English study programme.</h2>
           </div>
 
-          <Link>
+          <Link to="/">
             <Button variant="outline-light px-sm-5 py-sm-3">Get a Quote</Button>
           </Link>
           <Link to="/" className="get-quote-button">

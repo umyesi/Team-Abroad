@@ -4,6 +4,7 @@ import Welcome from "./Welcome";
 import Highlights from "./Highlights";
 import GetQuote from "./GetQuote";
 import Location from "./Location";
+import Footer from "./Footer";
 import image from "../../assets/images/courses-prices.jpg";
 
 class Dashboard extends Component {
@@ -15,6 +16,7 @@ class Dashboard extends Component {
         <Highlights />
         <GetQuote />
         <Location />
+        <Footer />
       </div>
     );
   }

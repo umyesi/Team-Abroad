@@ -26,7 +26,7 @@ const Welcome = () => {
           By hiring excellent English speaking teachers and tour guides and
           arranging visits to the most important cultural locations and tourist
           attractions, we aim to ensure the students have a memorable and
-          worthwhile experience..
+          worthwhile experience.
         </p>
       </div>
     </div>

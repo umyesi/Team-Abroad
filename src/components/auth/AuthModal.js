@@ -1,23 +1,29 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { connect } from "react-redux";
 import SignInModal from "./SignInModal";
 import SignUpModal from "./SignUpModal";
 
 class AuthModals extends Component {
-  render() {
-    const modalList = [SignInModal, SignUpModal];
-    const { currIndex } = this.props;
-    const ModalComponent = modalList[currIndex];
-
-    return (
-      <div>
-        <ModalComponent
-          switchModal={this.switchAuthModal}
-          onHide={this.handleModalHide}
-        />
-      </div>
-    );
+  constructor() {
+    super();
+    this.state = {
+      height: window.innerHeight,
+      width: window.innerWidth
+    };
+    //this.updateDimensions = this.updateDimensions.bind(this);
   }
+  componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
+  }
+  updateDimensions = () => {
+    this.setState({
+      height: window.innerHeight,
+      width: window.innerWidth
+    });
+    if (this.state.width < 775) {
+      this.props.hideModal();
+    }
+  };
 
   switchAuthModal = () => {
     const modalList = [SignInModal, SignUpModal];
@@ -33,6 +39,21 @@ class AuthModals extends Component {
   handleModalHide = () => {
     this.props.hideModal();
   };
+
+  render() {
+    const modalList = [SignInModal, SignUpModal];
+    const { currIndex } = this.props;
+    const ModalComponent = modalList[currIndex];
+
+    return (
+      <div>
+        <ModalComponent
+          switchModal={this.switchAuthModal}
+          onHide={this.handleModalHide}
+        />
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = state => {

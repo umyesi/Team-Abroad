@@ -1,0 +1,26 @@
+.footer-container {
+  height: 100px;
+  background-color: #110e11;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .Logo {
+    width: 8rem;
+  }
+
+  .social-media {
+    display: flex;
+    justify-content: space-between;
+    min-width: 10%;
+    .facebook-icon {
+      color: #4267b2;
+    }
+    .instagram-icon {
+      color: #cf4466;
+    }
+    .twitter-icon {
+      color: #09a0e9;
+    }
+  }
+}

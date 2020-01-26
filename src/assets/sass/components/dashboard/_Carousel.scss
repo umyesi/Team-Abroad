@@ -1,7 +1,59 @@
 .carousel-inner {
-  height: 600px;
-  
+  text-align:center;
+  .carousel-item {
+   max-height: 500px;
+  }
+
   .carousel-caption {
-    bottom: 60%;
+    top: 20%;
+    text-align: center;
+
+    h3 {
+      display: inline-block;
+      width: 70%;
+      font-size: 3rem;
+      font-weight: 600;
+      
+    }
+    p {
+      padding-top: 6rem;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .carousel-inner {
+    .carousel-caption {
+      top:20%;
+
+      h3 {
+        width: 100%;
+        font-size: 2rem;
+      }
+      p {
+        padding-top: 3rem;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .carousel-inner {
+    .carousel-caption {
+      top:10%;
+
+      h3 {
+        width: 100%;
+        font-size: 1.7rem;
+      }
+      p {
+        padding-top: 3rem;
+        font-size: 0.7rem;
+        font-weight: 600;
+      }
+    }
   }
 }
