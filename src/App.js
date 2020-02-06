@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import NavigationBar from "./components/dashboard/NavigationBar";
+import Footer from "./components/dashboard/Footer";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import ResetPassword from "./components/auth/ResetPassword";
-import Dashboard from "./components/dashboard/Dashboard";
+import DashBoard from "./components/dashboard/DashBoard";
+import OurPrograms from "./components/pages/OurPrograms";
 import NoMatch from "./components/pages/NoMatch";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -13,20 +15,19 @@ class App extends Component {
     const { location } = this.props;
     return (
       <div className="App">
-        
-        {
-          location.pathname !== "/signin" &&
+        {location.pathname !== "/signin" &&
           location.pathname !== "/signup" &&
-          location.pathname !== "/reset-password" && 
-          <NavigationBar />
-          }
+          location.pathname !== "/reset-password" && <NavigationBar />}
+        
         <Switch>
-          <Route exact path="/" component={Dashboard} />
+          <Route exact path="/" component={DashBoard} />
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />
           <Route path="/reset-password" component={ResetPassword} />
-          <Route component={NoMatch} />
+          <Route path="/ourprograms" component={OurPrograms} />
+          {/* <Route component={NoMatch} /> */}
         </Switch>
+        <Footer />
       </div>
     );
   }

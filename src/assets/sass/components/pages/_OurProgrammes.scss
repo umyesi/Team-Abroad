@@ -1,0 +1,93 @@
+.our-programs {
+  text-decoration: none;
+  text-align: center;
+  padding-top: 3rem;
+  overflow: hidden;
+  a {
+    color: rgb(39, 37, 37);
+    &:hover {
+      text-decoration: none;
+      color: rgb(24, 23, 23);
+    }
+  }
+
+  h2 {
+    font-size: 4rem;
+    color: #599079;
+    font-weight: 600;
+  }
+  hr {
+    margin-top: 2rem;
+    width: 100px;
+    height: 0rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 3px solid rgba(248, 214, 70, 0.57);
+  }
+  p {
+    margin: 0 auto;
+    max-width: 50rem;
+    font-size: 19px;
+    color: #000000ab;
+    text-align: justify;
+  }
+
+  .programs-links {
+    justify-content: space-between;
+    padding: 4rem 0;
+
+    & > div {
+      padding: 3rem 0;
+      transition: all 0.2s ease-in-out;
+      margin-bottom: 1rem;
+      &:hover {
+        background-color: #4cae7559;
+        transform: scale(1.05);
+        //box-shadow: 0 0.6rem 1.6rem 0 rgba(21, 21, 30, 0.2);
+      }
+      img {
+        min-width: 200px;
+      }
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .english-courses {
+      cursor: pointer;
+      img {
+        width: 60%;
+        padding-bottom: 3.5rem;
+      }
+    }
+
+    .french-courses {
+      cursor: pointer;
+      padding: 0.3rem 0 3rem 0;
+      img {
+        width: 54%;
+        //padding-top: 2rem;
+      }
+    }
+    .internship {
+      cursor: pointer;
+      padding-top: 2.8rem;
+      img {
+        width: 58%;
+        padding-bottom: 1.4rem;
+      }
+    }
+  }
+
+  .program-info {
+    .hidden {
+      display: none;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+  }
+}

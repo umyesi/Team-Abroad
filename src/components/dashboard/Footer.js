@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../assets/images/loguna.png";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
