@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import eflag from "../../assets/images/eflag.svg";
 import fflag from "../../assets/images/fflag.svg";
 import internship from "../../assets/images/internship.jpg";
@@ -7,52 +6,29 @@ import internship from "../../assets/images/internship.jpg";
 class OurPrograms extends React.Component {
   constructor(props) {
     super(props);
-    //this.state = this.initialState;
-    //this.scrollToDiv = React.createRef();
-    //this.scrollToTop = React.createRef();
+    this.state = this.initialState;
   }
 
-  // get initialState() {
-  //   return {
-  //     englishInfo: false,
-  //     frenchInfo: false,
-  //     internInfo: false
-  //   };
-  // }
-  // reset() {
-  //   this.setState(this.initialState);
-  // }
-
-  componentWillUnmount() {
-    this.props.hideInfo();
+   get initialState() {
+    return {
+      englishInfo: false,
+      frenchInfo: false,
+      internInfo: false
+    };
   }
 
-  // toggle = name => {
-  //   this.reset();
-  //   this.props.showInfo(name);
-  //   this.setState(prev => ({
-  //     [name]: !prev[name]
-  //   }));
-  // };
-
-  showInfo = name => {
-    //this.scrollToDiv.current.scrollIntoView({ behavior: "smooth" });
-    window.scroll(0, 2000);
-    this.props.showInfo(name);
-  };
-
-  hideInfo = name => {
-    this.props.hideInfo(name);
-    window.scroll(0, 0);
-    //this.scrollToTop.current.scrollIntoView({ behavior: "smooth" });
+  toggle = (name, value) => {
+    const state = this.initialState;
+    this.setState({
+      ...state,
+      [name]: !value
+    });
   };
 
   render() {
-    // const { englishInfo, frenchInfo, internInfo } = this.state;
-    const { englishInfo, frenchInfo, internInfo } = this.props.programInfo;
-
+    const { englishInfo, frenchInfo, internInfo } = this.state;
     return (
-      <div ref={this.scrollToTop} className="our-programs container-fluid">
+      <div className="our-programs container-fluid">
         <h2>Our Programs</h2>
         <hr />
         <p>
@@ -64,10 +40,11 @@ class OurPrograms extends React.Component {
 
         <div className="programs-links row">
           <a
+            href="#english-program"
             className={`english-program  col-md-4 ${
               englishInfo ? "active" : ""
             }`}
-            onClick={() => this.showInfo("englishInfo")}
+            onClick={() => this.toggle("englishInfo", this.state.englishInfo)}
           >
             <div id="englishInfo">
               <img src={eflag} alt="English Flag" />
@@ -78,8 +55,9 @@ class OurPrograms extends React.Component {
           </a>
 
           <a
+            href="#french-program"
             className={`french-courses  col-md-4 ${frenchInfo ? "active" : ""}`}
-            onClick={() => this.showInfo("frenchInfo")}
+            onClick={() => this.toggle("frenchInfo", this.state.frenchInfo)}
           >
             <img src={fflag} alt="Fnglish Flag" />
             <h3>
@@ -88,8 +66,9 @@ class OurPrograms extends React.Component {
           </a>
 
           <a
+            href="#internship-program"
             className={`internship  col-md-4 ${internInfo ? "active" : ""}`}
-            onClick={() => this.showInfo("internInfo")}
+            onClick={() => this.toggle("internInfo", this.state.internInfo)}
           >
             <img src={internship} alt="Internship Logo" />
             <h3>Internship Program</h3>
@@ -97,10 +76,10 @@ class OurPrograms extends React.Component {
         </div>
 
         <div className="program-info">
-          <div className={`english-program ${englishInfo ? "" : "hidden"}`}>
-            <span className="close" onClick={() => this.hideInfo()}>
-              &times;
-            </span>
+          <div
+            id="english-program"
+            className={`english-program ${englishInfo ? "" : "hidden"}`}
+          >
             <h2>English Program</h2>
             <p>
               During the school year we offer school trips, usually 4 – 5 days,
@@ -123,9 +102,6 @@ class OurPrograms extends React.Component {
             id="french-program"
             className={`french-program ${frenchInfo ? "" : "hidden"}`}
           >
-            <span className="close" onClick={() => this.hideInfo()}>
-              &times;
-            </span>
             <h2>French Program</h2>
             <p>
               During the school year we offer school trips, usually 4 – 5 days,
@@ -145,9 +121,6 @@ class OurPrograms extends React.Component {
             </p>
           </div>
           <div className={`internship-program ${internInfo ? "" : "hidden"}`}>
-            <span className="close" onClick={() => this.hideInfo()}>
-              &times;
-            </span>
             <h2>Internship Program</h2>
             <p>
               During the school year we offer school trips, usually 4 – 5 days,
@@ -167,23 +140,9 @@ class OurPrograms extends React.Component {
             </p>
           </div>
         </div>
-        <div></div>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    programInfo: state.programInfo
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    showInfo: name => dispatch({ type: "SHOW_INFO", name }),
-    hideInfo: name => dispatch({ type: "HIDE_INFO", name })
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(OurPrograms);
+export default OurPrograms;

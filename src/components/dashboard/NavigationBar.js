@@ -9,6 +9,10 @@ import Logo from "../../assets/images/loguna.png";
 import { signOut } from "../../store/actions/authActions";
 
 class NavigationBar extends React.Component {
+  showInfo = name => {
+    window.scroll(0, 2000);
+    this.props.showInfo(name);
+  };
   render() {
     const { auth } = this.props;
     const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
@@ -37,7 +41,12 @@ class NavigationBar extends React.Component {
               Our Programs
               <div className="dropdown-content">
                 <div>
-                  <Link to="/signin">English Program</Link>
+                  <Link
+                    onClick={() => this.showInfo("englishInfo")}
+                    to="/ourprograms"
+                  >
+                    English Program
+                  </Link>
                 </div>
                 <div>
                   <Link to="/signin">French Program</Link>
@@ -117,7 +126,6 @@ class NavigationBar extends React.Component {
 }
 
 const mapStateToProps = state => {
-  // console.log(state);
   return {
     auth: state.firebase.auth
   };
@@ -125,7 +133,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    signOut: () => dispatch(signOut())
+    signOut: () => dispatch(signOut()),
+    showInfo: name => dispatch({ type: "SHOW_INFO", name })
   };
 };
 

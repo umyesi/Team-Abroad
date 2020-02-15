@@ -24,7 +24,7 @@ class App extends Component {
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />
           <Route path="/reset-password" component={ResetPassword} />
-          <Route path="/ourprograms" component={OurPrograms} />
+          <Route path="/ourprograms" component={OurPrograms}/>
           {/* <Route component={NoMatch} /> */}
         </Switch>
         <Footer />
