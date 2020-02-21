@@ -6,6 +6,9 @@ import GetQuote from "./GetQuote";
 import Location from "./Location";
 
 class DashBoard extends Component {
+  componentDidMount() {
+    window.scroll(0, 0);
+  }
   render() {
     return (
       <div>

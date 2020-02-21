@@ -8,7 +8,7 @@ class GetQuote extends Component {
   render() {
     return (
       <div className="get-quote-container ">
-        <img className="prices-image w-100 d-block" src={image} alt="image" />
+        <img className="prices-image w-100 d-block" src={image} alt="quote" />
         <div className="get-quote-content">
           <div className="get-quote-header pb-md-5 pb-sm-3">
             <h2>We would love to help you choose your</h2>

@@ -1,0 +1,48 @@
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Message</title>
+        <style>
+            body {
+                margin: 0;
+            }
+
+            .container {
+                padding: 8px 29px;
+            }
+
+            h2 {
+                color: #863766;
+                margin-bottom: 4rem;
+            }
+
+            h3 {
+                color: #f30a0a;
+            }
+
+            p {
+                max-width: 50rem;
+                color: #294242;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <p>Sender Name: {{creds.name}}</p>
+            <p>Sender Surname: {{creds.surname}}</p>
+            <p>Sender Phone: {{creds.phone}}</p>
+            <p>Sender Email: {{creds.email}}</p>
+
+            <h3>Message content:</h3>
+            <p>{{ creds.message }}</p>
+            <br>
+          
+
+
+        </div>
+    </body>
+
+    </html>

@@ -1,18 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import SignedInLinks from "../auth/SignedInLinks";
 import SignedOutLinks from "../auth/SignedOutLinks";
 import Logo from "../../assets/images/loguna.png";
 import { signOut } from "../../store/actions/authActions";
 
 class NavigationBar extends React.Component {
-  showInfo = name => {
+  showProgramInfo = name => {
+    //stopPropagation();
     window.scroll(0, 2000);
-    this.props.showInfo(name);
+    this.props.showProgramInfo(name);
   };
+
+  showServiceInfo = name => {
+    window.scroll(0, 200);
+    this.props.showServiceInfo(name);
+  };
+
   render() {
     const { auth } = this.props;
     const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
@@ -37,51 +43,101 @@ class NavigationBar extends React.Component {
             <NavLink to="/" exact className="nav-link">
               Home
             </NavLink>
-            <NavLink to="/ourprograms" className="nav-link nav-dropdown">
-              Our Programs
+            <div className="nav-link nav-dropdown">
+              <NavLink to="/ourprograms">Our Programs</NavLink>
               <div className="dropdown-content">
                 <div>
                   <Link
-                    onClick={() => this.showInfo("englishInfo")}
+                    onClick={() => this.showProgramInfo("englishInfo")}
                     to="/ourprograms"
                   >
                     English Program
                   </Link>
                 </div>
                 <div>
-                  <Link to="/signin">French Program</Link>
+                  <Link
+                    onClick={() => this.showProgramInfo("frenchInfo")}
+                    to="/ourprograms"
+                  >
+                    French Program
+                  </Link>
                 </div>
                 <div>
-                  <Link to="/signin">Internship</Link>
-                </div>
-              </div>
-            </NavLink>
-
-            <div className="nav-dropdown nav-link">
-              <div className="dropbtn">Services</div>
-              <div className="dropdown-content">
-                <div>
-                  <Link to="/signin">Accomodation</Link>
-                </div>
-                <div>
-                  <Link to="/signin">Activities</Link>
-                </div>
-                <div>
-                  <Link to="/signin">Transfers</Link>
-                </div>
-                <div>
-                  <Link to="/signin">Meals</Link>
-                </div>
-                <div>
-                  <Link to="/signin" className="last">
-                    Assistance
+                  <Link
+                    onClick={() => this.showProgramInfo("internInfo")}
+                    to="/ourprograms"
+                  >
+                    Internship
                   </Link>
                 </div>
               </div>
             </div>
 
-            <div className="nav-dropdown nav-link">
-              Contact
+            <div componentlass="span" className="nav-dropdown nav-link">
+              <NavLink
+                to="/services"
+                //onClick={() => this.showServiceInfo("accomodation")}
+                className="dropbtn"
+              >
+                Services
+              </NavLink>
+              <div className="dropdown-content">
+                <div>
+                  <Link
+                    onClick={() => this.showServiceInfo("accomodation")}
+                    to="/services"
+                  >
+                    Accomodation
+                  </Link>
+                </div>
+                <div>
+                  <Link
+                    onClick={() => this.showServiceInfo("activities")}
+                    to="/services"
+                  >
+                    Activities
+                  </Link>
+                </div>
+                <div>
+                  <Link
+                    onClick={() => this.showServiceInfo("transfers")}
+                    to="/services"
+                  >
+                    Transfers
+                  </Link>
+                </div>
+                <div>
+                  <Link
+                    onClick={() => this.showServiceInfo("meals")}
+                    to="/services"
+                  >
+                    Meals
+                  </Link>
+                </div>
+                <div>
+                  <Link
+                    onClick={() => this.showServiceInfo("assistance")}
+                    to="/services"
+                    className="last"
+                  >
+                    Assistance
+                  </Link>
+                </div>
+                <div>
+                  <Link
+                    onClick={() => this.showServiceInfo("optional")}
+                    to="/services"
+                    className="last"
+                  >
+                    Optional Services
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div componentclass="span" className="nav-dropdown nav-link">
+              <NavLink to="/contact">Contact</NavLink>
+
               <div className="dropdown-content">
                 <div>
                   <Link to="/signin">Contact Us</Link>
@@ -134,7 +190,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     signOut: () => dispatch(signOut()),
-    showInfo: name => dispatch({ type: "SHOW_INFO", name })
+    showProgramInfo: name => dispatch({ type: "SHOW_PROGRAM_INFO", name }),
+    showServiceInfo: name => dispatch({ type: "SHOW_SERVICE_INFO", name })
   };
 };
 

@@ -5,6 +5,7 @@ const Highlights = () => {
     <div className="highlights container-fluid">
       <div className="row align-items-center first-highlight-container">
         <iframe
+          title="paris"
           className="col-lg-6 pb-3"
           width="560"
           height="315"
@@ -39,6 +40,7 @@ const Highlights = () => {
         </div>
 
         <iframe
+          title="paris"
           className="col-lg-6 pt-3"
           width="560"
           height="315"

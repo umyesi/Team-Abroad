@@ -9,7 +9,6 @@ import { reduxFirestore, getFirestore } from "redux-firestore";
 import { reactReduxFirebase, getFirebase } from "react-redux-firebase";
 import fbConfig from "./config/fbConfig";
 import { BrowserRouter } from "react-router-dom";
-import ScrollToTop from "react-router-scroll-top";
 import "./main.scss";
 
 const store = createStore(
@@ -29,9 +28,7 @@ store.firebaseAuthIsReady.then(() => {
   ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
-        <ScrollToTop>
-          <App />
-        </ScrollToTop>
+        <App />
       </BrowserRouter>
     </Provider>,
     document.getElementById("root")

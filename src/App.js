@@ -7,7 +7,9 @@ import SignUp from "./components/auth/SignUp";
 import ResetPassword from "./components/auth/ResetPassword";
 import DashBoard from "./components/dashboard/DashBoard";
 import OurPrograms from "./components/pages/OurPrograms";
-import NoMatch from "./components/pages/NoMatch";
+import Services from "./components/pages/Services";
+import Contact from "./components/pages/Contact";
+//import NoMatch from "./components/pages/NoMatch";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
@@ -25,6 +27,10 @@ class App extends Component {
           <Route path="/signup" component={SignUp} />
           <Route path="/reset-password" component={ResetPassword} />
           <Route path="/ourprograms" component={OurPrograms}/>
+          <Route path="/services" component={Services}/>
+          <Route path="/contact" component={Contact}/>
+
+
           {/* <Route component={NoMatch} /> */}
         </Switch>
         <Footer />

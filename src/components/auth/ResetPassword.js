@@ -19,11 +19,14 @@ class ResetPassword extends Component {
   };
 
   handleSubmit = e => {
+    console.log(this.props)
+    //const { resetSent } = this.props;
     e.preventDefault();
     this.props.resetPassword(this.state);
-    setTimeout(() => {
-      this.props.history.push("/");
-    }, 5000);
+    // if (resetSent === "success") { setTimeout(() => {
+    //   //this.props.history.push("/");
+    // }, 5000);}
+   
   };
 
   render() {

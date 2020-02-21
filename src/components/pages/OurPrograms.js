@@ -5,12 +5,12 @@ import fflag from "../../assets/images/fflag.svg";
 import internship from "../../assets/images/internship.jpg";
 
 class OurPrograms extends React.Component {
-  constructor(props) {
-    super(props);
-    //this.state = this.initialState;
-    //this.scrollToDiv = React.createRef();
-    //this.scrollToTop = React.createRef();
-  }
+  // constructor(props) {
+  //   super(props);
+  //   //this.state = this.initialState;
+  //   //this.scrollToDiv = React.createRef();
+  //   //this.scrollToTop = React.createRef();
+  // }
 
   // get initialState() {
   //   return {
@@ -22,6 +22,10 @@ class OurPrograms extends React.Component {
   // reset() {
   //   this.setState(this.initialState);
   // }
+
+  componentDidMount() {
+    window.scroll(0, 0);
+  }
 
   componentWillUnmount() {
     this.props.hideInfo();
@@ -52,7 +56,7 @@ class OurPrograms extends React.Component {
     const { englishInfo, frenchInfo, internInfo } = this.props.programInfo;
 
     return (
-      <div ref={this.scrollToTop} className="our-programs container-fluid">
+      <div className="our-programs container-fluid">
         <h2>Our Programs</h2>
         <hr />
         <p>
@@ -63,7 +67,7 @@ class OurPrograms extends React.Component {
         </p>
 
         <div className="programs-links row">
-          <a
+          <div
             className={`english-program  col-md-4 ${
               englishInfo ? "active" : ""
             }`}
@@ -75,9 +79,9 @@ class OurPrograms extends React.Component {
                 Program held in English <br /> Language{" "}
               </h3>
             </div>
-          </a>
+          </div>
 
-          <a
+          <div
             className={`french-courses  col-md-4 ${frenchInfo ? "active" : ""}`}
             onClick={() => this.showInfo("frenchInfo")}
           >
@@ -85,15 +89,15 @@ class OurPrograms extends React.Component {
             <h3>
               Program held in French <br /> Language
             </h3>
-          </a>
+          </div>
 
-          <a
+          <div
             className={`internship  col-md-4 ${internInfo ? "active" : ""}`}
             onClick={() => this.showInfo("internInfo")}
           >
             <img src={internship} alt="Internship Logo" />
             <h3>Internship Program</h3>
-          </a>
+          </div>
         </div>
 
         <div className="program-info">
@@ -181,8 +185,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    showInfo: name => dispatch({ type: "SHOW_INFO", name }),
-    hideInfo: name => dispatch({ type: "HIDE_INFO", name })
+    showInfo: name => dispatch({ type: "SHOW_PROGRAM_INFO", name }),
+    hideInfo: name => dispatch({ type: "HIDE_PROGRAM_INFO", name })
   };
 };
 

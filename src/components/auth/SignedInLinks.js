@@ -1,14 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import { signOut } from "../../store/actions/authActions";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   Nav,
   Dropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem,
-  Button
+  DropdownItem
 } from "reactstrap";
 //import { FaUser } from "react-icons/fa";
 import { AiOutlineUser } from "react-icons/ai";

@@ -6,13 +6,13 @@ const initState = {
 
 const programReducer = (state = initState, action) => {
   switch (action.type) {
-    case "SHOW_INFO":
+    case "SHOW_PROGRAM_INFO":
       state = undefined;
       return {
         ...state,
         [action.name]: true
       };
-    case "HIDE_INFO":
+    case "HIDE_PROGRAM_INFO":
       state = undefined;
       return {
         state
