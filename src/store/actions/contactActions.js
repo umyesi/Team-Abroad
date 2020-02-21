@@ -6,7 +6,8 @@ export const sendMessage = creds => {
       .collection("mail")
       .add({
         to: "umyesigiorgi@gmail.com",
-        from: [creds.email],
+        from: "teamabroad2019@gmail.com",
+        replyTo: [creds.email],
         template: {
           name: "message",
           data: {

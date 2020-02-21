@@ -24,7 +24,9 @@ class OurPrograms extends React.Component {
   // }
 
   componentDidMount() {
-    window.scroll(0, 0);
+    setTimeout(() => {
+      window.scroll(0, 0);
+    }, 200);
   }
 
   componentWillUnmount() {

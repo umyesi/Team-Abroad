@@ -9,13 +9,16 @@ import { signOut } from "../../store/actions/authActions";
 
 class NavigationBar extends React.Component {
   showProgramInfo = name => {
-    //stopPropagation();
-    window.scroll(0, 2000);
+    setTimeout(() => {
+      window.scroll(0, 2000);
+    }, 500);
     this.props.showProgramInfo(name);
   };
 
   showServiceInfo = name => {
-    window.scroll(0, 200);
+    setTimeout(() => {
+      window.scroll(0, 200);
+    }, 500);
     this.props.showServiceInfo(name);
   };
 
@@ -140,13 +143,13 @@ class NavigationBar extends React.Component {
 
               <div className="dropdown-content">
                 <div>
-                  <Link to="/signin">Contact Us</Link>
+                  <Link to="/contact">Contact Us</Link>
                 </div>
                 <div>
-                  <Link to="/signin">Get a Quote</Link>
+                  <Link to="/contact">Get a Quote</Link>
                 </div>
                 <div>
-                  <Link to="/signin">About Team Abroad</Link>
+                  <Link to="/contact">About Team Abroad</Link>
                 </div>
               </div>
             </div>

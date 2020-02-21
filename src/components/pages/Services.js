@@ -153,7 +153,9 @@ const activitiesImg = [
 
 class Services extends React.Component {
   componentDidMount() {
-    window.scroll(0, 0);
+    setTimeout(() => {
+      window.scroll(0, 0);
+    }, 200);
   }
 
   componentWillUnmount() {
@@ -162,7 +164,9 @@ class Services extends React.Component {
 
   showInfo = name => {
     this.props.showInfo(name);
-    window.scroll(0, 200);
+    setTimeout(() => {
+      window.scroll(0, 200);
+    }, 400);
   };
 
   hideInfo = name => {

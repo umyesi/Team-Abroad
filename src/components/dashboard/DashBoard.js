@@ -7,8 +7,11 @@ import Location from "./Location";
 
 class DashBoard extends Component {
   componentDidMount() {
-    window.scroll(0, 0);
+    setTimeout(() => {
+      window.scroll(0, 0);
+    }, 200);
   }
+
   render() {
     return (
       <div>

@@ -19,10 +19,15 @@ class Contact extends React.Component {
     };
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      window.scroll(0, 0);
+    }, 200);
+  }
+
   handleSubmit = (values, { setSubmitting }) => {
     console.log(values);
     setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
       setSubmitting(false);
     }, 400);
     console.log(values);
@@ -31,11 +36,22 @@ class Contact extends React.Component {
 
   validate = values => {
     const emailTest = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    const messageTest = /^[^]{10,}$/;
+    const phoneTest = /^[0-9+-]*$/;
     let errors = {};
+
     if (!values.email) {
       errors.email = "Required";
     } else if (!emailTest.test(values.email)) {
       errors.email = "Invalid email address";
+    }
+    if (!values.message) {
+      errors.message = "Required";
+    } else if (!messageTest.test(values.message)) {
+      errors.message = "Your message must be at least 10 characters long";
+    }
+    if (!phoneTest.test(values.phone)) {
+      errors.phone = "Please enter a valid phone number";
     }
     return errors;
   };
@@ -82,11 +98,6 @@ class Contact extends React.Component {
                     placeholder="First name"
                     className="form-control"
                   />
-                  <ErrorMessage
-                    component="div"
-                    name="email"
-                    className="invalid-feedback"
-                  />
                 </div>
                 <div className="col-6">
                   <Field
@@ -99,10 +110,17 @@ class Contact extends React.Component {
 
                 <div className="col-6">
                   <Field
+                    className={`form-control ${
+                      touched.phone && errors.phone ? "is-invalid" : ""
+                    }`}
                     name="phone"
-                    className="form-control"
                     id="phone"
                     placeholder="Phone Number"
+                  />
+                  <ErrorMessage
+                    component="div"
+                    name="phone"
+                    className="invalid-feedback"
                   />
                 </div>
                 <div className="col-6">
@@ -127,6 +145,7 @@ class Contact extends React.Component {
                     className={`form-control text-input ${
                       touched.message && errors.message ? "is-invalid" : ""
                     }`}
+                    component="textarea"
                     type="textarea"
                     id="message"
                     name="message"
