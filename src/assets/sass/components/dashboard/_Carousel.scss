@@ -1,7 +1,7 @@
 .carousel-inner {
-  text-align:center;
+  text-align: center;
   .carousel-item {
-   max-height: 500px;
+    max-height: 500px;
   }
 
   .carousel-caption {
@@ -13,7 +13,6 @@
       width: 70%;
       font-size: 3rem;
       font-weight: 600;
-      
     }
     p {
       padding-top: 6rem;
@@ -25,7 +24,7 @@
 @media screen and (max-width: 770px) {
   .carousel-inner {
     .carousel-caption {
-      top:20%;
+      top: 20%;
 
       h3 {
         width: 100%;
@@ -43,7 +42,7 @@
 @media screen and (max-width: 500px) {
   .carousel-inner {
     .carousel-caption {
-      top:10%;
+      top: 10%;
 
       h3 {
         width: 100%;

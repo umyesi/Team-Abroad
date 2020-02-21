@@ -2,11 +2,16 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { connect } from "react-redux";
 import { sendMessage } from "../../store/actions/contactActions";
-import { FaPhone } from "react-icons/fa";
-import { MdLocationOn } from "react-icons/md";
-import { MdEmail } from "react-icons/md";
 import emailsent from "../../assets/images/emailsent.png";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+// import Select from "react-select";
+// import DayPicker from "react-day-picker";
+// import "react-day-picker/lib/style.css";
+// import PropTypes from "prop-types";
+// import DayPickerInput from "react-day-picker/DayPickerInput";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import "react-datepicker/dist/react-datepicker-cssmodules.css";
 
 class Contact extends React.Component {
   get initialValues() {
@@ -15,7 +20,11 @@ class Contact extends React.Component {
       surname: "",
       phone: "",
       email: "",
-      message: ""
+      program: "",
+      residence: "",
+      message: "",
+      birthDate: "",
+      date: ""
     };
   }
 
@@ -31,6 +40,7 @@ class Contact extends React.Component {
       setSubmitting(false);
     }, 400);
     console.log(values);
+
     this.props.sendMessage(values);
   };
 
@@ -53,29 +63,23 @@ class Contact extends React.Component {
     if (!phoneTest.test(values.phone)) {
       errors.phone = "Please enter a valid phone number";
     }
+    if (!values.program || values.program == "undefined") {
+      errors.program = "Required";
+    }
+
     return errors;
   };
 
   render() {
+    console.log(new Date());
     const { messageSent, sendingError } = this.props;
+    const includedDates = [new Date("2020-02-01"), new Date("2020-03-01")];
 
     return (
-      <div className="contact-container">
+      <div className="quote-container">
         <div className="title">
-          <h2>Contact Us</h2>
+          <h2>Get a Quote</h2>
           <hr />
-        </div>
-
-        <div className="contact-info pl-1">
-          <FaPhone size={23} className="" />
-          <p className="pt-1">+33 6 05 88 96 28</p>
-          <MdLocationOn size={28} className="" />
-          <div>
-            <p className="">63, rue de la fosse aux bergers</p>
-            <p>Villemomble, France</p>
-          </div>
-          <MdEmail size={26} />
-          <p className="pt-1">umyesigiorgi@gmail.com</p>
         </div>
 
         {messageSent ? (
@@ -89,13 +93,13 @@ class Contact extends React.Component {
             validate={this.validate}
             onSubmit={this.handleSubmit}
           >
-            {({ touched, errors, isSubmitting }) => (
+            {({ touched, errors, isSubmitting, values, setFieldValue }) => (
               <Form className="row">
                 <div className="col-6 mb-4">
                   <Field
                     name="name"
                     id="name"
-                    placeholder="First name"
+                    placeholder="First Name"
                     className="form-control"
                   />
                 </div>
@@ -104,11 +108,27 @@ class Contact extends React.Component {
                     className="form-control"
                     name="surname"
                     id="surname"
-                    placeholder="Last name"
+                    placeholder="Last Name"
+                  />
+                </div>
+
+                <div className="col-6 mb-4">
+                  <Field
+                    className="form-control"
+                    name="birthDate"
+                    placeholder="Date of Birth"
                   />
                 </div>
 
                 <div className="col-6">
+                  <Field
+                    className="form-control"
+                    name="residence"
+                    placeholder="Country of Residence"
+                  />
+                </div>
+
+                <div className="col-6 mb-4">
                   <Field
                     className={`form-control ${
                       touched.email && errors.email ? "is-invalid" : ""
@@ -139,6 +159,37 @@ class Contact extends React.Component {
                     className="invalid-feedback"
                   />
                 </div>
+                <div className="col-6 ">
+                  <Field
+                    component="select"
+                    name="program"
+                    className={`program ${
+                      touched.program && errors.program ? "is-invalid" : ""
+                    }`}
+                  >
+                    <option value="undefined">-- Select Program --</option>
+                    <option value="English">English Program</option>
+                    <option value="French">French Program</option>
+                    <option value="Internship">Internship Program</option>
+                  </Field>
+                  <ErrorMessage
+                    component="div"
+                    name="program"
+                    className="invalid-feedback"
+                  />
+                </div>
+                <div className="col-6 date-picker-container">
+                  <DatePicker
+                    className="date-picker"
+                    selected={values.date}
+                    dateFormat="MMMM d, yyyy"
+                    className="form-control"
+                    name="date"
+                    onChange={dates => setFieldValue("date", dates)}
+                    includeDates={includedDates}
+                    placeholderText=" Please choose the date that is most convenient to you "
+                  />
+                </div>
                 <div className="mt-4 col-12">
                   <Field
                     className={`form-control text-input ${
@@ -162,7 +213,7 @@ class Contact extends React.Component {
                     variant="secondary"
                     type="submit"
                   >
-                    {isSubmitting ? "Please wait..." : "Send Message"}
+                    {isSubmitting ? "Please wait..." : "Send Request"}
                   </Button>
                 </div>
               </Form>
