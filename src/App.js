@@ -10,6 +10,7 @@ import OurPrograms from "./components/pages/OurPrograms";
 import Services from "./components/pages/Services";
 import Contact from "./components/pages/Contact";
 import Quote from "./components/pages/Quote";
+import AboutUs from "./components/pages/AboutUs";
 //import NoMatch from "./components/pages/NoMatch";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -31,6 +32,7 @@ class App extends Component {
           <Route path="/services" component={Services}/>
           <Route path="/contact" component={Contact}/>
           <Route path="/quote" component={Quote}/>
+          <Route path="/about-us" component={AboutUs}/>
 
 
           {/* <Route component={NoMatch} /> */}

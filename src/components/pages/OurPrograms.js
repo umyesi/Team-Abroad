@@ -42,8 +42,16 @@ class OurPrograms extends React.Component {
   // };
 
   showInfo = name => {
+    const mql = window.matchMedia("(max-width: 375px)");
     //this.scrollToDiv.current.scrollIntoView({ behavior: "smooth" });
-    window.scroll(0, 2000);
+    setTimeout(() => {
+      if (mql.matches) {
+        window.scroll(0, 1300);
+      } else {
+        window.scroll(0, 2000);
+      }
+    }, 200);
+
     this.props.showInfo(name);
   };
 
@@ -62,10 +70,10 @@ class OurPrograms extends React.Component {
         <h2>Our Programs</h2>
         <hr />
         <p>
-          Team Abroad welcomes students to study the English and French
-          languages through various programs. These programmes are designed to
-          immerse the students in a different culture while learning languages
-          and discovering the rich history of the country.
+          Team Abroad welcomes students to choose one of our amazing programs
+          that are designed to immerse students in a different culture while
+          learning French and English languages and discovering historical
+          monuments of Paris city.
         </p>
 
         <div className="programs-links row">

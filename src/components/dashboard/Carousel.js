@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 import img1 from "../../assets/images/carouselpics/img1.jpg";
 import img2 from "../../assets/images/carouselpics/img2.jpg";
@@ -22,13 +24,16 @@ const Slider = () => {
       onSelect={handleSelect}
     >
       <Carousel.Item>
-        <img className="d-block w-100" src={img1} alt="First slide" />
+        <img
+          className="d-block w-100 first-image"
+          src={img1}
+          alt="First slide"
+        />
         <Carousel.Caption>
-          <h3>A new way to learn French</h3>
+          <h3>The best way to explore Paris</h3>
           <p>
-            Students can enjoy a dynamic and interactive approach to improving
-            French and English skills through educational activities and
-            communication
+            Team Abroad offers fantastic combination of lessons, indoor &
+            outdoor activities, excursions and cultural trips in Paris
           </p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -40,10 +45,11 @@ const Slider = () => {
         />
 
         <Carousel.Caption>
-          <h3>Discover and explore Paris.</h3>
+          <h3>Improve your Linguistic skills</h3>
           <p>
-            Team Abroad offers interesting programme and a high-quality
-            educational experience.
+            Improve your linguistic skills through our educational and
+            entertaining activities, held by French and English native speaking
+            teachers, group leaders, animators and tour guides.
           </p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -51,11 +57,16 @@ const Slider = () => {
         <img className="d-block w-100" src={img3} alt="Third slide" />
 
         <Carousel.Caption>
-          <h3>Feel free to create your own programme.</h3>
+          <h3>Choose one of our amazing programs</h3>
           <p>
-            Team Abroad is well-known for its flexibility.
-            Every programme is customised to meet the students' needs.
+            Team Abroad offers various types of certificated programs during the
+            whole year
           </p>
+          <Link to="/ourprograms" className="">
+            <Button variant="outline-light px-md-5 py-md-3 mt-2 mt-sm-3 mt-md-5">
+              See Programs
+            </Button>
+          </Link>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

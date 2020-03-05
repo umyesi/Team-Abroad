@@ -9,80 +9,87 @@
 .signin-container {
   background: #9d2f760f;
   font-family: sans-serif;
+  padding: 0;
   font-size: 10px;
   width: 100%;
   height: 100vh;
 
-  .create-account {
-    text-align: center;
+  .signin-content {
+    padding: 0 2rem;
 
-    a {
-      background: none;
-      border: none;
-      padding: 0;
-      color: #626365;
-      cursor: pointer;
-      padding-top: 1rem;
-
-      &:hover {
-        color: #1c1a1a;
-      }
-      &:active {
-        color: #d0b7b7;
-        border: none;
-        background-color: #ff000000;
-        box-shadow: none !important;
-      }
-      &:focus {
-        box-shadow: none;
-      }
-    }
-  }
-
-  .form-container {
-    background: #fff;
-    padding: 4em 4em 2em;
-    width: 465px;
-    margin: 50px auto 0;
-    box-shadow: 0 0 1em #222;
-    border-radius: 2px;
-
-    .form-group {
-      margin-bottom: 2rem;
-    }
-
-    .form-label {
-      font-size: 13px;
-    }
-
-    .form-control {
-      display: block;
-      box-sizing: border-box;
-      width: 100%;
-      outline: none;
-      margin: 0;
-    }
-
-    h2 {
-      margin: 0 0 1.5rem 0;
+    .create-account {
       text-align: center;
-      font-size: 37px;
-    }
-    .forgot-password-input {
-      position: relative;
 
       a {
-        color: #242727b0;
-        position: absolute;
-        top: 58%;
-        left: 75%;
+        background: none;
+        border: none;
+        padding: 0;
+        color: #626365;
+        cursor: pointer;
+        padding-top: 1rem;
+
         &:hover {
-          color: #242727;
+          color: #1c1a1a;
+        }
+        &:active {
+          color: #d0b7b7;
+          border: none;
+          background-color: #ff000000;
+          box-shadow: none !important;
+        }
+        &:focus {
+          box-shadow: none;
         }
       }
     }
-    .btn {
-      padding: 1rem;
+
+    .form-container {
+      background: #fff;
+      padding: 4em 4em 2em;
+      width: 465px;
+      margin: 50px auto 0;
+      box-shadow: 0 0 1em #222;
+      border-radius: 2px;
+
+      .form-group {
+        margin-bottom: 2rem;
+      }
+
+      .form-label {
+        font-size: 13px;
+        padding-bottom: 0.3rem;
+        color: #060606db;
+      }
+
+      .form-control {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        outline: none;
+        margin: 0;
+      }
+
+      h2 {
+        margin: 0 0 1.5rem 0;
+        text-align: center;
+        font-size: 37px;
+      }
+      .forgot-password-input {
+        position: relative;
+
+        a {
+          color: #242727b0;
+          position: absolute;
+          // top: 58%;
+          // left: 75%;
+          &:hover {
+            color: #242727;
+          }
+        }
+      }
+      .btn {
+        padding: 1rem;
+      }
     }
   }
 }

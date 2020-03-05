@@ -5,7 +5,6 @@ import { Redirect, Link } from "react-router-dom";
 import Logo from "../../assets/images/loguna.png";
 import { Navbar, Form, Button } from "react-bootstrap";
 
-
 class SignIn extends Component {
   state = {
     email: "",
@@ -36,22 +35,25 @@ class SignIn extends Component {
           </Link>
         </Navbar>
         <div className="container-fluid signin-container">
-          <div className="row justify-content-center">
+          <div className="row justify-content-center signin-content">
             <Form className="form-container" onSubmit={this.handleSubmit}>
               <h2>Login</h2>
               <Form.Group className="form-group forgot-password-input">
                 <Form.Label htmlFor="email" className="form-label">
                   Email address
                 </Form.Label>
+                <div>
                 <Form.Control
                   type="email"
                   id="email"
                   className="form-control"
                   onChange={this.handleChange}
                 />
-                <Link to="/reset-password" className="forgot-password">
-                  Forgot Password?
-                </Link>
+               
+                  <Link to="/reset-password" className="forgot-password">
+                    Forgot Password?
+                  </Link>
+                </div>
               </Form.Group>
 
               <Form.Group>
@@ -72,8 +74,7 @@ class SignIn extends Component {
                 {authError ? <p>{authError}</p> : null}
               </div>
               <div className="create-account">
-                <Link to='/signup'>Don't have an Account? Sign Up</Link>
-                
+                <Link to="/signup">Don't have an Account? Sign Up</Link>
               </div>
             </Form>
           </div>

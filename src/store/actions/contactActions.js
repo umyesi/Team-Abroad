@@ -29,6 +29,42 @@ export const sendMessage = creds => {
   };
 };
 
+
+export const getQuote = creds => {
+  console.log(creds);
+  return (dispatch, getState, { getFirestore }) => {
+    const firestore = getFirestore();
+    firestore
+      .collection("mail")
+      .add({
+        to: "umyesigiorgi@gmail.com",
+        from: "teamabroad2019@gmail.com",
+        replyTo: [creds.email],
+        template: {
+          name: "getQuote",
+          data: {
+            creds,
+            birthdate: creds.birthdate.toDateString(),
+            date: creds.date.toDateString()
+          }
+        }
+      })
+      .then(() => {
+        dispatch({ type: "QUOTE_SENT" });
+      })
+      .then(
+        setTimeout(() => {
+          dispatch({ type: "RESET_QUOTE" });
+        }, 10000)
+      )
+      .catch(err => {
+        dispatch({ type: "SENDING_ERROR", err });
+      });
+  };
+};
+
+
+
 // from: [creds.email],
 // to: ["umyesigiorgi@gmail.com"],
 

@@ -7,7 +7,7 @@ class Location extends Component {
   render() {
     return (
       <div className="container-fluid map-container">
-        <div className="row align-items-center pt-5">
+        <div className="row align-items-center">
           <iframe
             title="myFrame"
             className="col-lg-7 col-md-12 pb-5"
@@ -24,20 +24,20 @@ class Location extends Component {
               <hr className="" />
               <div className="contact-info ">
                 <FaPhone size={23} className="" />
-                <p className="pt-1">+33 6 05 88 96 28</p>
+                <p className="pt-1">+33 7 82 73 64 27</p>
                 <div className="location-icon">
                   <MdLocationOn size={28} className="" />
                 </div>
 
                 <div className="">
-                  <p className="">63, rue de la fosse aux bergers</p>
-                  <p>Villemomble, France</p>
+                  <p className="pb-1">21 Avenue Gabriel Péri</p>
+                  <p> 95100 Argenteuil, France</p>
                 </div>
                 <div className="">
                   <MdEmail size={26} />
                 </div>
 
-                <p className="pt-1">umyesigiorgi@gmail.com</p>
+                <p className="pt-1">teamabroad2019@gmail.com</p>
               </div>
             </div>
           </div>

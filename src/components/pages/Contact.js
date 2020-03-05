@@ -91,7 +91,7 @@ class Contact extends React.Component {
           >
             {({ touched, errors, isSubmitting }) => (
               <Form className="row">
-                <div className="col-6 mb-4">
+                <div className="col-md-6 mb-4">
                   <Field
                     name="name"
                     id="name"
@@ -99,7 +99,7 @@ class Contact extends React.Component {
                     className="form-control"
                   />
                 </div>
-                <div className="col-6">
+                <div className="col-md-6 mb-4">
                   <Field
                     className="form-control"
                     name="surname"
@@ -108,7 +108,7 @@ class Contact extends React.Component {
                   />
                 </div>
 
-                <div className="col-6">
+                <div className="col-md-6 mb-4">
                   <Field
                     className={`form-control ${
                       touched.email && errors.email ? "is-invalid" : ""
@@ -124,7 +124,7 @@ class Contact extends React.Component {
                     className="invalid-feedback"
                   />
                 </div>
-                <div className="col-6">
+                <div className="col-md-6 mb-4">
                   <Field
                     className={`form-control ${
                       touched.phone && errors.phone ? "is-invalid" : ""
@@ -179,9 +179,10 @@ class Contact extends React.Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state);
   return {
-    messageSent: state.message.messageSent,
-    sendingError: state.message.sendingError
+    messageSent: state.contact.messageSent,
+    sendingError: state.contact.sendingError
   };
 };
 

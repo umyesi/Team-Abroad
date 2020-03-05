@@ -252,10 +252,12 @@ class Services extends React.Component {
               <div className={`accomodation ${accomodation ? "" : "hidden"}`}>
                 <h2>Accomodation</h2>
                 <p>
-                  We offer a wide variety of accommodation options with host
-                  families, hotels, residences and campuses, Accommodation is
-                  carefully selected and constantly monitored, to guarantee the
-                  highest standards of quality and safety.
+                  "The campsite is a very good starting point if you want to
+                  discover the capital while enjoying unusual accommodation, and
+                  great activities for children! My Love hut: if you are looking
+                  for child-friendly accommodation near Paris and you don't
+                  necessarily want to lock yourself in a hotel room, I recommend
+                  that you try the wooden perched huts. "
                 </p>
                 <Gallery
                   images={accomodationImg}

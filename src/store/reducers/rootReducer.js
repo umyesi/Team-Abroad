@@ -9,7 +9,7 @@ import contactReducer from "./contactReducer";
 
 const rootReducer = combineReducers({
   programInfo: programReducer,
-  message: contactReducer,
+  contact: contactReducer,
   serviceInfo: serviceReducer,
   auth: authReducer,
   firestore: firestoreReducer,

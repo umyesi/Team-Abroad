@@ -4,10 +4,11 @@
   text-align: center;
   img {
     //filter: blur(1px);
+    filter: brightness(50%);
   }
   .get-quote-content {
     position: absolute;
-    top: 20%;
+    top: 31%;
 
     .get-quote-header {
       h2 {
@@ -21,10 +22,9 @@
       }
     }
 
-    .get-quote-button {
-      width: 100%;
-      display: inline-block;
-      padding-top: 4rem;
+    .get-quote-buttons {
+      margin: auto;
+      max-width: 36rem;
     }
   }
 }

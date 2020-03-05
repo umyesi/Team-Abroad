@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            padding: 8px 29px;
+        }
+
+        h2 {
+            color: #863766;
+            margin-bottom: 4rem;
+        }
+
+        h3 {
+            color: #f30a0a;
+        }
+
+        p {
+            max-width: 50rem;
+            color: #294242;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>Name: {{creds.name}}</p>
+        <p>Surname: {{creds.surname}}</p>
+        <p>Birth Date: {{birthdate}}</p>
+        <p>Country: {{creds.residence}}</p>
+        <p>Email: {{creds.email}}</p>
+        <p>Phone: {{creds.phone}}</p>
+        <p>Program: {{creds.program}}</p>
+        <p>Starting Date: {{date}}</p>
+        <p>Number of Students: {{creds.number}}</p>
+        <p>Flight Included: {{creds.flight}}</p>
+        <h3>Message content:</h3>
+        <p>{{ creds.message }}</p>
+        <br>
+
+
+
+    </div>
+</body>
+
+</html>
+
+
+<!-- GetQuote message from: {{creds.name}} {{creds.surname}} -->

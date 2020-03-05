@@ -12,15 +12,20 @@ class GetQuote extends Component {
         <div className="get-quote-content">
           <div className="get-quote-header pb-md-5 pb-sm-3">
             <h2>We would love to help you choose your</h2>
-            <h2>ideal English study programme.</h2>
+            <h2>ideal study program.</h2>
           </div>
-
-          <Link to="/">
-            <Button variant="outline-light px-sm-5 py-sm-3">Get a Quote</Button>
-          </Link>
-          <Link to="/" className="get-quote-button">
-            <Button variant="outline-light px-sm-5 py-sm-3">English Level Test</Button>
-          </Link>
+          <div className="row get-quote-buttons">
+            <Link to="/ourprograms" className="col-6">
+              <Button variant="outline-light px-sm-5 py-sm-3">
+                See Programs
+              </Button>
+            </Link>
+            <Link to="/quote" className="col-6">
+              <Button variant="outline-light px-sm-5 py-sm-3">
+                Get a Quote
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     );

@@ -66,7 +66,7 @@ class ResetPassword extends Component {
             </Link>
           </Navbar>
           <div className="container-fluid reset-password-container">
-            <div className="row justify-content-center">
+            <div className="row justify-content-center  reset-content">
               <Form className="form-container" onSubmit={this.handleSubmit}>
                 <h3>Forgot Your Password?</h3>
                 <Form.Group className="signin-form-group">

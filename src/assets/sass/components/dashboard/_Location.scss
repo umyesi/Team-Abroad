@@ -1,12 +1,21 @@
-.contact-info-container {
-  padding-bottom: 65px;
-  .contact-info {
-    display: grid;
-    grid-template-columns: min-content auto;
-    grid-row-gap: 50px;
-    grid-column-gap: 20px;
-    .location-icon {
-      margin-left: -2px;
+.map-container {
+  overflow: hidden;
+  padding: 4rem 1rem 4rem;
+  @media screen and (min-width: 765px) {
+    padding: 7rem 1rem 7rem;
+  }
+
+  .contact-info-container {
+    padding-bottom: 65px;
+    color: #39323a;
+    .contact-info {
+      display: grid;
+      grid-template-columns: min-content auto;
+      grid-row-gap: 50px;
+      grid-column-gap: 20px;
+      .location-icon {
+        margin-left: -2px;
+      }
     }
   }
 }

@@ -1,11 +1,12 @@
 .welcome {
   margin-top: 2rem;
+  overflow: hidden;
 
   .welcome-header {
     text-align: center;
     font-size: 3rem;
     font-weight: 700;
-    color: #0d0c0cc7;
+    color: #706b67;
     .team {
       color: #f8d747;
     }
@@ -22,9 +23,75 @@
     max-width: 50rem;
     font-size: 19px;
     color: #000000ab;
-    text-align: justify;
   }
   p {
     line-height: 1.5em;
+    font-size: 18px;
+  }
+  .paris-container {
+    padding: 4rem 0 4rem;
+    @media screen and (min-width: 765px) {
+      padding: 7rem 0 7rem;
+    }
+
+    .paris-content {
+      padding: 0 30px;
+
+      iframe {
+        border-radius: 0.3rem;
+      }
+
+      .paris-text {
+        font-size: 1.1rem;
+        background: linear-gradient(rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.82)),
+          url("../../../images/paris-background1.png");
+        background-position: bottom left;
+        background-size: auto;
+        background-size: 647px 242px;
+        background-repeat: no-repeat;
+        .paris-header {
+          padding-bottom: 2rem;
+
+          h2 {
+            display: inline;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1105058c;
+            text-align: left;
+            font-weight: 600;
+            display: inline;
+          }
+          .team {
+            color: #f8d747;
+          }
+          .abroad {
+            color: #79cba9;
+          }
+
+          img {
+            width: 117px;
+            vertical-align: text-bottom;
+            margin-bottom: -9px;
+          }
+        }
+
+        p {
+          color: #595963;
+          line-height: 1.2em;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .highlights {
+      .paris-content {
+        .highlight-description {
+          h2 {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
   }
 }

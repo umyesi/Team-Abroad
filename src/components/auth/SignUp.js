@@ -37,7 +37,7 @@ class SignUp extends Component {
           </Link>
         </Navbar>
         <div className="container-fluid signup-container">
-          <div className="row justify-content-center">
+          <div className="row justify-content-center signup-content">
             <Form className="form-container" onSubmit={this.handleSubmit}>
               <h2>Sign Up </h2>
               <Form.Group>

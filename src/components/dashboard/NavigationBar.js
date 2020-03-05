@@ -146,10 +146,10 @@ class NavigationBar extends React.Component {
                   <Link to="/contact">Contact Us</Link>
                 </div>
                 <div>
-                  <Link to="/contact">Get a Quote</Link>
+                  <Link to="/quote">Get a Quote</Link>
                 </div>
                 <div>
-                  <Link to="/contact">About Team Abroad</Link>
+                  <Link to="/about-us">About Team Abroad</Link>
                 </div>
               </div>
             </div>

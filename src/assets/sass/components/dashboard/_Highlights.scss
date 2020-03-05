@@ -1,75 +1,41 @@
-.highlights {
-  padding-top: 5rem;
- // padding-bottom: 6rem;
-  .first-highlight-container {
-    background-color: #662c4b1f;
-    padding: 70px 30px 50px;
+// .paris-container {
+//   padding: 5rem 0 7rem;
+//   // padding-bottom: 6rem;
+//   .paris-content {
+//     //background-color: #662c4b1f;
+//     padding: 70px 30px 50px;
 
-    iframe {
-      border-radius: 0.3rem;
-    }
+//     iframe {
+//       border-radius: 0.3rem;
+//     }
 
-    .highlight-description {
-      text-align: justify;
-      font-size: 1.1rem;
-      h2 {
-        padding-bottom: 1rem;
-        font-size: 3rem;
-        font-weight: 600;
-        color: #d506e3;
-        text-align: left;
-        font-weight: 600;
-      }
-      p {
-        color: #595963;
-        line-height: 1.2em;
-      }
-    }
-  }
+//     .highlight-description {
+//       text-align: justify;
+//       font-size: 1.1rem;
+//       h2 {
+//         padding-bottom: 1rem;
+//         font-size: 2.5rem;
+//         font-weight: 600;
+//         color: #1105058c;
+//         text-align: left;
+//         font-weight: 600;
+//       }
+//       p {
+//         color: #595963;
+//         line-height: 1.2em;
+//       }
+//     }
+//   }
+// }
 
-  .second-highlight-container {
-    background-color: #1890361a;
-    padding: 50px 30px 70px;
-
-    iframe {
-      border-radius: 0.3rem;
-    }
-    .highlight-description {
-      padding-top: 2rem;
-      text-align: justify;
-
-      font-size: 1.1rem;
-      h2 {
-        padding-bottom: 1rem;
-        text-align: left;
-        font-size: 3rem;
-        font-weight: 600;
-        color: #ee8f20;
-      }
-      p {
-        color: #595963;
-        line-height: 1.2em;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .highlights {
-    .first-highlight-container {
-      .highlight-description {
-        h2 {
-          font-size: 2rem;
-        }
-      }
-    }
-
-    .second-highlight-container {
-      .highlight-description {
-        h2 {
-          font-size: 2rem;
-        }
-      }
-    }
-  }
-}
+// @media screen and (max-width: 500px) {
+//   .highlights {
+//     .paris-content {
+//       .highlight-description {
+//         h2 {
+//           font-size: 2rem;
+//         }
+//       }
+//     }
+//   }
+// }
