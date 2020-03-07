@@ -12,7 +12,7 @@ import Contact from "./components/pages/Contact";
 import Quote from "./components/pages/Quote";
 import AboutUs from "./components/pages/AboutUs";
 //import NoMatch from "./components/pages/NoMatch";
-import "bootstrap/dist/css/bootstrap.min.css";
+//import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
   render() {

@@ -9,6 +9,7 @@ import { reduxFirestore, getFirestore } from "redux-firestore";
 import { reactReduxFirebase, getFirebase } from "react-redux-firebase";
 import fbConfig from "./config/fbConfig";
 import { BrowserRouter } from "react-router-dom";
+import "./assets/sass/base/customBootstrap.scss";
 import "./main.scss";
 
 const store = createStore(
