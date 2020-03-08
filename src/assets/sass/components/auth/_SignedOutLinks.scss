@@ -4,10 +4,26 @@
     color: #606d66b8;
   }
 
- 
-  .dropdown-item:active {
+  .auth-link {
+    //font-weight: 600;
+    color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    &:hover {
+      //background-color: #3f5d513d;
+      color: #725b74;
+      transition: 0.3s;
+      // padding-left: 10px;
+    }
+  }
+
+  .dropdown-item:hover,
+  .dropdown-item:focus {
     border-style: outset;
-    background-color: unset;
+    color: #16181b;
+    text-decoration: none;
+    background-color: #3f5d513d;
+    //padding-left: 26px;
+    //transition: 0.3s;
   }
   .dropdown-signup-button {
     outline: none;
@@ -17,12 +33,14 @@
     display: inline-block;
     width: 141px;
     margin: 0 0 8px 9px;
-    background-color: #f9ce18d6;
-    border-color: #f9da57;
-    color: #55b885;
+    background-color: #f5d445;
+    border-color: #f8d746;
+    color: #4bab73;
+    font-size: 18px;
+    // font-weight: 600;
     opacity: 0.7;
     &:hover {
-      background-color: #f9da57;
+      background-color: #ffdb42;
       border-color: #f9da57;
       color: #55b885;
       opacity: 1;

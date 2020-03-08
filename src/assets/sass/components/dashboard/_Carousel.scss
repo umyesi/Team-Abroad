@@ -2,7 +2,7 @@
   text-align: center;
   
   .carousel-item {
-    max-height: 600px;
+    max-height: 570px;
     img {
       filter: brightness(50%);
     }
@@ -12,7 +12,7 @@
   }
 
   .carousel-caption {
-    top: 20%;
+    top: 25%;
     text-align: center;
 
     h3 {
@@ -35,14 +35,14 @@
 @media screen and (max-width: 770px) {
   .carousel-inner {
     .carousel-caption {
-      top: 20%;
+      top: 25%;
 
       h3 {
         width: 100%;
         font-size: 2rem;
       }
       p {
-        padding-top: 3rem;
+        padding-top: 2rem;
         font-size: 1rem;
         //font-weight: 600;
       }
@@ -53,14 +53,14 @@
 @media screen and (max-width: 500px) {
   .carousel-inner {
     .carousel-caption {
-      top: 10%;
+      top: 20%;
 
       h3 {
         width: 100%;
         font-size: 1.7rem;
       }
       p {
-        padding-top: 3rem;
+        padding-top: 2rem;
         font-size: 0.7rem;
         //font-weight: 600;
       }
@@ -71,15 +71,15 @@
 @media screen and (max-width: 430px) {
   .carousel-inner {
     .carousel-caption {
-      top: 0;
+      top: 12%;
 
       h3 {
-        padding-top: 1.5rem;
+       // padding-top: 1.5rem;
         width: 100%;
         font-size: 1.7rem;
       }
       p {
-        padding-top: 3rem;
+        padding-top: 1rem;
         font-size: 0.7rem;
         //font-weight: 600;
       }

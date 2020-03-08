@@ -27,13 +27,13 @@ class SignIn extends Component {
     if (auth.uid) return <Redirect to="/" />;
     return (
       <div>
-        <Navbar className="signin-navbar">
+        {/* <Navbar className="signin-navbar">
           <Link to="/">
             <Navbar.Brand>
               <img className="Logo" src={Logo} alt="logo" />
             </Navbar.Brand>
           </Link>
-        </Navbar>
+        </Navbar> */}
         <div className="container-fluid signin-container">
           <div className="row justify-content-center signin-content">
             <Form className="form-container" onSubmit={this.handleSubmit}>

@@ -30,7 +30,7 @@ class SignedOutLinks extends React.Component {
 
   onMouseLeave = () => {
     this.setState({ dropdownOpen: false });
-  }
+  };
 
   // open modal
   handleModalOpen = (e, currIndex) => {
@@ -65,30 +65,30 @@ class SignedOutLinks extends React.Component {
               className="dropdown-signup-button"
               onClick={event => this.handleModalOpen(event, 1)}
             >
-              <div className="nav-link">Sign Up</div>
+              <div className="nav-link auth-link">Sign Up</div>
             </DropdownItem>
 
             <DropdownItem>
               <Link
-                className="nav-link"
+                className="nav-link auth-link"
                 to={{
-                  pathname: "/signup",
+                  pathname: "/contact",
                   state: { modal: true }
                 }}
               >
-                Help
+                Contact
               </Link>
             </DropdownItem>
 
             <DropdownItem>
               {" "}
               <Link
-                className="nav-link"
+                className="nav-link auth-link"
                 to={{
-                  pathname: "modal/signup"
+                  pathname: "/contact"
                 }}
               >
-                Contact
+                Help
               </Link>
             </DropdownItem>
           </DropdownMenu>

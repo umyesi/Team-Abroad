@@ -14,26 +14,23 @@ import { AiOutlineUser } from "react-icons/ai";
 import { NavItem } from "react-bootstrap";
 
 class SignedInLinks extends React.Component {
-  
-
-    state = {
-      dropdownOpen: false
-    };
-  
+  state = {
+    dropdownOpen: false
+  };
 
   toggle = () => {
     this.setState(prevState => ({
       dropdownOpen: !prevState.dropdownOpen
     }));
-  }
+  };
 
   onMouseEnter = () => {
     this.setState({ dropdownOpen: true });
-  }
+  };
 
   onMouseLeave = () => {
     this.setState({ dropdownOpen: false });
-  }
+  };
 
   render() {
     return (
@@ -57,23 +54,19 @@ class SignedInLinks extends React.Component {
             </DropdownItem>
 
             <DropdownItem>
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/contact">
                 Help
               </Link>
             </DropdownItem>
 
             <DropdownItem>
-              
-              <Link
-                className="nav-link"
-                to='/'
-              >
+              <Link className="nav-link" to="/contact">
                 Contact
               </Link>
             </DropdownItem>
             <DropdownItem divider />
             <DropdownItem>
-              <NavItem className="nav-link"   onClick={this.props.signOut}>
+              <NavItem className="nav-link" onClick={this.props.signOut}>
                 Log Out
               </NavItem>
             </DropdownItem>

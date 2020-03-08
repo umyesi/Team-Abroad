@@ -19,21 +19,20 @@ class App extends Component {
     const { location } = this.props;
     return (
       <div className="App">
-        {location.pathname !== "/signin" &&
+        {/* {location.pathname !== "/signin" &&
           location.pathname !== "/signup" &&
-          location.pathname !== "/reset-password" && <NavigationBar />}
-        
+          location.pathname !== "/reset-password" && <NavigationBar />} */}
+        <NavigationBar />
         <Switch>
           <Route exact path="/" component={DashBoard} />
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />
           <Route path="/reset-password" component={ResetPassword} />
-          <Route path="/ourprograms" component={OurPrograms}/>
-          <Route path="/services" component={Services}/>
-          <Route path="/contact" component={Contact}/>
-          <Route path="/quote" component={Quote}/>
-          <Route path="/about-us" component={AboutUs}/>
-
+          <Route path="/ourprograms" component={OurPrograms} />
+          <Route path="/services" component={Services} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/quote" component={Quote} />
+          <Route path="/about-us" component={AboutUs} />
 
           {/* <Route component={NoMatch} /> */}
         </Switch>

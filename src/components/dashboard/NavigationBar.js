@@ -28,13 +28,16 @@ class NavigationBar extends React.Component {
     const { prevScrollpos } = this.state;
     const currentScrollpos = window.pageYOffset;
     const visible = prevScrollpos > currentScrollpos;
-    console.log(currentScrollpos)
+    console.log(currentScrollpos);
 
     if (!this.state.collapse) {
       this.setState({
         collapse: true
       });
-    } else if (currentScrollpos > 70 && (this.state.visible || !this.state.visible)) {
+    } else if (
+      currentScrollpos > 70 &&
+      (this.state.visible || !this.state.visible)
+    ) {
       this.setState({
         prevScrollpos: currentScrollpos,
         visible
@@ -99,11 +102,11 @@ class NavigationBar extends React.Component {
                 onClick={this.toggleCollapse}
                 to="/"
                 exact
-                className="nav-link"
+                className="nav-link navigation-link"
               >
                 Home
               </NavLink>
-              <div className="nav-link nav-dropdown">
+              <div className="nav-link nav-dropdown navigation-link">
                 <NavLink onClick={this.toggleCollapse} to="/ourprograms">
                   Our Programs
                 </NavLink>
@@ -135,7 +138,10 @@ class NavigationBar extends React.Component {
                 </div>
               </div>
 
-              <div componentlass="span" className="nav-dropdown nav-link">
+              <div
+                componentlass="span"
+                className="nav-dropdown nav-link navigation-link"
+              >
                 <NavLink
                   to="/services"
                   onClick={this.toggleCollapse}
@@ -197,7 +203,10 @@ class NavigationBar extends React.Component {
                 </div>
               </div>
 
-              <div componentclass="span" className="nav-dropdown nav-link">
+              <div
+                componentclass="span"
+                className="nav-dropdown nav-link navigation-link"
+              >
                 <NavLink onClick={this.toggleCollapse} to="/contact">
                   Contact
                 </NavLink>
@@ -227,10 +236,10 @@ class NavigationBar extends React.Component {
                   </div>
                 ) : (
                   <div>
-                    <NavLink to="/signin" className="nav-link toggle-signin">
+                    <NavLink onClick={this.toggleCollapse} to="/signin" className="nav-link toggle-signin">
                       Sign In
                     </NavLink>
-                    <NavLink to="/signup" className="nav-link  toggle-signup">
+                    <NavLink onClick={this.toggleCollapse} to="/signup" className="nav-link  toggle-signup">
                       Sign Up
                     </NavLink>
                   </div>

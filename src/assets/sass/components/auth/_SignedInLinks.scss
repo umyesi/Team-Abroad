@@ -4,11 +4,15 @@
   }
 
   .dropdown-menu {
-    transform: translate3d(-120px, 36px, 0px) !important;
+    top: 0px;
+    left: 0px;
+    transform: translate3d(-116px, 44px, 0px);
   }
 
-  .dropdown-item:active {
-    border-style: outset;
-    background-color: unset;
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    color: #16181b;
+    text-decoration: none;
+    background-color: #3f5d513d;
   }
 }

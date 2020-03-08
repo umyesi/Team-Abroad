@@ -2,7 +2,7 @@
   --dropdownhoverColor: #e03ad3ad;
 }
 .nav-container {
-  height: 71.58px;
+  //height: 71.58px;
   .navigation-bar {
     position: fixed;
     z-index: 2000;
@@ -13,6 +13,8 @@
     transform-origin: top;
     width: 100%;
     background-color: #371838cc;
+    //background-color: #5d415f;
+    //background-color: #512d53;
     white-space: nowrap;
     font-size: 1.2rem;
     font-weight: 600;
@@ -25,7 +27,7 @@
       color: #599079 !important;
     }
 
-    .nav-link {
+    .navigation-link {
       color: #c1edd3bd;
       &:hover {
         color: rgb(89, 144, 121);
@@ -197,9 +199,17 @@
       }
       .toggle-signin {
         display: block;
+        color: #9cb6ac;
+        &:hover {
+          color: #599079;
+        }
       }
       .toggle-signup {
         display: block;
+        color: #9cb6ac;
+        &:hover {
+          color: #599079;
+        }
       }
     }
   }
