@@ -89,3 +89,11 @@
     }
   }
 }
+
+@media screen and (max-width: 767px) { 
+  .quote-container {
+    form {
+      padding: 0;
+    }
+  }
+ }

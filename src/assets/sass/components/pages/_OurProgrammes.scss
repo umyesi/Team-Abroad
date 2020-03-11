@@ -1,8 +1,10 @@
 .our-programs {
   text-decoration: none;
   text-align: center;
-  padding-top: 8rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   overflow: hidden;
+  min-height: 100vh;
   a {
     color: rgb(39, 37, 37);
     &:hover {
@@ -12,7 +14,7 @@
   }
 
   h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     color: #599079;
     font-weight: 600;
   }
@@ -34,7 +36,7 @@
 
   .programs-links {
     justify-content: space-between;
-    padding: 4rem 0;
+    padding: 8rem 0;
 
     & > div {
       padding: 3rem 0;

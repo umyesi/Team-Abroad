@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { signUp } from "../../store/actions/authActions";
 import { Redirect, Link } from "react-router-dom";
-import { Navbar, Form, Button } from "react-bootstrap";
-import Logo from "../../assets/images/loguna.png";
+import { Form, Button } from "react-bootstrap";
 
 class SignUp extends Component {
   state = {

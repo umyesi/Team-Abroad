@@ -11,7 +11,6 @@ class ResetPassword extends Component {
     email: ""
   };
 
-
   handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
@@ -19,14 +18,13 @@ class ResetPassword extends Component {
   };
 
   handleSubmit = e => {
-    console.log(this.props)
+    console.log(this.props);
     //const { resetSent } = this.props;
     e.preventDefault();
     this.props.resetPassword(this.state);
     // if (resetSent === "success") { setTimeout(() => {
     //   //this.props.history.push("/");
     // }, 5000);}
-   
   };
 
   render() {
@@ -58,13 +56,7 @@ class ResetPassword extends Component {
     } else {
       return (
         <div>
-          <Navbar className="reset-password-navbar">
-            <Link to="/">
-              <Navbar.Brand>
-                <img className="Logo" src={Logo} alt="logo" />
-              </Navbar.Brand>
-            </Link>
-          </Navbar>
+          <Navbar className="reset-password-navbar"></Navbar>
           <div className="container-fluid reset-password-container">
             <div className="row justify-content-center  reset-content">
               <Form className="form-container" onSubmit={this.handleSubmit}>

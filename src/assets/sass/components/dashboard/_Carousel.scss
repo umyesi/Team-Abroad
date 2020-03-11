@@ -1,68 +1,79 @@
 .carousel-inner {
   text-align: center;
-  
+
   .carousel-item {
-    max-height: 570px;
+    max-height: 500px;
     img {
       filter: brightness(50%);
     }
-    .first-image {
-      filter: brightness(71%);
-    }
-  }
 
-  .carousel-caption {
-    top: 25%;
-    text-align: center;
-
-    h3 {
-      display: inline-block;
-      width: 100%;
-      font-size: 3.2rem;
-      font-weight: 600;
-      padding-top: 2rem;
-    }
-    p {
-      max-width: 38rem;
-      margin: auto;
-      padding-top: 4rem;
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
-  }
-}
-
-@media screen and (max-width: 770px) {
-  .carousel-inner {
     .carousel-caption {
       top: 25%;
+      text-align: center;
 
       h3 {
+        display: inline-block;
         width: 100%;
-        font-size: 2rem;
+        font-size: 3.2rem;
+        font-weight: 600;
+        //padding-top: 2rem;
       }
       p {
-        padding-top: 2rem;
-        font-size: 1rem;
-        //font-weight: 600;
+        max-width: 38rem;
+        margin: auto;
+        padding-top: 4rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+    }
+  }
+  .first-image {
+    img {
+      filter: brightness(71%);
+    }
+    .carousel-caption {
+      p {
+        padding-top: 5rem;
       }
     }
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 670px) {
   .carousel-inner {
-    .carousel-caption {
-      top: 20%;
+    .carousel-item {
+      .carousel-caption {
+        top: 27%;
+        max-width: 28rem;
+        margin: auto;
 
-      h3 {
-        width: 100%;
-        font-size: 1.7rem;
+        h3 {
+          font-size: 2.5rem;
+        }
+        p {
+          padding-top: 2rem;
+          font-size: 1rem;
+        }
       }
-      p {
-        padding-top: 2rem;
-        font-size: 0.7rem;
-        //font-weight: 600;
+    }
+  }
+}
+
+@media screen and (max-width: 524px) {
+  .carousel-inner {
+    .carousel-item {
+      .carousel-caption {
+        top: 23%;
+
+        h3 {
+          width: 100%;
+          font-size: 1.7rem;
+        }
+        p {
+          padding-top: 2rem;
+          font-size: 0.7rem;
+          font-weight: 600;
+        }
       }
     }
   }
@@ -70,18 +81,19 @@
 
 @media screen and (max-width: 430px) {
   .carousel-inner {
-    .carousel-caption {
-      top: 12%;
+    .carousel-item {
+      .carousel-caption {
+        top: 22%;
 
-      h3 {
-       // padding-top: 1.5rem;
-        width: 100%;
-        font-size: 1.7rem;
-      }
-      p {
-        padding-top: 1rem;
-        font-size: 0.7rem;
-        //font-weight: 600;
+        h3 {
+          width: 100%;
+          font-size: 1.7rem;
+        }
+        p {
+          padding-top: 1rem;
+          font-size: 0.7rem;
+          font-weight: 600;
+        }
       }
     }
   }

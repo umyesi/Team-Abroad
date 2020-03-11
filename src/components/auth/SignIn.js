@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { logIn } from "../../store/actions/authActions";
 import { Redirect, Link } from "react-router-dom";
-import Logo from "../../assets/images/loguna.png";
-import { Navbar, Form, Button } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 class SignIn extends Component {
   state = {
@@ -27,13 +26,6 @@ class SignIn extends Component {
     if (auth.uid) return <Redirect to="/" />;
     return (
       <div>
-        {/* <Navbar className="signin-navbar">
-          <Link to="/">
-            <Navbar.Brand>
-              <img className="Logo" src={Logo} alt="logo" />
-            </Navbar.Brand>
-          </Link>
-        </Navbar> */}
         <div className="container-fluid signin-container">
           <div className="row justify-content-center signin-content">
             <Form className="form-container" onSubmit={this.handleSubmit}>
@@ -43,13 +35,13 @@ class SignIn extends Component {
                   Email address
                 </Form.Label>
                 <div>
-                <Form.Control
-                  type="email"
-                  id="email"
-                  className="form-control"
-                  onChange={this.handleChange}
-                />
-               
+                  <Form.Control
+                    type="email"
+                    id="email"
+                    className="form-control"
+                    onChange={this.handleChange}
+                  />
+
                   <Link to="/reset-password" className="forgot-password">
                     Forgot Password?
                   </Link>

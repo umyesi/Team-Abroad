@@ -51,13 +51,13 @@ const authReducer = (state = initState, action) => {
         resetSent: "success"
       };
 
-      case "RESET_INSTRUCTIONS":
-        console.log("reset instructions");
-        return {
-          ...state,
-          authError: null,
-          resetSent: null
-        };
+    case "RESET_INSTRUCTIONS":
+      console.log("reset instructions");
+      return {
+        ...state,
+        authError: null,
+        resetSent: null
+      };
 
     case "WRONG_EMAIL":
       console.log("no account found with this email");
@@ -74,17 +74,15 @@ const authReducer = (state = initState, action) => {
     //   };
 
     case "OPEN_MODAL":
-      console.log("modal opened");
       return {
         ...state,
         showModal: true,
         currIndex: action.currIndex,
-        authError: null,
+        authError: null
         //resetSent: null
       };
 
     case "HIDE_MODAL":
-      console.log("modal closed");
       return {
         ...state,
         showModal: false,
@@ -93,7 +91,6 @@ const authReducer = (state = initState, action) => {
       };
 
     case "SWITCH_MODAL":
-      console.log("modal switched");
       return {
         ...state,
         showModal: true,

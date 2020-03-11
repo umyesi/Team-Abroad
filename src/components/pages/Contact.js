@@ -179,7 +179,6 @@ class Contact extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     messageSent: state.contact.messageSent,
     sendingError: state.contact.sendingError

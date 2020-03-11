@@ -44,7 +44,8 @@ class SignedOutLinks extends React.Component {
         <AuthModal />
         <Dropdown
           className="d-inline-block mr-3 display-block"
-          onMouseOver={this.onMouseEnter}
+          onClick={this.onMouseEnter}
+          onMouseEnter={this.onMouseEnter}
           onMouseLeave={this.onMouseLeave}
           isOpen={this.state.dropdownOpen}
           toggle={this.toggle}

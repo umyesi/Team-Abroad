@@ -1,12 +1,13 @@
 .contact-container {
   text-decoration: none;
-  padding-top: 8rem;
+  padding-top: 4rem;
   overflow: hidden;
+  min-height: 100vh;
 
   .title {
     text-align: center;
     h2 {
-      font-size: 4rem;
+      font-size: 3rem;
       color: #599079;
       font-weight: 600;
     }
@@ -63,6 +64,14 @@
       //   color: #dfdbc9;
       //   background-color: #599079;
       //   border-color: #548873;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contact-container {
+    form {
+      padding: 0;
     }
   }
 }

@@ -16,7 +16,7 @@ import AboutUs from "./components/pages/AboutUs";
 
 class App extends Component {
   render() {
-    const { location } = this.props;
+    //const { location } = this.props;
     return (
       <div className="App">
         {/* {location.pathname !== "/signin" &&

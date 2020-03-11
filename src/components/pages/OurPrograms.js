@@ -57,7 +57,11 @@ class OurPrograms extends React.Component {
 
   hideInfo = name => {
     this.props.hideInfo(name);
-    window.scroll(0, 0);
+    setTimeout(() => {
+      window.scroll(0, 250);
+    }, 300);
+    //this.props.hideInfo(name);
+
     //this.scrollToTop.current.scrollIntoView({ behavior: "smooth" });
   };
 

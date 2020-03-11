@@ -23,13 +23,13 @@ const Slider = () => {
       direction={direction}
       onSelect={handleSelect}
     >
-      <Carousel.Item>
+      <Carousel.Item className="first-image">
         <img
-          className="d-block w-100 first-image"
+          className="d-block w-100 "
           src={img1}
           alt="First slide"
         />
-        <Carousel.Caption>
+        <Carousel.Caption className="">
           <h3>The best way to explore Paris</h3>
           <p>
             Team Abroad offers fantastic combination of lessons, indoor &
@@ -37,7 +37,7 @@ const Slider = () => {
           </p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item className="second-image">
         <img
           className="d-block w-100 center-block"
           src={img2}
@@ -53,7 +53,7 @@ const Slider = () => {
           </p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item className="third-image">
         <img className="d-block w-100" src={img3} alt="Third slide" />
 
         <Carousel.Caption>

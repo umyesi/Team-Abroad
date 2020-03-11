@@ -1,5 +1,6 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, withRouter } from "react-router-dom";
+import { compose } from "redux";
 import { connect } from "react-redux";
 import { Navbar, Nav } from "react-bootstrap";
 import SignedInLinks from "../auth/SignedInLinks";
@@ -13,45 +14,63 @@ class NavigationBar extends React.Component {
     this.state = {
       collapse: true,
       visible: true,
-      prevScrollpos: window.pageYOffset
+      prevScrollpos: window.pageYOffset,
+      programs: false,
+      services: false,
+      contact: false
     };
   }
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("mousedown", this.dropdown);
+    window.addEventListener("mousedown", this.toggleCollapse);
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("mousedown", this.dropdown, false);
+    window.removeEventListener("mousedown", this.toggleCollapse, false);
   }
 
   handleScroll = () => {
     const { prevScrollpos } = this.state;
     const currentScrollpos = window.pageYOffset;
     const visible = prevScrollpos > currentScrollpos;
-    console.log(currentScrollpos);
+    const { location } = this.props;
 
     if (!this.state.collapse) {
       this.setState({
         collapse: true
       });
     } else if (
-      currentScrollpos > 70 &&
+      currentScrollpos > 100 &&
+      location.pathname !== "/signup" &&
+      location.pathname !== "/signin" &&
       (this.state.visible || !this.state.visible)
     ) {
       this.setState({
         prevScrollpos: currentScrollpos,
-        visible
+        visible,
+        dropdown: false
       });
     }
   };
 
-  toggleCollapse = () => {
-    this.setState({ collapse: !this.state.collapse });
+  toggleCollapse = e => {
+    setTimeout(() => {
+      if (e.target.id === "toggle-button") {
+        this.setState({ collapse: !this.state.collapse });
+      } else if (e.target.className === "arrow") {
+        return false;
+      } else {
+        this.setState({ collapse: true });
+      }
+    }, 200);
   };
 
   showProgramInfo = name => {
     setTimeout(() => {
-      window.scroll(0, 2000);
+      window.scroll(0, 2500);
     }, 500);
     this.props.showProgramInfo(name);
   };
@@ -63,15 +82,53 @@ class NavigationBar extends React.Component {
     this.props.showServiceInfo(name);
   };
 
+  dropdown = e => {
+    console.log(e.target)
+    if (e.target.id === "programs") {
+      this.setState({
+        programs: !this.state.programs,
+        services: false,
+        contact: false
+      });
+    } else if (e.target.id === "services") {
+      this.setState({
+        services: !this.state.services,
+        contact: false,
+        programs: false
+      });
+    } else if (e.target.id === "contact") {
+      this.setState({
+        contact: !this.state.contact,
+        services: false,
+        programs: false
+      });
+    } else if (e.target.className === "drp-item") {
+      console.log("djsk")
+      setTimeout(() => {
+        this.setState({
+          contact: false,
+          services: false,
+          programs: false
+        });
+      }, 500);
+
+    } else {
+      this.setState({ contact: false, services: false, programs: false });
+    }
+    // if (this.node.contains(e.target)) {
+    //   this.setState({ dropdown: !this.state.dropdown });
+    // }
+  };
+
   render() {
+    //console.log(this.props);
     const { auth } = this.props;
     const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
     return (
-      <div className="nav-container">
+      <div ref={node => (this.node = node)} className="nav-container">
         <Navbar
           expand="md"
-          className="navigation-bar"
-          className={`navigation-bar ${this.state.visible ? "" : "hidden"}`}
+          className={`nav-content ${this.state.visible ? "" : "nav-hidden"}`}
         >
           <Link to="/">
             <Navbar.Brand>
@@ -80,8 +137,9 @@ class NavigationBar extends React.Component {
           </Link>
 
           <button
-            onClick={this.toggleCollapse}
+            //onClick={this.toggleCollapse}
             className="navbar-toggler toggle-button ml-auto collapsed"
+            id="toggle-button"
             type="button"
             data-toggle="collapse"
             data-target="#basic-navbar-nav"
@@ -89,32 +147,38 @@ class NavigationBar extends React.Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span id="toggle-button" className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse-container">
             <div
-              className={`justify-content-lg-around navbar-collapse ${
+              className={`justify-content-lg-around navbar-collapse collapse-content ${
                 this.state.collapse ? "collapse " : "collapse show "
-              }`}
+                }`}
               id="basic-navbar-nav"
             >
               <NavLink
-                onClick={this.toggleCollapse}
+                //onClick={this.toggleCollapse}
                 to="/"
                 exact
                 className="nav-link navigation-link"
               >
                 Home
               </NavLink>
+
               <div className="nav-link nav-dropdown navigation-link">
-                <NavLink onClick={this.toggleCollapse} to="/ourprograms">
-                  Our Programs
-                </NavLink>
-                <div className="dropdown-content">
+                <NavLink to="/ourprograms">Our Programs</NavLink>
+
+                <span id="programs" className="arrow"></span>
+                <div
+                  className={`dropdown-content ${
+                    this.state.programs ? "show" : ""
+                    }`}
+                >
                   <div>
                     <Link
                       onClick={() => this.showProgramInfo("englishInfo")}
                       to="/ourprograms"
+                      className="drp-item"
                     >
                       English Program
                     </Link>
@@ -123,6 +187,7 @@ class NavigationBar extends React.Component {
                     <Link
                       onClick={() => this.showProgramInfo("frenchInfo")}
                       to="/ourprograms"
+                      className="drp-item"
                     >
                       French Program
                     </Link>
@@ -131,6 +196,7 @@ class NavigationBar extends React.Component {
                     <Link
                       onClick={() => this.showProgramInfo("internInfo")}
                       to="/ourprograms"
+                      className="drp-item"
                     >
                       Internship
                     </Link>
@@ -140,20 +206,22 @@ class NavigationBar extends React.Component {
 
               <div
                 componentlass="span"
-                className="nav-dropdown nav-link navigation-link"
+                className="nav-dropdown nav-link navigation-link services"
               >
-                <NavLink
-                  to="/services"
-                  onClick={this.toggleCollapse}
-                  className="dropbtn"
-                >
+                <span id="services" className="arrow"></span>
+                <NavLink to="/services" className="dropbtn">
                   Services
                 </NavLink>
-                <div className="dropdown-content">
+                <div
+                  className={`dropdown-content ${
+                    this.state.services ? "show" : ""
+                    }`}
+                >
                   <div>
                     <Link
                       onClick={() => this.showServiceInfo("accomodation")}
                       to="/services"
+                      className="drp-item"
                     >
                       Accomodation
                     </Link>
@@ -162,6 +230,7 @@ class NavigationBar extends React.Component {
                     <Link
                       onClick={() => this.showServiceInfo("activities")}
                       to="/services"
+                      className="drp-item"
                     >
                       Activities
                     </Link>
@@ -170,6 +239,7 @@ class NavigationBar extends React.Component {
                     <Link
                       onClick={() => this.showServiceInfo("transfers")}
                       to="/services"
+                      className="drp-item"
                     >
                       Transfers
                     </Link>
@@ -178,6 +248,7 @@ class NavigationBar extends React.Component {
                     <Link
                       onClick={() => this.showServiceInfo("meals")}
                       to="/services"
+                      className="drp-item"
                     >
                       Meals
                     </Link>
@@ -186,7 +257,7 @@ class NavigationBar extends React.Component {
                     <Link
                       onClick={() => this.showServiceInfo("assistance")}
                       to="/services"
-                      className="last"
+                      className="last drp-item"
                     >
                       Assistance
                     </Link>
@@ -195,7 +266,7 @@ class NavigationBar extends React.Component {
                     <Link
                       onClick={() => this.showServiceInfo("optional")}
                       to="/services"
-                      className="last"
+                      className="last drp-item"
                     >
                       Optional Services
                     </Link>
@@ -204,25 +275,52 @@ class NavigationBar extends React.Component {
               </div>
 
               <div
-                componentclass="span"
-                className="nav-dropdown nav-link navigation-link"
+                //componentclass="span"
+                className="nav-dropdown nav-link navigation-link d-none d-md-block"
               >
-                <NavLink onClick={this.toggleCollapse} to="/contact">
-                  Contact
-                </NavLink>
+                <span id="contact" className="arrow"></span>
+                <NavLink to="/contact">Contact</NavLink>
 
-                <div className="dropdown-content">
+                <div
+                  className={`dropdown-content ${
+                    this.state.contact ? "show" : ""
+                    }`}
+                >
                   <div>
-                    <Link to="/contact">Contact Us</Link>
+                    <NavLink className="drp-item" to="/contact">Contact Us</NavLink>
                   </div>
                   <div>
-                    <Link to="/quote">Get a Quote</Link>
+                    <NavLink className="drp-item" to="/quote">Get a Quote</NavLink>
                   </div>
                   <div>
-                    <Link to="/about-us">About Team Abroad</Link>
+                    <NavLink className="drp-item" to="/about-us">About Team Abroad</NavLink>
                   </div>
                 </div>
               </div>
+              <NavLink
+                //onClick={this.toggleCollapse}
+                to="/contact"
+                exact
+                className="nav-link navigation-link d-md-none"
+              >
+                Contact Us
+              </NavLink>
+              <NavLink
+                //onClick={this.toggleCollapse}
+                to="/quote"
+                exact
+                className="nav-link navigation-link d-md-none"
+              >
+                Get a Quote
+              </NavLink>
+              <NavLink
+                //onClick={this.toggleCollapse}
+                to="/about-us"
+                exact
+                className="nav-link navigation-link d-md-none"
+              >
+                About Team Abroad
+              </NavLink>
 
               <div className="auth-collapse">
                 {auth.uid ? (
@@ -230,20 +328,20 @@ class NavigationBar extends React.Component {
                     <NavLink to="/signin" className="nav-link toggle-signin">
                       My Account
                     </NavLink>
-                    <Nav.Link className="nav-link" onClick={this.props.signOut}>
+                    <Nav.Link className="nav-link navigation-link" onClick={this.props.signOut}>
                       Log Out
                     </Nav.Link>
                   </div>
                 ) : (
-                  <div>
-                    <NavLink onClick={this.toggleCollapse} to="/signin" className="nav-link toggle-signin">
-                      Sign In
+                    <div>
+                      <NavLink to="/signin" className="nav-link navigation-link">
+                        Sign In
                     </NavLink>
-                    <NavLink onClick={this.toggleCollapse} to="/signup" className="nav-link  toggle-signup">
-                      Sign Up
+                      <NavLink to="/signup" className="nav-link  navigation-link">
+                        Sign Up
                     </NavLink>
-                  </div>
-                )}
+                    </div>
+                  )}
               </div>
             </div>
           </div>
@@ -269,4 +367,8 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar);
+export default compose(
+  withRouter,
+  connect(mapStateToProps, mapDispatchToProps)
+)(NavigationBar);
+//export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar);
