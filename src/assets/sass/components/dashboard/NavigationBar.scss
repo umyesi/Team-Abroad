@@ -12,13 +12,15 @@
     transform: scaleY(1);
     transform-origin: top;
     width: 100%;
-    // background-color: #371838cc;
     background-color: #5d415f;
-    //background-color: #512d53;
     white-space: nowrap;
     font-size: 1.2rem;
     font-weight: 600;
     padding: 0 0;
+
+    .toggle-button {
+      margin-right: 10px;
+    }
 
     &.nav-hidden {
       transform: scaleY(0);
@@ -35,20 +37,7 @@
 
     .navigation-link {
       color: #c1edd3bd; //before hover
-      &:hover {
-        color: #599079; // on hover
-        & .arrow::after {
-          content: "";
-          position: absolute;
-          top: 15px;
-          right: 0px;
-          width: 0;
-          height: 0;
-          border-left: 5px solid #df1e1e00;
-          border-right: 5px solid transparent;
-          border-top: 8px solid #599079;
-        }
-      }
+
       .active {
         color: #599079; //on active
       }
@@ -60,6 +49,43 @@
     .nav-dropdown {
       position: relative;
       cursor: pointer;
+      .arrow-container {
+        display: inline-block;
+        width: 29px;
+        i {
+          border: solid #9eb8af;
+          border-width: 0 3px 3px 0;
+          display: inline-block;
+          padding: 3px;
+          margin-left: 8px;
+          margin-bottom: 3px;
+        }
+
+        .arrow-down {
+          transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+        }
+        &::after {
+          content: "";
+          height: 100px;
+          width: 126px;
+          position: absolute;
+          right: 0;
+          top: 25px;
+        }
+      }
+      @media (hover: hover) {
+        @media only screen and (min-width: 767px) {
+          &:hover {
+            color: #599079; // on hover
+            & .arrow-container {
+              i {
+                border-color: #599079;
+              }
+            }
+          }
+        }
+      }
 
       a {
         color: #c1edd3bd;
@@ -69,34 +95,6 @@
         }
       }
 
-      .arrow {
-        &::after {
-          content: "";
-          position: absolute;
-          top: 15px;
-          right: 0px;
-          width: 0;
-          height: 0;
-          border-left: 5px solid #df1e1e00;
-          border-right: 5px solid transparent;
-          border-top: 8px solid #a4bdb3;
-        }
-        &:hover::after {
-          content: "";
-          position: absolute;
-          top: 15px;
-          right: 0px;
-          width: 0;
-          height: 0;
-          border-left: 5px solid #df1e1e00;
-          border-right: 5px solid transparent;
-          border-top: 8px solid #599079;
-        }
-      }
-
-      // .dropdown-content.show {
-      //   visibility: visible;
-      // }
       @media (hover: hover) {
         @media only screen and (min-width: 767px) {
           &:hover .dropdown-content {
@@ -164,9 +162,71 @@
     }
   }
 }
+
 @media only screen and (max-width: 767px) {
   .nav-container {
     .nav-content {
+      .navigation-link {
+        width: 10px;
+      }
+      .nav-dropdown {
+        .arrow-container {
+          display: inline-block;
+          width: 29px;
+          margin-left: 10px;
+          i {
+            border: solid #9eb8af;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            margin-left: 8px;
+            margin-bottom: 3px;
+          }
+
+          .arrow-down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+          }
+          &.arrow-active {
+            i {
+              border-color: #599079;
+            }
+          }
+        }
+
+        .dropdown-content {
+          display: none;
+          font-size: 1rem;
+          font-weight: normal;
+          &.show {
+            display: block;
+          }
+
+          a {
+            display: block;
+            color: #80918c;
+            padding: 12px 0px 0px 16px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+
+            &.active {
+              color: #599079;
+            }
+
+            &:hover {
+              background-color: none;
+              color: #599079;
+
+              &::before {
+                transition: 0.3s;
+                opacity: 1;
+                left: 4px;
+              }
+            }
+          }
+        }
+      }
       .auth {
         display: none;
       }
@@ -182,73 +242,17 @@
           &.show {
             transform: scaleY(1);
           }
-          .navigation-link {
-            //cursor: unset;
-            width: 163px;
-            &.services {
-              width: 112px;
-            }
-          }
-          .nav-dropdown {
-            .dropdown-content {
-              display: none;
-              font-size: 1rem;
-              font-weight: normal;
-              &.show {
-                display: block;
-                & .arrow::after {
-                  content: "";
-                  position: absolute;
-                  top: 15px;
-                  right: 0px;
-                  width: 0;
-                  height: 0;
-                  border-left: 5px solid #df1e1e00;
-                  border-right: 5px solid transparent;
-                  border-top: 8px solid #599079;
-                }
-              }
-
-              a {
-                display: block;
-                color: #80918c;
-                padding: 12px 0px 0px 16px;
-                text-decoration: none;
-                font-weight: bold;
-                cursor: pointer;
-
-                &.active {
-                  color: #599079;
-                }
-
-                &:hover {
-                  background-color: none;
-                  color: #599079;
-                  //transition: 0.3s;
-                  //padding-left: 20px;
-
-                  &::before {
-                    transition: 0.3s;
-                    opacity: 1;
-                    left: 4px;
-                  }
-                }
-              }
-            }
-          }
 
           .auth-collapse {
             display: block;
             width: fit-content;
             .toggle-signin {
-              //display: block;
               color: #9cb6ac;
               &:hover {
                 color: #599079;
               }
             }
             .toggle-signup {
-              //display: block;
               color: #9cb6ac;
               &:hover {
                 color: #599079;

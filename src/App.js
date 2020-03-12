@@ -30,9 +30,10 @@ class App extends Component {
           <Route path="/reset-password" component={ResetPassword} />
           <Route path="/ourprograms" component={OurPrograms} />
           <Route path="/services" component={Services} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/quote" component={Quote} />
-          <Route path="/about-us" component={AboutUs} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/contact/contact-us" component={Contact} />
+          <Route path="/contact/quote" component={Quote} />
+          <Route path="/contact/about-us" component={AboutUs} />
 
           {/* <Route component={NoMatch} /> */}
         </Switch>
