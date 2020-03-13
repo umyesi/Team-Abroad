@@ -34,11 +34,9 @@ class NavigationBar extends React.Component {
   }
 
   topScroll = () => {
-    window.removeEventListener("scroll", this.handleScroll);
     setTimeout(() => {
       window.scroll(0, 0);
     }, 200);
-    window.addEventListener("scroll", this.handleScroll);
   }
 
   // else if (e.target.closest(".navbar-brand")) {

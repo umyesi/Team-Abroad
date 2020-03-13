@@ -20,7 +20,7 @@ class GetQuote extends Component {
                 See Programs
               </Button>
             </Link>
-            <Link to="/quote" className="col-6">
+            <Link to="/contact/quote" className="col-6">
               <Button variant="outline-light px-sm-5 py-sm-3">
                 Get a Quote
               </Button>

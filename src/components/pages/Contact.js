@@ -97,23 +97,24 @@ class Contact extends React.Component {
               {({ touched, errors, isSubmitting, values }) => (
                 <Form className="row">
                   <div className="col-md-6 mb-4">
+                    <label htmlFor="name">First Name</label>
                     <Field
                       name="name"
                       id="name"
-                      placeholder="First name"
                       className="form-control"
                     />
                   </div>
                   <div className="col-md-6 mb-4">
+                    <label htmlFor="surname">Last Name</label>
                     <Field
                       className="form-control"
                       name="surname"
                       id="surname"
-                      placeholder="Last name"
                     />
                   </div>
 
                   <div className="col-md-6 mb-4">
+                    <label htmlFor="email" className="required">Email Address</label>
                     <Field
                       className={`form-control ${
                         touched.email && errors.email ? "is-invalid" : ""
@@ -121,7 +122,6 @@ class Contact extends React.Component {
                       //type="email"
                       name="email"
                       id="email"
-                      placeholder="Email Address"
                     />
                     <ErrorMessage
                       component="div"
@@ -130,13 +130,13 @@ class Contact extends React.Component {
                     />
                   </div>
                   <div className="col-md-6 mb-4">
+                    <label htmlFor="surname">Phone Number</label>
                     <Field
                       className={`form-control ${
                         touched.phone && errors.phone ? "is-invalid" : ""
                         }`}
                       name="phone"
                       id="phone"
-                      placeholder="Phone Number"
                     />
                     <ErrorMessage
                       component="div"
@@ -145,6 +145,7 @@ class Contact extends React.Component {
                     />
                   </div>
                   <div className="mt-4 col-12">
+                    <label htmlFor="surname" className="required">Message</label>
                     <Field
                       className={`form-control text-input ${
                         touched.message && errors.message ? "is-invalid" : ""
@@ -153,7 +154,6 @@ class Contact extends React.Component {
                       type="textarea"
                       id="message"
                       name="message"
-                      placeholder="Message"
                     />
                     <ErrorMessage
                       component="div"

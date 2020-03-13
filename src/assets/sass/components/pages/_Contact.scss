@@ -52,6 +52,16 @@
     margin: 6rem 0 8rem;
     padding: 0 3rem;
     justify-content: center;
+    label {
+      color: #767272;
+      font-size: 14px;
+      padding-bottom: 11px;
+
+      &.required:after {
+        content: " *";
+        color: red;
+      }
+    }
     input {
       padding: 2rem 0.5rem;
     }
