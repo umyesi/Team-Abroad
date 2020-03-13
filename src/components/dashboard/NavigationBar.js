@@ -34,9 +34,11 @@ class NavigationBar extends React.Component {
   }
 
   topScroll = () => {
+    window.removeEventListener("scroll", this.handleScroll);
     setTimeout(() => {
       window.scroll(0, 0);
     }, 200);
+    window.addEventListener("scroll", this.handleScroll);
   }
 
   // else if (e.target.closest(".navbar-brand")) {
@@ -46,10 +48,10 @@ class NavigationBar extends React.Component {
   // }
 
   handleScroll = () => {
-    const { prevScrollpos } = this.state;
+    //const { prevScrollpos } = this.state;
     const currentScrollpos = window.pageYOffset;
-    const visible = prevScrollpos > currentScrollpos;
-    const { location } = this.props;
+    //const visible = prevScrollpos > currentScrollpos;
+    //const { location } = this.props;
 
     if (!this.state.collapse) {
       this.setState({
@@ -71,7 +73,6 @@ class NavigationBar extends React.Component {
   };
 
   toggleCollapse = e => {
-    console.log(e.target)
     setTimeout(() => {
       if (e.target.id === "toggle-button") {
         this.setState({ collapse: !this.state.collapse });
@@ -124,7 +125,6 @@ class NavigationBar extends React.Component {
         programs: false
       });
     } else if (e.target.closest(".drp-item")) {
-      console.log("djsk")
       setTimeout(() => {
         this.setState({
           contact: false,
@@ -145,7 +145,7 @@ class NavigationBar extends React.Component {
       <div ref={node => (this.node = node)} className="nav-container">
         <Navbar
           expand="md"
-          className={`nav-content ${this.state.visible ? "" : "nav-hidden"}`}
+          className={`nav-content  ${this.state.visible ? "" : "nav-hidden"}`}
         >
           <Link className="clicked" to="/">
             <Navbar.Brand onClick={this.topScroll}>

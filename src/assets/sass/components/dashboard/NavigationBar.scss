@@ -1,16 +1,14 @@
-:root {
-  --dropdownhoverColor: #e03ad3ad;
-}
 .nav-container {
   height: 71.58px;
   .nav-content {
     position: fixed;
     z-index: 2000;
-    top: 0;
-    transition: transform 0.3s ease-out;
-    height: auto;
-    transform: scaleY(1);
-    transform-origin: top;
+    //in case you want to collapse navbar on scroll use this code
+    // top: 0;
+    // transition: transform 0.3s ease-out;
+    // height: auto;
+    // transform: scaleY(1);
+    // transform-origin: top;
     width: 100%;
     background-color: #5d415f;
     white-space: nowrap;
@@ -21,10 +19,10 @@
     .toggle-button {
       margin-right: 10px;
     }
-
-    &.nav-hidden {
-      transform: scaleY(0);
-    }
+    //in case you want to collapse navbar on scroll use this code
+    // &.nav-hidden {
+    //   transform: scaleY(0);
+    // }
     .Logo {
       width: 9rem;
     }
@@ -49,6 +47,9 @@
     .nav-dropdown {
       position: relative;
       cursor: pointer;
+      .navlink-container {
+        display: inline-block;
+      }
       .arrow-container {
         display: inline-block;
         width: 29px;

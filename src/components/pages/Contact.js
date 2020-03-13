@@ -15,7 +15,8 @@ class Contact extends React.Component {
       surname: "",
       phone: "",
       email: "",
-      message: ""
+      message: "",
+      all: false
     };
   }
 
@@ -42,16 +43,20 @@ class Contact extends React.Component {
 
     if (!values.email) {
       errors.email = "Required";
+      errors.all = true;
     } else if (!emailTest.test(values.email)) {
       errors.email = "Invalid email address";
+      errors.all = true;
     }
     if (!values.message) {
       errors.message = "Required";
     } else if (!messageTest.test(values.message)) {
       errors.message = "Your message must be at least 10 characters long";
+      errors.all = true;
     }
     if (!phoneTest.test(values.phone)) {
       errors.phone = "Please enter a valid phone number";
+      errors.all = true;
     }
     return errors;
   };
@@ -84,91 +89,92 @@ class Contact extends React.Component {
             <p>Your message has been successfully sent</p>
           </div>
         ) : (
-          <Formik
-            initialValues={this.initialValues}
-            validate={this.validate}
-            onSubmit={this.handleSubmit}
-          >
-            {({ touched, errors, isSubmitting }) => (
-              <Form className="row">
-                <div className="col-md-6 mb-4">
-                  <Field
-                    name="name"
-                    id="name"
-                    placeholder="First name"
-                    className="form-control"
-                  />
-                </div>
-                <div className="col-md-6 mb-4">
-                  <Field
-                    className="form-control"
-                    name="surname"
-                    id="surname"
-                    placeholder="Last name"
-                  />
-                </div>
+            <Formik
+              initialValues={this.initialValues}
+              validate={this.validate}
+              onSubmit={this.handleSubmit}
+            >
+              {({ touched, errors, isSubmitting, values }) => (
+                <Form className="row">
+                  <div className="col-md-6 mb-4">
+                    <Field
+                      name="name"
+                      id="name"
+                      placeholder="First name"
+                      className="form-control"
+                    />
+                  </div>
+                  <div className="col-md-6 mb-4">
+                    <Field
+                      className="form-control"
+                      name="surname"
+                      id="surname"
+                      placeholder="Last name"
+                    />
+                  </div>
 
-                <div className="col-md-6 mb-4">
-                  <Field
-                    className={`form-control ${
-                      touched.email && errors.email ? "is-invalid" : ""
-                    }`}
-                    //type="email"
-                    name="email"
-                    id="email"
-                    placeholder="Email Address"
-                  />
-                  <ErrorMessage
-                    component="div"
-                    name="email"
-                    className="invalid-feedback"
-                  />
-                </div>
-                <div className="col-md-6 mb-4">
-                  <Field
-                    className={`form-control ${
-                      touched.phone && errors.phone ? "is-invalid" : ""
-                    }`}
-                    name="phone"
-                    id="phone"
-                    placeholder="Phone Number"
-                  />
-                  <ErrorMessage
-                    component="div"
-                    name="phone"
-                    className="invalid-feedback"
-                  />
-                </div>
-                <div className="mt-4 col-12">
-                  <Field
-                    className={`form-control text-input ${
-                      touched.message && errors.message ? "is-invalid" : ""
-                    }`}
-                    component="textarea"
-                    type="textarea"
-                    id="message"
-                    name="message"
-                    placeholder="Message"
-                  />
-                  <ErrorMessage
-                    component="div"
-                    name="message"
-                    className="invalid-feedback"
-                  />
-                </div>
-                <div className="col align-left mt-5">
-                  <Button
-                    disabled={isSubmitting}
-                    variant="secondary"
-                    type="submit"
-                  >
-                    {isSubmitting ? "Please wait..." : "Send Message"}
-                  </Button>
-                </div>
-              </Form>
-            )}
-          </Formik>
-        )}
+                  <div className="col-md-6 mb-4">
+                    <Field
+                      className={`form-control ${
+                        touched.email && errors.email ? "is-invalid" : ""
+                        }`}
+                      //type="email"
+                      name="email"
+                      id="email"
+                      placeholder="Email Address"
+                    />
+                    <ErrorMessage
+                      component="div"
+                      name="email"
+                      className="invalid-feedback"
+                    />
+                  </div>
+                  <div className="col-md-6 mb-4">
+                    <Field
+                      className={`form-control ${
+                        touched.phone && errors.phone ? "is-invalid" : ""
+                        }`}
+                      name="phone"
+                      id="phone"
+                      placeholder="Phone Number"
+                    />
+                    <ErrorMessage
+                      component="div"
+                      name="phone"
+                      className="invalid-feedback"
+                    />
+                  </div>
+                  <div className="mt-4 col-12">
+                    <Field
+                      className={`form-control text-input ${
+                        touched.message && errors.message ? "is-invalid" : ""
+                        }`}
+                      component="textarea"
+                      type="textarea"
+                      id="message"
+                      name="message"
+                      placeholder="Message"
+                    />
+                    <ErrorMessage
+                      component="div"
+                      name="message"
+                      className="invalid-feedback"
+                    />
+                  </div>
+                  <div className="col align-left mt-5">
+                    <Button
+                      disabled={isSubmitting}
+                      variant="secondary"
+                      type="submit"
+                    >
+                      {isSubmitting ? "Please wait..." : "Send Message"}
+                    </Button>
+                    {errors.all ? <p className="validation-error">Please fill in all required fields.</p> : null}
+                  </div>
+                </Form>
+              )}
+            </Formik>
+          )}
 
         <div className="text-center text-danger mt-3">
           {sendingError ? <p>{sendingError}</p> : null}
