@@ -24,6 +24,7 @@ class NavigationBar extends React.Component {
     window.addEventListener("scroll", this.handleScroll);
     window.addEventListener("mousedown", this.dropdown);
     window.addEventListener("mousedown", this.toggleCollapse);
+
   }
 
   componentWillUnmount() {
@@ -31,6 +32,18 @@ class NavigationBar extends React.Component {
     window.removeEventListener("mousedown", this.dropdown, false);
     window.removeEventListener("mousedown", this.toggleCollapse, false);
   }
+
+  topScroll = () => {
+    setTimeout(() => {
+      window.scroll(0, 0);
+    }, 200);
+  }
+
+  // else if (e.target.closest(".navbar-brand")) {
+  //   setTimeout(() => {
+  //     window.scroll(0, 0);
+  //   }, 200);
+  // }
 
   handleScroll = () => {
     const { prevScrollpos } = this.state;
@@ -43,14 +56,15 @@ class NavigationBar extends React.Component {
         collapse: true
       });
     } else if (
-      currentScrollpos > 100 &&
-      location.pathname !== "/signup" &&
-      location.pathname !== "/signin" &&
-      (this.state.visible || !this.state.visible)
+      currentScrollpos > 100
+      //&&
+      // location.pathname !== "/signup" &&
+      // location.pathname !== "/signin" &&
+      // (this.state.visible || !this.state.visible)
     ) {
       this.setState({
         prevScrollpos: currentScrollpos,
-        visible,
+        //visible,
         dropdown: false
       });
     }
@@ -72,8 +86,13 @@ class NavigationBar extends React.Component {
   };
 
   showProgramInfo = name => {
+    const mql = window.matchMedia("(max-width: 375px)");
     setTimeout(() => {
-      window.scroll(0, 2200);
+      if (mql.matches) {
+        window.scroll(0, 1400);
+      } else {
+        window.scroll(0, 2000);
+      }
     }, 500);
     this.props.showProgramInfo(name);
   };
@@ -117,13 +136,9 @@ class NavigationBar extends React.Component {
     } else {
       this.setState({ contact: false, services: false, programs: false });
     }
-    // if (this.node.contains(e.target)) {
-    //   this.setState({ dropdown: !this.state.dropdown });
-    // }
   };
 
   render() {
-    //console.log(this.props);
     const { auth } = this.props;
     const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
     return (
@@ -133,13 +148,12 @@ class NavigationBar extends React.Component {
           className={`nav-content ${this.state.visible ? "" : "nav-hidden"}`}
         >
           <Link className="clicked" to="/">
-            <Navbar.Brand>
+            <Navbar.Brand onClick={this.topScroll}>
               <img className="Logo" src={Logo} alt="logo" />
             </Navbar.Brand>
           </Link>
 
           <button
-            //onClick={this.toggleCollapse}
             className="navbar-toggler toggle-button ml-auto collapsed"
             id="toggle-button"
             type="button"
@@ -159,7 +173,6 @@ class NavigationBar extends React.Component {
               id="basic-navbar-nav"
             >
               <NavLink
-                //onClick={this.toggleCollapse}
                 to="/"
                 exact
                 className="nav-link navigation-link clicked"
@@ -168,7 +181,9 @@ class NavigationBar extends React.Component {
               </NavLink>
 
               <div className="nav-link nav-dropdown navigation-link">
-                <NavLink to="/ourprograms" className="clicked">Our Programs</NavLink>
+                <div className="navlink-container">
+                  <NavLink to="/ourprograms" className="clicked">Our Programs</NavLink>
+                </div>
 
 
                 <div id="programs" className={`arrow-container ${
@@ -183,7 +198,7 @@ class NavigationBar extends React.Component {
                     <Link
                       onClick={() => this.showProgramInfo("englishInfo")}
                       to="/ourprograms"
-                      className={`drp-item ${
+                      className={`drp-item clicked ${
                         this.props.programInfo.englishInfo ? "active" : ""
                         } `}
                     >
@@ -194,7 +209,7 @@ class NavigationBar extends React.Component {
                     <Link
                       onClick={() => this.showProgramInfo("frenchInfo")}
                       to="/ourprograms"
-                      className={`drp-item ${
+                      className={`drp-item clicked ${
                         this.props.programInfo.frenchInfo ? "active" : ""
                         } `}
                     >
@@ -205,7 +220,7 @@ class NavigationBar extends React.Component {
                     <Link
                       onClick={() => this.showProgramInfo("internInfo")}
                       to="/ourprograms"
-                      className={`drp-item ${
+                      className={`drp-item clicked ${
                         this.props.programInfo.internInfo ? "active" : ""
                         } `}
                     >
@@ -219,9 +234,11 @@ class NavigationBar extends React.Component {
                 componentlass="span"
                 className="nav-dropdown nav-link navigation-link services"
               >
-                <NavLink className="clicked" to="/services" >
-                  Services
+                <div className="navlink-container">
+                  <NavLink className="clicked" to="/services" >
+                    Services
                 </NavLink>
+                </div>
                 <div id="services" className={`arrow-container ${
                   this.state.services ? "arrow-active" : ""
                   }`}><i id="services" className="arrow-down"></i></div>
@@ -234,7 +251,7 @@ class NavigationBar extends React.Component {
                     <Link
                       onClick={() => this.showServiceInfo("accomodation")}
                       to="/services"
-                      className={`drp-item ${
+                      className={`drp-item clicked ${
                         this.props.serviceInfo.accomodation ? "active" : ""
                         } `}
                     >
@@ -245,7 +262,7 @@ class NavigationBar extends React.Component {
                     <Link
                       onClick={() => this.showServiceInfo("activities")}
                       to="/services"
-                      className={`drp-item ${
+                      className={`drp-item clicked ${
                         this.props.serviceInfo.activities ? "active" : ""
                         } `}
                     >
@@ -256,7 +273,7 @@ class NavigationBar extends React.Component {
                     <Link
                       onClick={() => this.showServiceInfo("transfers")}
                       to="/services"
-                      className={`drp-item ${
+                      className={`drp-item clicked ${
                         this.props.serviceInfo.transfers ? "active" : ""
                         } `}
                     >
@@ -267,7 +284,7 @@ class NavigationBar extends React.Component {
                     <Link
                       onClick={() => this.showServiceInfo("meals")}
                       to="/services"
-                      className={`drp-item ${
+                      className={`drp-item clicked ${
                         this.props.serviceInfo.meals ? "active" : ""
                         } `}
                     >
@@ -278,7 +295,7 @@ class NavigationBar extends React.Component {
                     <Link
                       onClick={() => this.showServiceInfo("assistance")}
                       to="/services"
-                      className={`drp-item ${
+                      className={`drp-item clicked ${
                         this.props.serviceInfo.assistance ? "active" : ""
                         } `}
                     >
@@ -289,7 +306,7 @@ class NavigationBar extends React.Component {
                     <Link
                       onClick={() => this.showServiceInfo("optional")}
                       to="/services"
-                      className={`drp-item ${
+                      className={`drp-item clicked ${
                         this.props.serviceInfo.optional ? "active" : ""
                         } `}
                     >
@@ -301,10 +318,11 @@ class NavigationBar extends React.Component {
 
               <div
                 componentclass="span"
-                //  className="nav-dropdown nav-link navigation-link d-none d-md-block"
                 className="nav-dropdown nav-link navigation-link"
               >
-                <NavLink className="clicked" to="/contact">Contact</NavLink>
+                <div className="navlink-container">
+                  <NavLink className="clicked" to="/contact">Contact</NavLink>
+                </div>
                 <div id="contact" className={`arrow-container ${
                   this.state.contact ? "arrow-active" : ""
                   }`}><i id="contact" className="arrow-down"></i></div>
@@ -314,13 +332,13 @@ class NavigationBar extends React.Component {
                     }`}
                 >
                   <div>
-                    <NavLink className="drp-item" to="/contact/contact-us">Contact Us</NavLink>
+                    <NavLink className="drp-item clicked" to="/contact/contact-us">Contact Us</NavLink>
                   </div>
                   <div>
-                    <NavLink className="drp-item" to="/contact/quote">Get a Quote</NavLink>
+                    <NavLink className="drp-item clicked" to="/contact/quote">Get a Quote</NavLink>
                   </div>
                   <div>
-                    <NavLink className="drp-item" to="/contact/about-us">About Team Abroad</NavLink>
+                    <NavLink className="drp-item clicked" to="/contact/about-us">About Team Abroad</NavLink>
                   </div>
                 </div>
               </div>
@@ -328,19 +346,19 @@ class NavigationBar extends React.Component {
               <div className="auth-collapse">
                 {auth.uid ? (
                   <div>
-                    <NavLink to="/signin" className="nav-link toggle-signin">
+                    <NavLink to="/signin" className="nav-link toggle-signin clicked">
                       My Account
                     </NavLink>
-                    <Nav.Link className="nav-link navigation-link" onClick={this.props.signOut}>
+                    <Nav.Link className="nav-link navigation-link clicked" onClick={this.props.signOut}>
                       Log Out
                     </Nav.Link>
                   </div>
                 ) : (
                     <div>
-                      <NavLink to="/signin" className="nav-link navigation-link">
+                      <NavLink to="/signin" className="nav-link navigation-link clicked">
                         Sign In
                     </NavLink>
-                      <NavLink to="/signup" className="nav-link  navigation-link">
+                      <NavLink to="/signup" className="nav-link  navigation-link clicked">
                         Sign Up
                     </NavLink>
                     </div>

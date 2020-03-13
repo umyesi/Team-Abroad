@@ -46,7 +46,7 @@ class OurPrograms extends React.Component {
     //this.scrollToDiv.current.scrollIntoView({ behavior: "smooth" });
     setTimeout(() => {
       if (mql.matches) {
-        window.scroll(0, 1300);
+        window.scroll(0, 1400);
       } else {
         window.scroll(0, 2000);
       }

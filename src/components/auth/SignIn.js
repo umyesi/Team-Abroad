@@ -9,6 +9,11 @@ class SignIn extends Component {
     email: "",
     password: ""
   };
+  componentDidMount() {
+    setTimeout(() => {
+      window.scroll(0, 0);
+    }, 200);
+  }
 
   handleChange = e => {
     this.setState({

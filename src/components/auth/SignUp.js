@@ -12,6 +12,12 @@ class SignUp extends Component {
     lastName: ""
   };
 
+  componentDidMount() {
+    setTimeout(() => {
+      window.scroll(0, 0);
+    }, 200);
+  }
+
   handleChange = e => {
     this.setState({
       [e.target.id]: e.target.value
