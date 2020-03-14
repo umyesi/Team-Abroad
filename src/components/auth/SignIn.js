@@ -11,7 +11,7 @@ class SignIn extends Component {
   };
   componentDidMount() {
     setTimeout(() => {
-      window.scroll(0, 0);
+      window.scroll(0, 50);
     }, 200);
   }
 

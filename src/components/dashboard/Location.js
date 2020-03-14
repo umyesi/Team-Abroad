@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { FaPhone } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
@@ -20,7 +21,10 @@ class Location extends Component {
 
           <div className="col">
             <div className="contact-info-container pl-lg-3">
-              <h3 className="">Contact Us</h3>
+              <Link to="/contact">
+                <h3 className="">Contact us</h3>
+              </Link>
+
               <hr className="" />
               <div className="contact-info ">
                 <FaPhone size={23} className="" />
@@ -28,11 +32,10 @@ class Location extends Component {
                 <div className="location-icon">
                   <MdLocationOn size={28} className="" />
                 </div>
-
                 <div className="">
-                  {/* <p className="pb-1">21 Avenue Gabriel Péri</p> */}
-                  <a href="https://www.google.fr/maps/place/21+Avenue+Gabriel+P%C3%A9ri,+95100+Argenteuil/@48.9436951,2.2489764,17z/data=!3m1!4b1!4m5!3m4!1s0x47e666774cdf0bbf:0xbc4439b05f0d4e42!8m2!3d48.9436916!4d2.2511651" target="_blank" rel="noopener noreferrer" className="pt-1"><p>21 Avenue Gabriel Péri,</p> <p className="pt-1"> 95100 Argenteuil, France</p></a>
-                  {/* <p> 95100 Argenteuil, France</p> */}
+                  <a href="https://www.google.fr/maps/place/21+Avenue+Gabriel+P%C3%A9ri,+95100+Argenteuil/@48.9436951,2.2489764,17z/data=!3m1!4b1!4m5!3m4!1s0x47e666774cdf0bbf:0xbc4439b05f0d4e42!8m2!3d48.9436916!4d2.2511651" target="_blank" rel="noopener noreferrer" className="pt-1">
+                    <p>21 Avenue Gabriel Péri,</p> <p className="pt-1"> 95100 Argenteuil, France</p>
+                  </a>
                 </div>
                 <div className="">
                   <MdEmail size={26} />

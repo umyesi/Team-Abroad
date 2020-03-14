@@ -10,6 +10,11 @@ class ResetPassword extends Component {
   state = {
     email: ""
   };
+  componentDidMount() {
+    setTimeout(() => {
+      window.scroll(0, 0);
+    }, 200);
+  }
 
   handleChange = e => {
     this.setState({
@@ -33,13 +38,7 @@ class ResetPassword extends Component {
     if (resetSent === "success") {
       return (
         <div>
-          <Navbar className="reset-password-navbar">
-            <Link to="/">
-              <Navbar.Brand>
-                <img className="Logo" src={Logo} alt="logo" />
-              </Navbar.Brand>
-            </Link>
-          </Navbar>
+          
           <div className="container-fluid reset-password-container">
             <div className="row justify-content-center">
               <Form

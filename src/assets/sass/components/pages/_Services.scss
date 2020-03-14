@@ -23,7 +23,8 @@
     height: 0rem;
     margin-bottom: 1rem;
     border: 0;
-    border-top: 3px solid rgba(248, 214, 70, 0.57);
+    border-top: 3px solid
+      rgba(248, 214, 70, 0.57);
   }
   p {
     margin: 0 auto;
@@ -95,6 +96,12 @@
         line-height: normal;
         padding-bottom: 1rem;
       }
+      .transfers {
+        img {
+          //min-height: 76px;
+          //min-width: 190px;
+        }
+      }
       .meals {
         img {
           max-width: 20rem;
@@ -160,6 +167,12 @@
           font-size: 11px;
           line-height: normal;
           padding-bottom: 1rem;
+        }
+        .transfers {
+          img {
+            height: 100%;
+            min-width: 190px;
+          }
         }
         .meals {
           img {

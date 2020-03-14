@@ -319,7 +319,7 @@ class Services extends React.Component {
                   their accommodation either by private coach or licensed taxi.
                 </p>
                 <div className="row justify-content-center w-100">
-                  <img className="col-7 mt-4 w-100" src={transfer} alt="transfer" />
+                  <img className="col-12 col-md-9 mt-4 w-100" src={transfer} alt="transfer" />
                 </div>
               </div>
               <div className={`meals ${meals ? "" : "hidden"}`}>

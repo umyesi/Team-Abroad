@@ -58,7 +58,7 @@ class OurPrograms extends React.Component {
   hideInfo = name => {
     this.props.hideInfo(name);
     setTimeout(() => {
-      window.scroll(0, 250);
+      window.scroll(0, 0);
     }, 300);
     //this.props.hideInfo(name);
 
@@ -84,7 +84,7 @@ class OurPrograms extends React.Component {
           <div
             className={`english-program  col-md-4 ${
               englishInfo ? "active" : ""
-            }`}
+              }`}
             onClick={() => this.showInfo("englishInfo")}
           >
             <div id="englishInfo">

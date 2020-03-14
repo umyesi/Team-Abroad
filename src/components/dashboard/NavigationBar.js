@@ -50,6 +50,7 @@ class NavigationBar extends React.Component {
     const currentScrollpos = window.pageYOffset;
     //const visible = prevScrollpos > currentScrollpos;
     //const { location } = this.props;
+    console.log(currentScrollpos);
 
     if (!this.state.collapse) {
       this.setState({
@@ -85,21 +86,35 @@ class NavigationBar extends React.Component {
   };
 
   showProgramInfo = name => {
-    const mql = window.matchMedia("(max-width: 375px)");
-    setTimeout(() => {
-      if (mql.matches) {
-        window.scroll(0, 1400);
-      } else {
-        window.scroll(0, 2000);
-      }
-    }, 500);
+    const mql = window.matchMedia("(max-width: 500px)");
+    if (window.innerHeight > window.innerWidth) {
+      setTimeout(() => {
+        if (mql.matches) {
+          window.scroll(0, 1400);
+        } else {
+          window.scroll(0, 2000);
+        }
+      }, 500);
+    } else if (window.innerHeight < window.innerWidth) {
+      setTimeout(() => {
+        window.scroll(0, 1750);
+      }, 500);
+    }
+
     this.props.showProgramInfo(name);
   };
 
   showServiceInfo = name => {
-    setTimeout(() => {
-      window.scroll(0, 200);
-    }, 500);
+    if (window.innerHeight > window.innerWidth) {
+      setTimeout(() => {
+        window.scroll(0, 200);
+      }, 500);
+    } else if (window.innerHeight < window.innerWidth) {
+      setTimeout(() => {
+        window.scroll(0, 270);
+      }, 500);
+    }
+
     this.props.showServiceInfo(name);
   };
 
@@ -174,13 +189,14 @@ class NavigationBar extends React.Component {
                 to="/"
                 exact
                 className="nav-link navigation-link clicked"
+                onClick={this.topScroll}
               >
                 Home
               </NavLink>
 
               <div className="nav-link nav-dropdown navigation-link">
                 <div className="navlink-container">
-                  <NavLink to="/ourprograms" className="clicked">Our Programs</NavLink>
+                  <NavLink to="/ourprograms" className="clicked" onClick={this.topScroll}>Our Programs</NavLink>
                 </div>
 
 
@@ -233,7 +249,7 @@ class NavigationBar extends React.Component {
                 className="nav-dropdown nav-link navigation-link services"
               >
                 <div className="navlink-container">
-                  <NavLink className="clicked" to="/services" >
+                  <NavLink className="clicked" to="/services" onClick={this.topScroll}>
                     Services
                 </NavLink>
                 </div>
@@ -319,7 +335,7 @@ class NavigationBar extends React.Component {
                 className="nav-dropdown nav-link navigation-link"
               >
                 <div className="navlink-container">
-                  <NavLink className="clicked" to="/contact">Contact</NavLink>
+                  <NavLink className="clicked" to="/contact" onClick={this.topScroll}>Contact</NavLink>
                 </div>
                 <div id="contact" className={`arrow-container ${
                   this.state.contact ? "arrow-active" : ""
