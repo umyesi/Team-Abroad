@@ -1,133 +1,169 @@
 .our-programs {
-  text-decoration: none;
-  text-align: center;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-  overflow: hidden;
-  min-height: 100vh;
-  a {
-    color: rgb(39, 37, 37);
-    &:hover {
-      text-decoration: none;
-      color: rgb(24, 23, 23);
-    }
-  }
+	text-decoration: none;
+	text-align: center;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	overflow: hidden;
+	min-height: 100vh;
+	a {
+		color: rgb(39, 37, 37);
+		&:hover {
+			text-decoration: none;
+			color: rgb(24, 23, 23);
+		}
+	}
 
-  h2 {
-    font-size: 3rem;
-    color: #599079;
-    font-weight: 600;
-  }
-  hr {
-    margin-top: 2rem;
-    width: 100px;
-    height: 0rem;
-    margin-bottom: 1rem;
-    border: 0;
-    border-top: 3px solid rgba(248, 214, 70, 0.57);
-  }
-  p {
-    margin: 0 auto;
-    max-width: 50rem;
-    font-size: 19px;
-    color: #000000ab;
-    text-align: justify;
-  }
+	h2 {
+		font-size: 3rem;
+		color: #599079;
+		font-weight: 600;
+	}
+	hr {
+		margin-top: 2rem;
+		width: 100px;
+		height: 0rem;
+		margin-bottom: 1rem;
+		border: 0;
+		border-top: 3px solid rgba(248, 214, 70, 0.57);
+	}
+	p {
+		margin: 0 auto;
+		max-width: 50rem;
+		font-size: 19px;
+		color: #000000ab;
+		text-align: justify;
+		padding-top: 1rem;
+		line-height: normal;
+	}
 
-  .programs-links {
-    justify-content: space-between;
-    padding: 8rem 0;
+	.programs-links {
+		justify-content: space-between;
+		padding: 8rem 0;
 
-    & > div {
-      padding: 3rem 0;
-      transition: all 0.2s ease-in-out;
-      margin-bottom: 1rem;
-      &:hover {
-        //background-color: #4cae7559;
-        transform: scale(1.05);
-        //box-shadow: 0 0.6rem 1.6rem 0 rgba(21, 21, 30, 0.2);
-      }
-      &.active {
-        background-color: #4cae7559;
-        transform: scale(1.05);
-      }
-      img {
-        min-width: 200px;
-      }
-    }
+		& > div {
+			padding: 3rem 0;
+			transition: all 0.2s ease-in-out;
+			margin-bottom: 1rem;
+			&:hover {
+				//background-color: #4cae7559;
+				transform: scale(1.05);
+				//box-shadow: 0 0.6rem 1.6rem 0 rgba(21, 21, 30, 0.2);
+			}
+			&.active {
+				background-color: #4cae7559;
+				transform: scale(1.05);
+			}
+			img {
+				min-width: 200px;
+			}
+		}
 
-    h3 {
-      font-size: 20px;
-      font-weight: 600;
-      white-space: nowrap;
-    }
+		h3 {
+			font-size: 20px;
+			font-weight: 600;
+			white-space: nowrap;
+			line-height: normal;
+		}
 
-    .english-program {
-      cursor: pointer;
-      img {
-        width: 60%;
-        padding-bottom: 3.5rem;
-      }
-    }
+		.english-program {
+			cursor: pointer;
+			img {
+				width: 60%;
+				padding-bottom: 3.5rem;
+			}
+		}
 
-    .french-courses {
-      cursor: pointer;
-      padding: 0.3rem 0 3rem 0;
-      img {
-        width: 54%;
-      }
-    }
-    .internship {
-      cursor: pointer;
-      padding-top: 2.8rem;
-      img {
-        width: 58%;
-        padding-bottom: 1.4rem;
-      }
-    }
-  }
+		.french-courses {
+			cursor: pointer;
+			padding: 0.3rem 0 3rem 0;
+			img {
+				width: 54%;
+			}
+		}
+		.internship {
+			cursor: pointer;
+			padding-top: 2.8rem;
+			img {
+				width: 58%;
+				padding-bottom: 1.4rem;
+			}
+		}
+	}
 
-  .program-info {
-    margin: 0 auto 8rem;
-    .hidden {
-      display: none;
-    }
+	.program-info {
+		margin: 0 auto 8rem;
+		.hidden {
+			display: none;
+		}
 
-    div {
-      width: fit-content;
-      margin: auto;
-      position: relative;
-      h2 {
-        color: #d61717;
-        font-size: 2rem;
-        padding-bottom: 1rem;
-      }
-      .close {
-        right: 0;
-        cursor: pointer;
-        position: absolute;
-        transform: translate(0%, -50%);
-      }
-      .certificate {
-        font-size: 18px;
-        font-weight: 600;
-        color: #d61717;
-        //color: #5d3f3f;
-        padding: 1rem 0;
-      }
-      .link-info {
-        color: #0f0e0f;
-        font-size: 17px;
-      }
-      p:last-child {
-        padding: 1rem 0;
-        a {
-          //color: #7a00ff;
-          color: #d61717;
-          font-weight: 600;
-          text-decoration: underline;
-        }
-      }
-    }
-  }
+		div {
+			width: fit-content;
+			margin: auto;
+			position: relative;
+			h2 {
+				color: #d61717;
+				font-size: 2rem;
+				padding-bottom: 1rem;
+			}
+			p {
+				font-size: 17px;
+				line-height: normal;
+			}
+			.close {
+				right: 0;
+				cursor: pointer;
+				position: absolute;
+				transform: translate(0%, -50%);
+			}
+			.certificate {
+				font-size: 18px;
+				font-weight: 600;
+				color: #d61717;
+				//color: #5d3f3f;
+				padding: 1rem 0;
+			}
+			.link-info {
+				color: #000000ab;
+				font-size: 16px;
+			}
+			p:last-child {
+				padding: 1rem 0;
+				a {
+					//color: #7a00ff;
+					color: #d61717;
+					font-weight: 600;
+					text-decoration: underline;
+				}
+			}
+		}
+		.internship-program {
+			ul {
+				text-align: left;
+				list-style: square;
+				max-width: 50rem;
+				color: #000000ab;
+				padding: 1rem;
+				font-size: 17px;
+				li {
+					padding-bottom: 0.5rem;
+				}
+			}
+			svg {
+				color: #9e16a8;
+			}
+			.contact-link {
+				a {
+					color: #000000ab;
+					text-decoration: underline;
+					&:hover {
+						text-decoration: underline;
+						color: #181717;
+					}
+				}
+			}
+			.certificate {
+				padding: 2rem 0 0;
+			}
+		}
+	}
 }
