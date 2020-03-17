@@ -116,27 +116,38 @@
 				transform: translate(0%, -50%);
 			}
 			.certificate {
-				font-size: 18px;
-				font-weight: 600;
-				color: #d61717;
-				//color: #5d3f3f;
+				text-align: center;
 				padding: 1rem 0;
+				margin: 1rem auto 1.5rem;
+				img {
+					width: 93px;
+				}
+				p {
+					font-size: 18px;
+					font-weight: 600;
+					color: #d61717;
+				}
 			}
-			.link-info {
-				color: #000000ab;
-				font-size: 16px;
-			}
-			p:last-child {
-				padding: 1rem 0;
+
+			.agenda-link {
 				a {
-					//color: #7a00ff;
 					color: #d61717;
 					font-weight: 600;
 					text-decoration: underline;
 				}
 			}
+			.contact-link {
+				a {
+					color: #000000ab;
+					text-decoration: underline;
+					&:hover {
+						text-decoration: underline;
+						color: #181717;
+					}
+				}
+			}
 		}
-		.internship-program {
+		.internship-program-info {
 			ul {
 				text-align: left;
 				list-style: square;
@@ -150,19 +161,6 @@
 			}
 			svg {
 				color: #9e16a8;
-			}
-			.contact-link {
-				a {
-					color: #000000ab;
-					text-decoration: underline;
-					&:hover {
-						text-decoration: underline;
-						color: #181717;
-					}
-				}
-			}
-			.certificate {
-				padding: 2rem 0 0;
 			}
 		}
 	}

@@ -49,12 +49,6 @@ class NavigationBar extends React.Component {
 		}, 200);
 	};
 
-	// else if (e.target.closest(".navbar-brand")) {
-	//   setTimeout(() => {
-	//     window.scroll(0, 0);
-	//   }, 200);
-	// }
-
 	handleScroll = () => {
 		const { prevScrollpos } = this.state;
 		const currentScrollpos = window.pageYOffset;
@@ -136,7 +130,7 @@ class NavigationBar extends React.Component {
 			} else if (window.orientation === 90) {
 				window.scroll(0, 320);
 			} else {
-				window.scroll(0, 320);
+				window.scroll(0, 300);
 			}
 		}, 500);
 
@@ -306,6 +300,17 @@ class NavigationBar extends React.Component {
 								>
 									<div>
 										<Link
+											onClick={() => this.showServiceInfo("school")}
+											to='/services'
+											className={`drp-item clicked ${
+												this.props.serviceInfo.school ? "active" : ""
+											} `}
+										>
+											School
+										</Link>
+									</div>
+									<div>
+										<Link
 											onClick={() => this.showServiceInfo("accomodation")}
 											to='/services'
 											className={`drp-item clicked ${
@@ -357,17 +362,6 @@ class NavigationBar extends React.Component {
 											} `}
 										>
 											Assistance
-										</Link>
-									</div>
-									<div>
-										<Link
-											onClick={() => this.showServiceInfo("optional")}
-											to='/services'
-											className={`drp-item clicked ${
-												this.props.serviceInfo.optional ? "active" : ""
-											} `}
-										>
-											Optional Services
 										</Link>
 									</div>
 								</div>

@@ -1,67 +1,65 @@
 import React, { Component } from "react";
 
 class AboutUs extends Component {
-  componentDidMount() {
-    setTimeout(() => {
-      window.scroll(0, 0);
-    }, 200);
-  }
-  render() {
-    return (
-      <div className="about-us-container">
-        <div className="">
-          <h2>About Us</h2>
-          <hr />
-          <p className="">
-            Team Abroad is a friendly, independent English language school in
-            the centre of London offering excellent quality English language
-            courses at affordable prices.
-          </p>
-          <p>
-            Our aim is to ensure that all our students improve their English
-            quickly, reach their learning goals and enjoy their time in London.
-            You will be provided with a personal study plan, as well as
-            individual attention and support throughout your English course to
-            ensure that you progress rapidly and achieve your learning
-            objectives.
-          </p>
-          <p>
-            We have a truly international atmosphere with around 2,000 students
-            from over 40 different countries choosing to study at Bloomsbury
-            International every year. Whether you are looking to prepare for an
-            English language exam, improve your career opportunities or just
-            learn English for fun, you are sure to find the perfect course.
-          </p>
-          <p></p>
-        </div>
-        <div className="our-mission">
-          <h2 className="">Our Mission</h2>
-          <hr />
-          <p>
-            We believe that languages help people to communicate across borders
-            and cultures, leading them to achieve their personal dreams and
-            ambitions. In pursuit of this mission, the BIS is dedicated to the
-            following areas:
-          </p>
-          <ul>
-            <li>
-              Well-researched and up-to-date educational programmes that respond
-              to the needs of English language learners and allow them to put in
-              practice their skills in a work environment.
-            </li>
-            <li>
-              A rich socio-cultural programme set in a dynamic national context.
-            </li>
-            <li>
-              A highly committed team who actively pursue professional
-              development.
-            </li>
-            <li>Excellent value for money.</li>
-          </ul>
-        </div>
-      </div>
-    );
-  }
+	componentDidMount() {
+		setTimeout(() => {
+			window.scroll(0, 0);
+		}, 200);
+	}
+	render() {
+		return (
+			<div className='about-us-container'>
+				<div className=''>
+					<h2>About us</h2>
+					<hr />
+					<p className=''>
+						Team Abroad is committed to supporting not only the academic
+						learning but also the personal, social and emotional development of
+						each student. Our job is to keep students safe, healthy and happy
+						while promoting their linguistic, interpersonal, cultural and
+						communication skills. We make the effort to get to know each student
+						as an individual and support them to develop a healthy sense of
+						independence and self-esteem, while socializing and making new
+						friends, and even learning new skills.
+					</p>
+					<p>
+						New friendships, independence, self confidence, sense of belonging,
+						more fluency in English or/and French, positive experiences and
+						emotions, unforgettable memories, these are incomplete listings of
+						the benefits that Team Abroad provides for all participants. All of
+						these things contribute to the development of the child as they make
+						strides from being a kid to a strong, considerate, competent adult.
+					</p>
+					<p></p>
+				</div>
+				<div className='our-mission'>
+					<h2 className=''>Our Mission</h2>
+					<hr />
+					<p>
+						We believe that languages help people to communicate across borders
+						and cultures, leading them to achieve their personal dreams and
+						ambitions. In pursuit of this mission, Team Abroad is dedicated to
+						the following areas:
+					</p>
+					<ul>
+						<li>
+							Well-researched and up-to-date educational programs that respond
+							to the needs of English/French language learners and allow them to
+							put in practice their skills in a social environment.
+						</li>
+						<li>
+							A rich socio-cultural programme set in a dynamic national context.
+						</li>
+						<li>
+							A highly committed team who actively pursue professional
+							development.
+						</li>
+						<li>Excellent value for money.</li>
+					</ul>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default AboutUs;

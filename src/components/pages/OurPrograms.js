@@ -2,18 +2,19 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import eflag from "../../assets/images/eflag.svg";
+import certificate from "../../assets/images/certificate.svg";
 import fflag from "../../assets/images/fflag.svg";
 import internship from "../../assets/images/internship.jpg";
 import { FaRegSmileWink } from "react-icons/fa";
 
 class OurPrograms extends React.Component {
-	constructor(props) {
-		super(props);
-		//this.state = this.initialState;
-		//this.scrollToDiv = React.createRef();
-		//this.scrollToTop = React.createRef();
-		//this.myRef = React.createRef();
-	}
+	// constructor(props) {
+	// 	super(props);
+	// 	this.state = this.initialState;
+	// 	this.scrollToDiv = React.createRef();
+	// 	this.scrollToTop = React.createRef();
+	// 	this.myRef = React.createRef();
+	// }
 
 	// get initialState() {
 	//   return {
@@ -71,6 +72,7 @@ class OurPrograms extends React.Component {
 
 	hideInfo = name => {
 		this.props.hideInfo(name);
+		window.scroll(0, 880);
 		setTimeout(() => {
 			window.scroll(0, 0);
 		}, 300);
@@ -140,37 +142,59 @@ class OurPrograms extends React.Component {
 							leaders.
 						</p>
 						<p>
+							An important advantage of learning English abroad is the constant
+							contact with a foreign environment. Our camp achieves this through
+							the constant and extensive contact of the students with native
+							speakers. Not only during the lessons themselves, but also during
+							indoor and outdoor activities, our participants are always in
+							contact with native speakers who communicate with them in English.
+							This playful approach motivates children better than the school
+							classroom environment. The course focuses mainly on improving the
+							children’s conversational skills, their active perception of the
+							language and pronunciation.{" "}
+						</p>
+						<p>
 							During the morning classes our students will learn or build on
 							their knowledge of the language in a fun way, they will have
 							lessons in history and culture of France, seminars about various
-							interesting topics such as 'Healthy way of living', 'How to take
-							care of our environment' etc. all in English, they will work on
+							interesting topics such as "Healthy way of living", "How to take
+							care of our environment" etc. all in English, they will work on
 							the project and at the end of the program they will present it.
 							During these classes, teachers will focus on the sociability that
 							is conducive to developing spoken skills so that everyone can
 							become more confident in communicating in English.
 						</p>
 						<p>
-							In the afternoon students will enjoy a wide range of excursions,
-							cultural activities and entertainment.
+							In the afternoon students will take advantage of a wide range of
+							excursions, cultural activities and entertainment.
 						</p>
 						<p>
 							At the end of the day they will enjoy, bowling, laser game, cinema
-							and karaoke evenings supervised, in English, by our group leaders
-							who are on-hand 24 hours a day.
+							and karaoke evenings held and supervised, in English, by our group
+							leaders who are on-hand 24 hours a day.
 						</p>
 						<p>
 							Throughout 10 days, our students will have 4 full days and 6 half
 							days excursions, all guided by qualified group leaders and tour
 							guides.{" "}
 						</p>
-						<p className='certificate'>Certificate provided on completion.</p>
-						<p className='link-info'>
-							Click on the link below to view the agenda of our{" "}
-							<span>English Program</span>
+						<div className='certificate'>
+							<img src={certificate} alt='Certificate icon' />
+							<p>Certificate provided on completion.</p>
+						</div>
+
+						<p className='agenda-link'>
+							<a href='/'>
+								Click on this link to view the agenda of our 10 - days English
+								Program
+							</a>
 						</p>
-						<p>
-							<a href='/'>English Program - 10 - days</a>
+						<p className='pt-4'>
+							Don’t hesitate to{" "}
+							<span className='contact-link'>
+								<Link to='contact'>contact us</Link>
+							</span>{" "}
+							for more details.
 						</p>
 					</div>
 					<div
@@ -188,40 +212,64 @@ class OurPrograms extends React.Component {
 							leaders.
 						</p>
 						<p>
+							An important advantage of learning French abroad is the constant
+							contact with a foreign environment. Our camp achieves this through
+							the constant and extensive contact of the students with native
+							speakers. Not only during the lessons themselves, but also during
+							indoor and outdoor activities, our participants are always in
+							contact with native speakers who communicate with them in French
+							language. This playful approach motivates children better than the
+							school classroom environment. The course focuses mainly on
+							improving the children’s conversational skills, their active
+							perception of the language and pronunciation.{" "}
+						</p>
+						<p>
 							During the morning classes our students will learn or build on
 							their knowledge of the language in a fun way, they will have
 							lessons in history and culture of France, seminars about various
-							interesting topics such as 'Healthy way of living', 'How to take
-							care of our environment' etc. all in French, they will work on the
+							interesting topics such as "Healthy way of living", "How to take
+							care of our environment" etc. all in French, they will work on the
 							project and at the end of the program they will present it. During
 							these classes, teachers will focus on the sociability that is
 							conducive to developing spoken skills so that everyone can become
 							more confident in communicating in French.
 						</p>
 						<p>
-							In the afternoon students will enjoy a wide range of excursions,
-							cultural activities and entertainment.
+							In the afternoon students will take advantage of a wide range of
+							excursions, cultural activities and entertainment.
 						</p>
 						<p>
 							At the end of the day they will enjoy, bowling, laser game, cinema
-							and karaoke evenings supervised, in French, by our group leaders
-							who are on-hand 24 hours a day.
+							and karaoke evenings held and supervised, in French, by our group
+							leaders who are on-hand 24 hours a day.
 						</p>
 						<p>
 							Throughout 10 days, our students will have 4 full days and 6 half
 							days excursions, all guided by qualified group leaders and tour
 							guides.{" "}
 						</p>
-						<p className='certificate'>Certificate provided on completion.</p>
-						<p className='link-info'>
-							Click on the link below to view the agenda of our{" "}
-							<span>French Program</span>
+						<div className='certificate'>
+							<img src={certificate} alt='Certificate icon' />
+							<p>Certificate provided on completion.</p>
+						</div>
+
+						<p className='agenda-link'>
+							<a href='/'>
+								Click on this link to view the agenda of our 10 - days French
+								Program
+							</a>
 						</p>
 						<p>
-							<a href='/'>French Program - 10 - days</a>
+							Don’t hesitate to{" "}
+							<span className='contact-link'>
+								<Link to='contact'>contact us</Link>
+							</span>{" "}
+							for more details.
 						</p>
 					</div>
-					<div className={`internship-program ${internInfo ? "" : "hidden"}`}>
+					<div
+						className={`internship-program-info ${internInfo ? "" : "hidden"}`}
+					>
 						<span className='close' onClick={() => this.hideInfo()}>
 							&times;
 						</span>
@@ -282,7 +330,10 @@ class OurPrograms extends React.Component {
 							Responsibilities include but are not limited to leading indoor and
 							outdoor group games, sports and karaoke evenings.
 						</p>
-						<p className='certificate'>Certificate provided on completion.</p>
+						<div className='certificate'>
+							<img src={certificate} alt='Certificate icon' />
+							<p>Certificate provided on completion.</p>
+						</div>
 						<p>
 							Don’t hesitate to{" "}
 							<span className='contact-link'>

@@ -1,155 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
-import image1 from "../../assets/images/accomodation/1.jpg";
-import image2 from "../../assets/images/accomodation/2.jpg";
-import image3 from "../../assets/images/accomodation/3.jpg";
-import image4 from "../../assets/images/accomodation/4.jpg";
-import image5 from "../../assets/images/accomodation/5.jpg";
-import image6 from "../../assets/images/accomodation/6.jpg";
-import image7 from "../../assets/images/accomodation/7.jpg";
-import image8 from "../../assets/images/accomodation/8.jpg";
+import { accomodationImgs } from "../../assets/images/accomodation/accomodationArray";
+import { activitiesImgs } from "../../assets/images/campsite-activities/activitiesArray";
+import { schoolImgs } from "../../assets/images/school/schoolArray";
 import transfer from "../../assets/images/transfer/transfer.jpg";
 import Assistance from "../../assets/images/assistance.png";
 import Meals from "../../assets/images/meals.png";
 import Gallery from "react-grid-gallery";
-
-const accomodationImg = [
-	{
-		src: image1,
-		thumbnail: image1,
-		thumbnailWidth: 160,
-		thumbnailHeight: 90,
-		//isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)"
-		//customOverlay:  [image2]
-		//thumbnailCaption: "raisrame"
-	},
-	{
-		src: image2,
-		thumbnail: image2,
-		thumbnailWidth: 160,
-		thumbnailHeight: 90,
-		//isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)"
-	},
-	{
-		src: image3,
-		thumbnail: image3,
-		thumbnailWidth: 160,
-		thumbnailHeight: 90,
-		//isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)"
-	},
-	{
-		src: image4,
-		thumbnail: image4,
-		thumbnailWidth: 160,
-		thumbnailHeight: 90,
-		//isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)"
-	},
-	{
-		src: image5,
-		thumbnail: image5,
-		thumbnailWidth: 160,
-		thumbnailHeight: 90,
-		//isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)"
-	},
-	{
-		src: image6,
-		thumbnail: image6,
-		thumbnailWidth: 160,
-		thumbnailHeight: 90,
-		//isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)"
-	},
-	{
-		src: image7,
-		thumbnail: image7,
-		thumbnailWidth: 160,
-		thumbnailHeight: 90,
-		//isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)"
-	},
-	{
-		src: image8,
-		thumbnail: image8,
-		thumbnailWidth: 160,
-		thumbnailHeight: 90,
-		//isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)"
-	}
-];
-
-const activitiesImg = [
-	{
-		src: image1,
-		thumbnail: image1,
-		thumbnailWidth: 160,
-		thumbnailHeight: 90,
-		//isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)"
-		//customOverlay:  [image2]
-		//thumbnailCaption: "raisrame"
-	},
-	{
-		src: image2,
-		thumbnail: image2,
-		thumbnailWidth: 160,
-		thumbnailHeight: 90,
-		//isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)"
-	},
-	{
-		src: image3,
-		thumbnail: image3,
-		thumbnailWidth: 160,
-		thumbnailHeight: 90,
-		//isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)"
-	},
-	{
-		src: image4,
-		thumbnail: image4,
-		thumbnailWidth: 160,
-		thumbnailHeight: 90,
-		//isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)"
-	},
-	{
-		src: image5,
-		thumbnail: image5,
-		thumbnailWidth: 160,
-		thumbnailHeight: 90,
-		//isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)"
-	},
-	{
-		src: image6,
-		thumbnail: image6,
-		thumbnailWidth: 160,
-		thumbnailHeight: 90,
-		//isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)"
-	},
-	{
-		src: image7,
-		thumbnail: image7,
-		thumbnailWidth: 160,
-		thumbnailHeight: 90,
-		//isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)"
-	},
-	{
-		src: image8,
-		thumbnail: image8,
-		thumbnailWidth: 160,
-		thumbnailHeight: 90,
-		//isSelected: true,
-		caption: "After Rain (Jeshu John - designerspics.com)"
-	}
-];
+import eiffel from "../../assets/images/outdoor-activities/eiffel.jpg";
+import notreDame from "../../assets/images/outdoor-activities/notre-dame.jpg";
+import sacreCoeur from "../../assets/images/outdoor-activities/sacre-coeur.jpg";
+import sorbonne from "../../assets/images/outdoor-activities/sorbonne.jpg";
+import champs from "../../assets/images/outdoor-activities/champs-elysees.jpg";
+import arc from "../../assets/images/outdoor-activities/arc-de-triomphe.jpg";
+import versailles from "../../assets/images/outdoor-activities/versailles.jpg";
+import louvre from "../../assets/images/outdoor-activities/louvre.jpg";
+import disneyland from "../../assets/images/outdoor-activities/disneyland.jpg";
 
 class Services extends React.Component {
 	componentDidMount() {
@@ -177,14 +43,16 @@ class Services extends React.Component {
 			} else if (window.orientation === 90) {
 				window.scroll(0, 320);
 			} else {
-				window.scroll(0, 275);
+				window.scroll(0, 270);
 			}
 		}, 500);
 	};
 
 	hideInfo = name => {
 		this.props.hideInfo(name);
-		window.scroll(0, 0);
+		setTimeout(() => {
+			window.scroll(0, 0);
+		}, 300);
 	};
 
 	render() {
@@ -265,19 +133,23 @@ class Services extends React.Component {
 							<div className={`school ${school ? "" : "hidden"}`}>
 								<h2>School</h2>
 								<p>
-									"The campsite is a very good starting point if you want to
-									discover the capital while enjoying unusual accommodation, and
-									great activities for children! My Love hut: if you are looking
-									for child-friendly accommodation near Paris and you don't
-									necessarily want to lock yourself in a hotel room, I recommend
-									that you try the wooden perched huts. "
+									Since the beginning we have been cooperating
+									with well-established school Etude Plus in Paris. With 15
+									years successful experience, Etude Plus guarantees us with
+									qualified native speaking teachers, who not only teach well,
+									but also succeed to establish good and responsible
+									relationship with children. Their unique and fun way of
+									teaching allows our campers to absorb new language skills
+									quickly.
 								</p>
 								<Gallery
-									images={accomodationImg}
+									images={schoolImgs}
 									margin={2}
 									rowHeight={150}
-									maxRows={1}
+									maxRows={4}
 									backdropClosesModal={true}
+									enableImageSelection={false}
+									enableLightbox={false}
 								/>
 							</div>
 							<div className={`accomodation ${accomodation ? "" : "hidden"}`}>
@@ -302,12 +174,17 @@ class Services extends React.Component {
 									Cottages have a fully equipped kitchen, 3 bedrooms, a living
 									room, a bathroom with shower, and a separate toilet.
 								</p>
+								<p>
+									Please take a look at our gallery below to view the pictures
+									of accessible stays.
+								</p>
 								<Gallery
-									images={accomodationImg}
+									images={accomodationImgs}
 									margin={2}
 									rowHeight={150}
 									maxRows={1}
 									backdropClosesModal={true}
+									showLightboxThumbnails={true}
 								/>
 								<div className='campsite-services'>
 									<h3>Services on the campsite: </h3>
@@ -324,9 +201,17 @@ class Services extends React.Component {
 									</ul>
 									<p>
 										Team Abroad campers will enjoy all the sport and fun
-										activities available on the campsite led by our group
-										leaders and animators.
+										activities available on the campsite (pictures below), led
+										by our group leaders and animators.
 									</p>
+									<Gallery
+										images={activitiesImgs}
+										margin={2}
+										rowHeight={150}
+										maxRows={1}
+										backdropClosesModal={true}
+										showLightboxThumbnails={true}
+									/>
 								</div>
 							</div>
 							<div className={`activities ${activities ? "" : "hidden"}`}>
@@ -355,37 +240,120 @@ class Services extends React.Component {
 									self-esteem, confidence, social skills, leadership, and
 									respect for the environment in children.
 								</p>
-								<Gallery
-									images={activitiesImg}
-									margin={2}
-									rowHeight={150}
-									maxRows={1}
-									backdropClosesModal={true}
-								/>
+
 								<p>
 									In addition they will participate in various entertainment
 									activities such as:
 								</p>
 
-								<Gallery
-									images={activitiesImg}
-									margin={2}
-									rowHeight={150}
-									maxRows={1}
-									backdropClosesModal={true}
-								/>
-								<p>
-									All groups are accompanied by our BIS Group Assistants and the
-									city tours are led by a native, qualified guide.
+								<div>
+									<div className='thumbnail-gallery row'>
+										<div className='thumbnail-container col-md-4'>
+											<div
+												className='thumbnail'
+												data-title='Bacon'
+												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
+											>
+												<img src={eiffel} alt='Meat' />
+											</div>
+										</div>
+										<div className='thumbnail-container col-12 col-md-4'>
+											<div
+												className='thumbnail'
+												data-title='Bacon'
+												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
+											>
+												<img src={notreDame} alt='Meat' />
+											</div>
+										</div>
+										<div className='thumbnail-container col-12 col-md-4'>
+											<div
+												className='thumbnail'
+												data-title='Bacon'
+												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
+											>
+												<img src={sacreCoeur} alt='Meat' />
+											</div>
+										</div>
+
+										<div className='thumbnail-container col-12 col-md-4'>
+											<div
+												className='thumbnail'
+												data-title='Bacon'
+												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
+											>
+												<img src={sorbonne} alt='Meat' />
+											</div>
+										</div>
+										<div className='thumbnail-container col-12 col-md-4'>
+											<div
+												className='thumbnail'
+												data-title='Bacon'
+												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
+											>
+												<img src={arc} alt='Meat' />
+											</div>
+										</div>
+										<div className='thumbnail-container col-12 col-md-4'>
+											<div
+												className='thumbnail'
+												data-title='Bacon'
+												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
+											>
+												<img src={champs} alt='Meat' />
+											</div>
+										</div>
+										<div className='thumbnail-container col-12 col-md-4'>
+											<div
+												className='thumbnail'
+												data-title='Bacon'
+												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
+											>
+												<img src={louvre} alt='Meat' />
+											</div>
+										</div>
+										<div className='thumbnail-container col-12 col-md-4'>
+											<div
+												className='thumbnail'
+												data-title='Bacon'
+												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
+											>
+												<img src={disneyland} alt='Meat' />
+											</div>
+										</div>
+										<div className='thumbnail-container col-12 col-md-4'>
+											<div
+												className='thumbnail'
+												data-title='Bacon'
+												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
+											>
+												<img src={versailles} alt='Meat' />
+											</div>
+										</div>
+										<div></div>
+										<div></div>
+										<div></div>
+									</div>
+								</div>
+
+								<p className='pt-3'>
+									All groups are accompanied by our Team Abroad Group Assistants
+									and the city tours are led by a native, qualified guide.
+								</p>
+								<p className='agenda-link'>
+									<a href='/'>
+										Click on this link to view the agenda of our 10 - days
+										English/French Program
+									</a>
 								</p>
 							</div>
 							<div className={`transfers ${transfers ? "" : "hidden"}`}>
 								<h2>Transfers</h2>
 								<p>
-									Upon arrival, the students are met and welcomed at the
-									airport, by a Team Abroad Group assistant. We provide safe
-									travel to their accommodation either by private coach or
-									licensed taxi.
+									Students are welcomed at the airport upon arrival and at the
+									end of the program accompanied to the airport by a Team Abroad
+									Group assistant. We provide safe travel from / to the airport
+									by licensed taxi.
 								</p>
 								<div className='row justify-content-center w-100'>
 									<img
@@ -421,10 +389,10 @@ class Services extends React.Component {
 							<div className={`assistance ${assistance ? "" : "hidden"}`}>
 								<h2>Assistance</h2>
 								<p>
-									Each student group is assigned one of our BIS group
-									assistants, who are well-trained and experienced in guiding
-									students through the city. This assistant is with the group
-									throughout their stay and liaise with both the BIS offices and
+									Each student group is assigned one of our group assistants,
+									who are well-trained and experienced in guiding students
+									through the city. This assistant is with the group throughout
+									their stay and liaise with both the Team Abroad offices and
 									the group leaders, to ensure a smooth and positive experience
 									for all our visitors.
 								</p>
