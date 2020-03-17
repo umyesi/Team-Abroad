@@ -144,6 +144,89 @@
 		}
 		.activities {
 			.thumbnail-gallery {
+				margin-right: 0;
+				margin-left: 0;
+				margin: 0 0 1rem 0;
+
+				.thumbnail-gallery-title {
+					margin: 30px 0 17px;
+
+					.container-anim {
+						color: #260119;
+						text-align: center;
+						text-transform: uppercase;
+						font-size: 32px;
+						font-family: "Fredericka the Great", cursive;
+						width: 100%;
+						bottom: 45%;
+						display: block;
+					}
+					.switch {
+						height: 70px;
+						overflow: hidden;
+						padding-top: 1.4rem;
+
+						&::after {
+							content: "";
+							animation: show;
+							white-space: nowrap;
+							animation-name: show;
+							animation-duration: 15s;
+							//animation-timing-function: linear;
+							animation-timing-function: steps(1, end);
+							animation-iteration-count: infinite;
+						}
+					}
+
+					@keyframes show {
+						0% {
+							content: ":)";
+							background: #f3f705;
+							//background: #f2911b;
+						}
+						10% {
+							content: "Eiffel Tower";
+							background: #3df106;
+						}
+						20% {
+							content: "Notre-Dame de Paris";
+							background: #dca5f1;
+						}
+						30% {
+							content: "Sacré-Coeur";
+							background: #f2911b;
+						}
+						40% {
+							content: "Sorbonne University";
+							background: #f21bce;
+						}
+						50% {
+							content: "Triumphal Arch";
+							background: #e9fa02;
+						}
+						60% {
+							content: "Champs-Élysées";
+							background: #f50404;
+						}
+						70% {
+							content: "Louvre Museum";
+							background: #1bf2bc;
+						}
+						80% {
+							content: "Disneyland";
+							background: #1b8af2;
+						}
+						90% {
+							content: "Palace of Versailles";
+
+							background: #b9f21b;
+						}
+						100% {
+							content: "";
+							background: #b51bf2;
+						}
+					}
+				}
 				.thumbnail-container {
 					padding: 0 2px 2px 0;
 					margin: 0;
@@ -181,25 +264,26 @@
 					content: attr(data-title);
 					top: 0;
 					left: 0;
-					padding-top: 23px;
+					padding-top: 10%;
 					transform: translateY(-100%) scale(0.8);
 					background: rgba(0, 0, 0, 0.4);
-					font-size: 3rem;
+					font-size: 2.2vw;
 					font-weight: 300;
 					font-family: Merriweather, serif;
 					text-align: center;
 					visibility: hidden;
+					white-space: nowrap;
 				}
 				.thumbnail::before {
 					content: attr(data-description) "…";
 					top: 50%;
 					left: 0;
-					padding: 20px;
+					padding: 8% 1% 0;
 					transform: translateY(100%) scale(0.8);
 					background: rgba(107, 38, 68, 0.6);
 					backdrop-filter: blur(10px);
 					color: #f1f1f1;
-					font-size: 1rem;
+					font-size: 1.4vw;
 					visibility: hidden;
 				}
 				.thumbnail:hover::after,
@@ -221,7 +305,7 @@
 	}
 }
 
-@media screen and (max-width: 645px) {
+@media screen and (max-width: 767.5px) {
 	.service-container {
 		h2 {
 			font-size: 3rem;
@@ -287,6 +371,21 @@
 						position: absolute;
 						left: 35%;
 						opacity: 0.1;
+					}
+				}
+			}
+			.activities {
+				.thumbnail-gallery {
+					.thumbnail-gallery-title .container-anim {
+						font-size: 27px;
+					}
+					.thumbnail::after {
+						content: attr(data-title);
+						font-size: 1.9rem;
+					}
+					.thumbnail::before {
+						content: attr(data-description) "…";
+						font-size: 1rem;
 					}
 				}
 			}

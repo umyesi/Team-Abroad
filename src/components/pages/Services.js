@@ -16,6 +16,7 @@ import arc from "../../assets/images/outdoor-activities/arc-de-triomphe.jpg";
 import versailles from "../../assets/images/outdoor-activities/versailles.jpg";
 import louvre from "../../assets/images/outdoor-activities/louvre.jpg";
 import disneyland from "../../assets/images/outdoor-activities/disneyland.jpg";
+import arrowRight from "../../assets/images/outdoor-activities/arrow.png";
 
 class Services extends React.Component {
 	componentDidMount() {
@@ -217,126 +218,134 @@ class Services extends React.Component {
 							<div className={`activities ${activities ? "" : "hidden"}`}>
 								<h2>Activities</h2>
 								<p>
-									We provide multi-sportive activities, exciting excursions as
-									well as entertaining evenings, giving our students every
-									opportunity to have fun, to practice the language and to
-									develop friendships with fellow campers.  It's all included at
-									no extra cost.
+									We provide multi-sportive, indoor and outdoor activities,
+									exciting excursions as well as entertaining evenings, giving
+									our students every opportunity to have fun, to practice the
+									language and to develop friendships with fellow campers. It's
+									all included at no extra cost.
 								</p>
 								<p>
 									Our full-day and half-day trips to places of historical and
 									cultural importance are a good way to introduce students to
 									the great diversity of French culture, history, food,
 									geography and aim to take full advantage of the special
-									attractions around each destination.
+									attractions around each destination. All the tours are guided
+									by a native, qualified guide. Our goal is to take Team Abroad
+									campers to as many places as possible throughout the program.
 								</p>
+
+								<div className='thumbnail-gallery row'>
+									<div className='thumbnail-gallery-title col-12'>
+										<div className='container-anim' id='container-anim'>
+											> Places we are going to see together:{" "}
+											<div className='switch'></div>
+										</div>
+									</div>
+
+									<div className='thumbnail-container col-md-4'>
+										<div
+											className='thumbnail'
+											data-title='Eiffel Tower'
+											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs'
+										>
+											<img src={eiffel} alt='Meat' />
+										</div>
+									</div>
+									<div className='thumbnail-container col-12 col-md-4'>
+										<div
+											className='thumbnail'
+											data-title='Notre-Dame de Paris'
+											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs.'
+										>
+											<img src={notreDame} alt='Notre-Dame de Paris' />
+										</div>
+									</div>
+									<div className='thumbnail-container col-12 col-md-4'>
+										<div
+											className='thumbnail'
+											data-title='Sacré-Coeur'
+											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs'
+										>
+											<img src={sacreCoeur} alt='Sacré-Coeur' />
+										</div>
+									</div>
+
+									<div className='thumbnail-container col-12 col-md-4'>
+										<div
+											className='thumbnail'
+											data-title='Sorbonne University'
+											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs'
+										>
+											<img src={sorbonne} alt='Sorbonne University' />
+										</div>
+									</div>
+									<div className='thumbnail-container col-12 col-md-4'>
+										<div
+											className='thumbnail'
+											data-title='Triumphal Arch'
+											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs'
+										>
+											<img src={arc} alt='Meat' />
+										</div>
+									</div>
+									<div className='thumbnail-container col-12 col-md-4'>
+										<div
+											className='thumbnail'
+											data-title='Champs-Élysées'
+											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs'
+										>
+											<img src={champs} alt='Champs-Élysées' />
+										</div>
+									</div>
+									<div className='thumbnail-container col-12 col-md-4'>
+										<div
+											className='thumbnail'
+											data-title='Louvre Museum'
+											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs'
+										>
+											<img src={louvre} alt='Louvre Museum' />
+										</div>
+									</div>
+									<div className='thumbnail-container col-12 col-md-4'>
+										<div
+											className='thumbnail'
+											data-title='Disneyland'
+											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs'
+										>
+											<img src={disneyland} alt='Disneyland' />
+										</div>
+									</div>
+									<div className='thumbnail-container col-12 col-md-4'>
+										<div
+											className='thumbnail'
+											data-title='Palace of Versailles'
+											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs'
+										>
+											<img src={versailles} alt='Palace of Versailles' />
+										</div>
+									</div>
+								</div>
+
+								<p>
+									Indoor and outdoor activities that are introduced at our camp
+									are fun, interactive and educational at the same time and
+									promote teamwork and interaction between children and staff.
+									They are challenging and develop self-esteem, confidence,
+									social skills, leadership, and respect for the environment in
+									children. In addition with role playing, strategy, logic and
+									board games Team Abroad campers will enjoy various
+									entertainment activities such as :
+								</p>
+								<p>
+									All indoor and outdoor activities are led by our professional,
+									friendly and energetic group leaders and animators.
+								</p>
+
 								<p>
 									Team Abroad offers its participants 10 days of action, fun and
 									adventure in a safe, secure and healthy environment.
 								</p>
 								<p>
-									The activities promote teamwork and interaction between
-									children and staff. They are challenging and develop
-									self-esteem, confidence, social skills, leadership, and
-									respect for the environment in children.
-								</p>
-
-								<p>
-									In addition they will participate in various entertainment
-									activities such as:
-								</p>
-
-								<div>
-									<div className='thumbnail-gallery row'>
-										<div className='thumbnail-container col-md-4'>
-											<div
-												className='thumbnail'
-												data-title='Bacon'
-												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
-											>
-												<img src={eiffel} alt='Meat' />
-											</div>
-										</div>
-										<div className='thumbnail-container col-12 col-md-4'>
-											<div
-												className='thumbnail'
-												data-title='Bacon'
-												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
-											>
-												<img src={notreDame} alt='Meat' />
-											</div>
-										</div>
-										<div className='thumbnail-container col-12 col-md-4'>
-											<div
-												className='thumbnail'
-												data-title='Bacon'
-												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
-											>
-												<img src={sacreCoeur} alt='Meat' />
-											</div>
-										</div>
-
-										<div className='thumbnail-container col-12 col-md-4'>
-											<div
-												className='thumbnail'
-												data-title='Bacon'
-												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
-											>
-												<img src={sorbonne} alt='Meat' />
-											</div>
-										</div>
-										<div className='thumbnail-container col-12 col-md-4'>
-											<div
-												className='thumbnail'
-												data-title='Bacon'
-												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
-											>
-												<img src={arc} alt='Meat' />
-											</div>
-										</div>
-										<div className='thumbnail-container col-12 col-md-4'>
-											<div
-												className='thumbnail'
-												data-title='Bacon'
-												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
-											>
-												<img src={champs} alt='Meat' />
-											</div>
-										</div>
-										<div className='thumbnail-container col-12 col-md-4'>
-											<div
-												className='thumbnail'
-												data-title='Bacon'
-												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
-											>
-												<img src={louvre} alt='Meat' />
-											</div>
-										</div>
-										<div className='thumbnail-container col-12 col-md-4'>
-											<div
-												className='thumbnail'
-												data-title='Bacon'
-												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
-											>
-												<img src={disneyland} alt='Meat' />
-											</div>
-										</div>
-										<div className='thumbnail-container col-12 col-md-4'>
-											<div
-												className='thumbnail'
-												data-title='Bacon'
-												data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs, sausage shoulder tail biltong rump chicken ground round ham hock porchetta tri-tip. Boudin bresaola andouille, leberkas pork ball tip turducken beef ribs'
-											>
-												<img src={versailles} alt='Meat' />
-											</div>
-										</div>
-										<div></div>
-										<div></div>
-										<div></div>
-									</div>
-								</div>
-
-								<p className='pt-3'>
 									All groups are accompanied by our Team Abroad Group Assistants
 									and the city tours are led by a native, qualified guide.
 								</p>
@@ -389,12 +398,15 @@ class Services extends React.Component {
 							<div className={`assistance ${assistance ? "" : "hidden"}`}>
 								<h2>Assistance</h2>
 								<p>
-									Each student group is assigned one of our group assistants,
-									who are well-trained and experienced in guiding students
-									through the city. This assistant is with the group throughout
-									their stay and liaise with both the Team Abroad offices and
-									the group leaders, to ensure a smooth and positive experience
-									for all our visitors.
+									Safety of the children is the first priority for us.
+									Therefore, we provide professional assistance throughout the
+									whole stay thanks to our qualified group leaders, group
+									assistants, animators, tour guides and teachers who are 24
+									hours on hand.
+								</p>
+								<p>
+									The ration of supervision is one group leader / group
+									assistant for five students.
 								</p>
 								<img className='assistance' src={Assistance} alt='logo' />
 							</div>
