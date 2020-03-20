@@ -12,7 +12,7 @@ class AboutUs extends Component {
 				<div className=''>
 					<h2>About us</h2>
 					<hr />
-					<p className=''>
+					<p>
 						Team Abroad is committed to supporting not only the academic
 						learning but also the personal, social and emotional development of
 						each student. Our job is to keep students safe, healthy and happy
@@ -32,7 +32,7 @@ class AboutUs extends Component {
 					</p>
 					<p></p>
 				</div>
-				<div className='our-mission'>
+				{/* <div className='our-mission'>
 					<h2 className=''>Our Mission</h2>
 					<hr />
 					<p>
@@ -56,7 +56,7 @@ class AboutUs extends Component {
 						</li>
 						<li>Excellent value for money.</li>
 					</ul>
-				</div>
+				</div> */}
 			</div>
 		);
 	}

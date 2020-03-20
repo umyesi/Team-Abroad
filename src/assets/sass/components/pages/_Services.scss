@@ -31,6 +31,7 @@
 		font-size: 19px;
 		color: #000000ab;
 		text-align: justify;
+		line-height: 1.5rem;
 	}
 
 	.service-content {
@@ -50,7 +51,6 @@
 					top: 0;
 				}
 				li {
-					//float: left;
 					h4 {
 						display: inline-block;
 						color: #5a6069;
@@ -92,7 +92,7 @@
 			}
 			p {
 				font-size: 17px;
-				line-height: normal;
+				line-height: 1.5rem;
 				padding-bottom: 1rem;
 			}
 		}
@@ -146,7 +146,7 @@
 			.thumbnail-gallery {
 				margin-right: 0;
 				margin-left: 0;
-				margin: 0 0 1rem 0;
+				margin: 0 0 3rem 0;
 
 				.thumbnail-gallery-title {
 					margin: 30px 0 17px;
@@ -161,16 +161,32 @@
 						bottom: 45%;
 						display: block;
 					}
-					.switch {
+					.switch-heritages {
 						height: 70px;
 						overflow: hidden;
 						padding-top: 1.4rem;
 
 						&::after {
 							content: "";
-							animation: show;
+							animation: show-heritages;
 							white-space: nowrap;
-							animation-name: show;
+							animation-name: show-heritages;
+							animation-duration: 15s;
+							//animation-timing-function: linear;
+							animation-timing-function: steps(1, end);
+							animation-iteration-count: infinite;
+						}
+					}
+					.switch-activities {
+						height: 70px;
+						overflow: hidden;
+						padding-top: 1.4rem;
+
+						&::after {
+							content: "";
+							animation: show-activities;
+							white-space: nowrap;
+							animation-name: show-activities;
 							animation-duration: 15s;
 							//animation-timing-function: linear;
 							animation-timing-function: steps(1, end);
@@ -178,7 +194,7 @@
 						}
 					}
 
-					@keyframes show {
+					@keyframes show-heritages {
 						0% {
 							content: ":)";
 							background: #f3f705;
@@ -226,6 +242,54 @@
 							background: #b51bf2;
 						}
 					}
+					@keyframes show-activities {
+						0% {
+							content: ":)";
+							background: #f3f705;
+							//background: #f2911b;
+						}
+						10% {
+							content: "Seine River Cruise";
+							background: #3df106;
+						}
+						20% {
+							content: "Bowling Party";
+							background: #dca5f1;
+						}
+						30% {
+							content: "Paris By Mouth Food tours";
+							background: #f2911b;
+						}
+						40% {
+							content: "Paintball";
+							background: #f21bce;
+						}
+						50% {
+							content: "Vincennes Lake Trip";
+							background: #e9fa02;
+						}
+						60% {
+							content: "Karaoke Evening";
+							background: #f50404;
+						}
+						70% {
+							content: "Board Games";
+							background: #1bf2bc;
+						}
+						80% {
+							content: "Sport Activities";
+							background: #1b8af2;
+						}
+						90% {
+							content: "Campsite Activities";
+
+							background: #b9f21b;
+						}
+						100% {
+							content: "";
+							background: #b51bf2;
+						}
+					}
 				}
 				.thumbnail-container {
 					padding: 0 2px 2px 0;
@@ -248,49 +312,76 @@
 					height: 100%;
 					transition: opacity 0.2s ease-in-out;
 				}
-				.thumbnail:hover img {
-					opacity: 0.5;
-				}
-				.thumbnail::after,
-				.thumbnail::before {
+				.data-title,
+				.data-description {
 					position: absolute;
 					z-index: 1;
 					width: 100%;
 					height: 50%;
 					transition: transform 0.4s ease-out;
-					color: #fff;
 				}
-				.thumbnail::after {
-					content: attr(data-title);
+				.data-title {
+					display: flex;
+					justify-content: center;
+					align-items: center;
 					top: 0;
 					left: 0;
-					padding-top: 10%;
 					transform: translateY(-100%) scale(0.8);
 					background: rgba(0, 0, 0, 0.4);
-					font-size: 2.2vw;
-					font-weight: 300;
 					font-family: Merriweather, serif;
-					text-align: center;
 					visibility: hidden;
-					white-space: nowrap;
+
+					h1 {
+						font-size: 2vw;
+						font-weight: 300;
+						color: #fff;
+					}
 				}
-				.thumbnail::before {
-					content: attr(data-description) "…";
+				.data-description {
+					display: flex;
+					justify-content: center;
+					align-items: center;
 					top: 50%;
 					left: 0;
-					padding: 8% 1% 0;
+					padding: 0 2%;
 					transform: translateY(100%) scale(0.8);
 					background: rgba(107, 38, 68, 0.6);
 					backdrop-filter: blur(10px);
-					color: #f1f1f1;
-					font-size: 1.4vw;
 					visibility: hidden;
+					p {
+						font-size: 1vw;
+						line-height: 1.1;
+						color: #f1f1f1;
+						text-align: center;
+						//text-align-last: center;
+						//height: 38px;
+					}
 				}
-				.thumbnail:hover::after,
-				.thumbnail:hover::before {
+				.paintball,
+				// .karaoke .data-description {
+				// 	svg {
+				// 		display: inline-block;
+				// 		position: absolute;
+				// 		margin-left: 0.5rem;
+				// 		font-size: 21px;
+				// 		color: #fbb61b;
+				// 	}
+				// }
+				.thumbnail:hover .data-title,
+				.thumbnail:hover .data-description {
 					visibility: visible;
 					transform: translateY(0%) scale(1);
+					z-index: 1000;
 				}
+
+				.thumbnail:hover img {
+					opacity: 0.5;
+				}
+			}
+		}
+		.transfers {
+			img {
+				border-radius: 146px;
 			}
 		}
 		.meals {
@@ -309,15 +400,9 @@
 	.service-container {
 		h2 {
 			font-size: 3rem;
-			color: #599079;
-			font-weight: 600;
 		}
 		p {
-			margin: 0 auto;
-			max-width: 61rem;
-			font-size: 15px;
-			color: #000000ab;
-			text-align: justify;
+			font-size: 17px;
 		}
 		.service-content {
 			.service-navigation {
@@ -326,19 +411,13 @@
 					text-align: left;
 					li {
 						h4 {
-							padding-top: 14px;
-							padding-bottom: 14px;
-							font-weight: 400;
-							font-size: 15px;
+							font-size: 17px;
 							&.active {
 								&:after {
-									left: 1px;
+									left: 2px;
 								}
 							}
 						}
-					}
-					&:after {
-						display: none;
 					}
 				}
 			}
@@ -348,15 +427,10 @@
 					display: none;
 				}
 				h2 {
-					text-align: left;
-					color: #d61717;
-					font-size: 1rem;
-					padding-bottom: 1rem;
+					font-size: 1.5rem;
 				}
 				p {
-					font-size: 11px;
-					line-height: normal;
-					padding-bottom: 1rem;
+					font-size: 15px;
 				}
 				.transfers {
 					img {
@@ -379,13 +453,73 @@
 					.thumbnail-gallery-title .container-anim {
 						font-size: 27px;
 					}
-					.thumbnail::after {
-						content: attr(data-title);
-						font-size: 1.9rem;
+					.data-title {
+						h1 {
+							font-size: 6vw;
+						}
 					}
-					.thumbnail::before {
-						content: attr(data-description) "…";
-						font-size: 1rem;
+					.data-description {
+						p {
+							font-size: 3vw;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 575.5px) {
+	.service-container {
+		.service-content {
+			.service-info {
+				padding-left: 0;
+			}
+			.activities {
+				.thumbnail-gallery {
+					.data-title {
+						h1 {
+							font-size: 10vw;
+						}
+					}
+					.data-description {
+						p {
+							font-size: 4.5vw;
+						}
+					}
+				}
+			}
+			.service-navigation {
+				ul {
+					display: flex;
+					flex-wrap: wrap;
+					margin-bottom: 2rem;
+					margin: 0 auto 2rem;
+					justify-content: space-around;
+					text-align: center;
+					&:after {
+						display: none;
+					}
+					li {
+						padding: 5px 4px;
+						h4 {
+							border-radius: 0.25rem;
+							color: #599079;
+							padding: 0.5rem 1rem;
+							font-size: 15px;
+							background-color: #f5d367;
+							font-weight: bold;
+							width: 150px;
+							&:hover {
+								color: #599079;
+							}
+							&.active {
+								color: #d73b1e;
+								&:after {
+									display: none;
+								}
+							}
+						}
 					}
 				}
 			}

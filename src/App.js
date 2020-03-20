@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import NavigationBar from "./components/dashboard/NavigationBar";
 import Footer from "./components/dashboard/Footer";
@@ -15,32 +15,45 @@ import AboutUs from "./components/pages/AboutUs";
 //import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
-  render() {
-    //const { location } = this.props;
-    return (
-      <div className="App">
-        {/* {location.pathname !== "/signin" &&
+	constructor(props) {
+		super(props);
+		this.ProgramScrollRef = createRef();
+	}
+
+	render() {
+		//const { location } = this.props;
+		return (
+			<div className='App'>
+				{/* {location.pathname !== "/signin" &&
           location.pathname !== "/signup" &&
           location.pathname !== "/reset-password" && <NavigationBar />} */}
-        <NavigationBar />
-        <Switch>
-          <Route exact path="/" component={DashBoard} />
-          <Route path="/signin" component={SignIn} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="/reset-password" component={ResetPassword} />
-          <Route path="/ourprograms" component={OurPrograms} />
-          <Route path="/services" component={Services} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/contact/contact-us" component={Contact} />
-          <Route path="/contact/quote" component={Quote} />
-          <Route path="/contact/about-us" component={AboutUs} />
+				<NavigationBar ProgramScrollRef={this.ProgramScrollRef} />
+				<Switch>
+					<Route exact path='/' component={DashBoard} />
+					<Route path='/signin' component={SignIn} />
+					<Route path='/signup' component={SignUp} />
+					<Route path='/reset-password' component={ResetPassword} />
+					<Route
+						path='/ourprograms'
+						render={props => (
+							<OurPrograms
+								{...props}
+								ProgramScrollRef={this.ProgramScrollRef}
+							/>
+						)}
+					/>
+					<Route path='/services' component={Services} />
+					<Route exact path='/contact' component={Contact} />
+					<Route exact path='/contact/contact-us' component={Contact} />
+					<Route path='/contact/quote' component={Quote} />
+					<Route path='/contact/about-us' component={AboutUs} />
 
-          {/* <Route component={NoMatch} /> */}
-        </Switch>
-        <Footer />
-      </div>
-    );
-  }
+					{/* <Route component={NoMatch} /> */}
+				</Switch>
+				<Footer />
+			</div>
+		);
+	}
 }
 
 export default withRouter(App);

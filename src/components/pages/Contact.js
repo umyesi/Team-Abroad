@@ -16,7 +16,7 @@ class Contact extends React.Component {
 			phone: "",
 			email: "",
 			message: "",
-			all: false
+			all: ""
 		};
 	}
 
@@ -40,23 +40,25 @@ class Contact extends React.Component {
 		const messageTest = /^[^]{10,}$/;
 		const phoneTest = /^[0-9+-]*$/;
 		let errors = {};
+		console.log(errors);
 
 		if (!values.email) {
 			errors.email = "Required";
-			errors.all = true;
+			errors.all = "invalid";
 		} else if (!emailTest.test(values.email)) {
 			errors.email = "Invalid email address";
-			errors.all = true;
+			errors.all = "invalid";
 		}
 		if (!values.message) {
 			errors.message = "Required";
+			errors.all = "invalid";
 		} else if (!messageTest.test(values.message)) {
 			errors.message = "Your message must be at least 10 characters long";
-			errors.all = true;
+			errors.all = "invalid";
 		}
 		if (!phoneTest.test(values.phone)) {
 			errors.phone = "Please enter a valid phone number";
-			errors.all = true;
+			errors.all = "invalid";
 		}
 		return errors;
 	};
@@ -207,7 +209,7 @@ class Contact extends React.Component {
 									>
 										{isSubmitting ? "Please wait..." : "Send Message"}
 									</Button>
-									{errors.all ? (
+									{errors.all === "invalid" ? (
 										<p className='validation-error'>
 											Please fill in all required fields.
 										</p>

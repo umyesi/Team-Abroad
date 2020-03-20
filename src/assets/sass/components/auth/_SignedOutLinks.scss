@@ -1,55 +1,58 @@
 .signed-out-links {
-  font-weight: 300;
-  .icon {
-    color: #606d66b8;
-  }
+	font-weight: 300;
+	.icon {
+		color: #606d66b8;
+	}
 
-  .auth-link {
-    //font-weight: 600;
-    color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    &:hover {
-      //background-color: #3f5d513d;
-      color: #725b74;
-      transition: 0.3s;
-      // padding-left: 10px;
-    }
-  }
+	.auth-link {
+		//font-weight: 600;
+		color: rgba(0, 0, 0, 0.5);
+		width: 100%;
+		&:hover {
+			//background-color: #3f5d513d;
+			color: #725b74;
+			transition: 0.3s;
+			// padding-left: 10px;
+		}
+	}
 
-  .dropdown-item:hover,
-  .dropdown-item:focus {
-    border-style: outset;
-    color: #16181b;
-    text-decoration: none;
-    background-color: #3f5d513d;
-    //padding-left: 26px;
-    //transition: 0.3s;
-  }
-  .dropdown-signup-button {
-    outline: none;
-  }
-  .dropdown-login-button {
-    padding: 0.5rem 3rem;
-    display: inline-block;
-    width: 141px;
-    margin: 0 0 8px 9px;
-    background-color: #f5d445;
-    border-color: #f8d746;
-    color: #4bab73;
-    font-size: 18px;
-    // font-weight: 600;
-    opacity: 0.7;
-    &:hover {
-      background-color: #ffdb42;
-      border-color: #f9da57;
-      color: #55b885;
-      opacity: 1;
-      text-decoration: none;
-      transition: width 6s ease;
-      -webkit-transition: width 6s ease;
-    }
-    &:focus {
-      outline-color: #40ff00;
-    }
-  }
+	.dropdown-item:hover,
+	.dropdown-item:focus {
+		border-style: outset;
+		color: #16181b;
+		text-decoration: none;
+		background-color: #3f5d513d;
+		//padding-left: 26px;
+		//transition: 0.3s;
+	}
+	.dropdown-signup-button {
+		outline: none;
+	}
+	.dropdown-login-button {
+		padding: 0.5rem 0rem;
+		display: block;
+		width: 139px;
+		margin: 0 auto;
+		background-color: #f5d445;
+		border-color: #f8d746;
+		color: #4bab73;
+		font-size: 18px;
+		opacity: 0.7;
+		text-align: center;
+		border-radius: 3px;
+		cursor: pointer;
+		font-weight: bold;
+		&:hover {
+			background-color: #ffdb42;
+			border-color: #f9da57;
+			color: #55b885;
+			opacity: 1;
+			text-decoration: none;
+			transition: width 6s ease;
+			-webkit-transition: width 6s ease;
+		}
+		&:focus {
+			outline-color: #40ff00;
+		}
+	}
 }

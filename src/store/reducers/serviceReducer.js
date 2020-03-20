@@ -15,11 +15,12 @@ const serviceReducer = (state = initState, action) => {
 				...state,
 				[action.name]: true
 			};
-		// case "HIDE_INFO":
-		//   state = undefined;
-		//   return {
-		//     state
-		//   };
+		case "HIDE_INFO":
+			state = undefined;
+			return {
+				...state,
+				school: true
+			};
 
 		default:
 			return state;

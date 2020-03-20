@@ -16,7 +16,17 @@ import arc from "../../assets/images/outdoor-activities/arc-de-triomphe.jpg";
 import versailles from "../../assets/images/outdoor-activities/versailles.jpg";
 import louvre from "../../assets/images/outdoor-activities/louvre.jpg";
 import disneyland from "../../assets/images/outdoor-activities/disneyland.jpg";
-import arrowRight from "../../assets/images/outdoor-activities/arrow.png";
+import cruise from "../../assets/images/outdoor-activities/seine-cruise.jpg";
+import bowling from "../../assets/images/outdoor-activities/bowling.jpg";
+import food from "../../assets/images/outdoor-activities/food.jpg";
+import paintball from "../../assets/images/outdoor-activities/paintball.jpg";
+import lake from "../../assets/images/outdoor-activities/lake-trip.jpg";
+import karaoke from "../../assets/images/outdoor-activities/karaoke.jpg";
+import board from "../../assets/images/outdoor-activities/board.jpg";
+import sports from "../../assets/images/outdoor-activities/sport-activities.jpg";
+import campsite from "../../assets/images/outdoor-activities/campsite-activities.jpg";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { faSmileWink, faGrinBeam } from "@fortawesome/free-solid-svg-icons";
 
 class Services extends React.Component {
 	componentDidMount() {
@@ -36,21 +46,21 @@ class Services extends React.Component {
 		const mqm2 = window.matchMedia("(max-width: 768px)");
 		setTimeout(() => {
 			if (mqs.matches && !window.orientation) {
-				window.scroll(0, 270);
+				window.scroll(0, 350);
 			} else if (mqm.matches && !window.orientation) {
-				window.scroll(0, 270);
+				window.scroll(0, 320);
 			} else if (mqm2.matches && !window.orientation) {
-				window.scroll(0, 320);
+				window.scroll(0, 300);
 			} else if (window.orientation === 90) {
-				window.scroll(0, 320);
+				window.scroll(0, 300);
 			} else {
-				window.scroll(0, 270);
+				window.scroll(0, 300);
 			}
 		}, 500);
 	};
 
 	hideInfo = name => {
-		this.props.hideInfo(name);
+		this.props.hideInfo();
 		setTimeout(() => {
 			window.scroll(0, 0);
 		}, 300);
@@ -77,7 +87,7 @@ class Services extends React.Component {
 					below.
 				</p>
 				<div className='row service-content '>
-					<div className='col-3  service-navigation'>
+					<div className='col-12 col-sm-3  service-navigation'>
 						<ul>
 							<li>
 								<h4
@@ -129,7 +139,7 @@ class Services extends React.Component {
 							</li>
 						</ul>
 					</div>
-					<div className=' col-8 '>
+					<div className=' col-12 col-sm-8'>
 						<div className='service-info'>
 							<div className={`school ${school ? "" : "hidden"}`}>
 								<h2>School</h2>
@@ -156,8 +166,8 @@ class Services extends React.Component {
 							<div className={`accomodation ${accomodation ? "" : "hidden"}`}>
 								<h2>Accomodation</h2>
 								<p>
-									Our participants will stay at “Camping International de
-									Maisons-Laffitte”, four star child-friendly campsite located
+									Our participants will stay at 'Camping International de
+									Maisons-Laffitte' , four star child-friendly campsite located
 									on an island on the Seine. The campsite with a variety of
 									sporting and fun activities in, is the ideal base for
 									exploring Paris, as the city centre is only a 20 minutes train
@@ -237,63 +247,91 @@ class Services extends React.Component {
 								<div className='thumbnail-gallery row'>
 									<div className='thumbnail-gallery-title col-12'>
 										<div className='container-anim' id='container-anim'>
-											> Places we are going to see together:{" "}
-											<div className='switch'></div>
+											Places we are going to see together:{" "}
+											<div className='switch-heritages'></div>
 										</div>
 									</div>
 
 									<div className='thumbnail-container col-md-4'>
-										<div
-											className='thumbnail'
-											data-title='Eiffel Tower'
-											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs'
-										>
+										<div className='thumbnail'>
+											<div className='data-title'>
+												<h1>Eiffel Tower</h1>{" "}
+											</div>
+											<div className='data-description'>
+												<p>Architectural wonder and icon of Paris</p>
+											</div>
 											<img src={eiffel} alt='Meat' />
 										</div>
 									</div>
 									<div className='thumbnail-container col-12 col-md-4'>
-										<div
-											className='thumbnail'
-											data-title='Notre-Dame de Paris'
-											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs.'
-										>
+										<div className='thumbnail'>
+											<div className='data-title'>
+												{" "}
+												<h1>Notre-Dame de Paris</h1>{" "}
+											</div>
+											<div className='data-description'>
+												<p>
+													The most famous of the Gothic cathedrals of the Middle
+													Ages and house of famous Quasimodo and Esmeralda
+												</p>
+											</div>
 											<img src={notreDame} alt='Notre-Dame de Paris' />
 										</div>
 									</div>
 									<div className='thumbnail-container col-12 col-md-4'>
-										<div
-											className='thumbnail'
-											data-title='Sacré-Coeur'
-											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs'
-										>
+										<div className='thumbnail'>
+											<div className='data-title'>
+												<h1>Sacré-Coeur</h1>
+											</div>
+											<div className='data-description'>
+												<p>
+													Amazing view of Paris from Roman Catholic Church and
+													minor basilica, dedicated to the Sacred Heart of Jesus
+												</p>
+											</div>
 											<img src={sacreCoeur} alt='Sacré-Coeur' />
 										</div>
 									</div>
 
 									<div className='thumbnail-container col-12 col-md-4'>
-										<div
-											className='thumbnail'
-											data-title='Sorbonne University'
-											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs'
-										>
+										<div className='thumbnail'>
+											<div className='data-title'>
+												<h1>Sorbonne University</h1>
+											</div>
+											<div className='data-description'>
+												<p>
+													One of the oldest and most famous universities in the
+													world
+												</p>
+											</div>
 											<img src={sorbonne} alt='Sorbonne University' />
 										</div>
 									</div>
 									<div className='thumbnail-container col-12 col-md-4'>
-										<div
-											className='thumbnail'
-											data-title='Triumphal Arch'
-											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs'
-										>
+										<div className='thumbnail'>
+											<div className='data-title'>
+												<h1>Triumphal Arch</h1>
+											</div>
+											<div className='data-description'>
+												<p>
+													Commissioned by Emperor Napoléon Bonaparte in 1806
+													after victory in the Battle of Austerlitz
+												</p>
+											</div>
 											<img src={arc} alt='Meat' />
 										</div>
 									</div>
 									<div className='thumbnail-container col-12 col-md-4'>
-										<div
-											className='thumbnail'
-											data-title='Champs-Élysées'
-											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs'
-										>
+										<div className='thumbnail'>
+											<div className='data-title'>
+												<h1>Champs-Élysées</h1>
+											</div>
+											<div className='data-description'>
+												<p>
+													World’s most beautiful avenue by day and by night,
+													visited each day by nearly 300,000 people
+												</p>
+											</div>
 											<img src={champs} alt='Champs-Élysées' />
 										</div>
 									</div>
@@ -301,30 +339,54 @@ class Services extends React.Component {
 										<div
 											className='thumbnail'
 											data-title='Louvre Museum'
-											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs'
+											data-description="World's largest and richest art museum, where you can find the most famous masterpieces"
 										>
+											<div className='data-title'>
+												<h1>Louvre Museum</h1>
+											</div>
+											<div className='data-description'>
+												<p>
+													World's largest and richest art museum, where you can
+													find the most famous masterpieces
+												</p>
+											</div>
 											<img src={louvre} alt='Louvre Museum' />
 										</div>
 									</div>
 									<div className='thumbnail-container col-12 col-md-4'>
-										<div
-											className='thumbnail'
-											data-title='Disneyland'
-											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs'
-										>
+										<div className='thumbnail'>
+											<div className='data-title'>
+												<h1>Disneyland</h1>
+											</div>
+											<div className='data-description'>
+												<p>
+													Dream of every child and the happiest place on earth
+												</p>
+											</div>
 											<img src={disneyland} alt='Disneyland' />
 										</div>
 									</div>
 									<div className='thumbnail-container col-12 col-md-4'>
-										<div
-											className='thumbnail'
-											data-title='Palace of Versailles'
-											data-description='Bacon ipsum dolor amet filet mignon alcatra short ribs'
-										>
+										<div className='thumbnail'>
+											<div className='data-title'>
+												<h1>Palace of Versailles</h1>
+											</div>
+											<div className='data-description'>
+												<p>
+													Listed as a World Heritage Site for 30 years and one
+													of the greatest achievements in French 17th century
+													art
+												</p>
+											</div>
 											<img src={versailles} alt='Palace of Versailles' />
 										</div>
 									</div>
 								</div>
+
+								<p>
+									Team Abroad offers its participants 10 days of action, fun and
+									adventure in a safe, secure and healthy environment.
+								</p>
 
 								<p>
 									Indoor and outdoor activities that are introduced at our camp
@@ -332,19 +394,146 @@ class Services extends React.Component {
 									promote teamwork and interaction between children and staff.
 									They are challenging and develop self-esteem, confidence,
 									social skills, leadership, and respect for the environment in
-									children. In addition with role playing, strategy, logic and
-									board games Team Abroad campers will enjoy various
-									entertainment activities such as :
+									children.
 								</p>
+								<p>
+									In addition with role playing, strategy, logic and board games
+									Team Abroad campers will enjoy various entertainment
+									activities such as :
+								</p>
+								<div className='thumbnail-gallery row'>
+									<div className='thumbnail-gallery-title col-12'>
+										<div className='container-anim' id='container-anim'>
+											This is how we have fun
+											<div className='switch-activities'></div>
+										</div>
+									</div>
+
+									<div className='thumbnail-container col-md-4'>
+										<div className='thumbnail'>
+											<div className='data-title'>
+												<h1>Seine River Cruise</h1>
+											</div>
+											<div className='data-description'>
+												<p>
+													A guided tour of Paris’s most touristic parts for 1
+													hour on boat
+												</p>
+											</div>
+											<img src={cruise} alt='Seine River Cruise' />
+										</div>
+									</div>
+									<div className='thumbnail-container col-12 col-md-4'>
+										<div className='thumbnail bowling'>
+											<div className='data-title'>
+												<h1>Bowling</h1>
+											</div>
+											<div className='data-description'>
+												<p>It’s not how you bowl, it’s how your roll :)</p>
+											</div>
+											<img src={bowling} alt='Bowling Party' />
+										</div>
+									</div>
+									<div className='thumbnail-container col-12 col-md-4'>
+										<div className='thumbnail'>
+											<div className='data-title'>
+												<h1>Paris By Mouth Food tours</h1>
+											</div>
+											<div className='data-description'>
+												<p>
+													Unique and fun way for you to experience the 'hidden
+													gems' of Paris which let you explore original sensory
+													wonders that you'll never forget.
+												</p>
+											</div>
+											<img src={food} alt='Paris Mouth Food' />
+										</div>
+									</div>
+
+									<div className='thumbnail-container col-12 col-md-4'>
+										<div className='thumbnail paintball'>
+											<div className='data-title'>
+												<h1>Paintball</h1>
+											</div>
+											<div className='data-description'>
+												<p>
+													It doesn't matter who you are if you ever played it or
+													not, you will do it and you will love it
+													{/* <FontAwesomeIcon icon={faSmileWink} /> */}
+												</p>
+											</div>
+											<img src={paintball} alt='Paintball' />
+										</div>
+									</div>
+									<div className='thumbnail-container col-12 col-md-4'>
+										<div className='thumbnail'>
+											<div className='data-title'>
+												<h1>Vincennes Lake Trip</h1>
+											</div>
+											<div className=' data-description'>
+												<p>
+													The funniest mix of paddling in the lake and having
+													picnic in the forest
+												</p>
+											</div>
+											<img src={lake} alt='Vincennes Lake Trip' />
+										</div>
+									</div>
+									<div className='thumbnail-container col-12 col-md-4'>
+										<div className='thumbnail karaoke'>
+											<div className='data-title'>
+												<h1>Karaoke Evening</h1>
+											</div>
+											<div className=' data-description'>
+												<p>
+													Just because I can't sing, doesn't mean I won't sing
+													{/* <FontAwesomeIcon icon={faGrinBeam} /> */}
+												</p>
+											</div>
+											<img src={karaoke} alt='Karaoke Evening' />
+										</div>
+									</div>
+									<div className='thumbnail-container col-12 col-md-4'>
+										<div className='thumbnail'>
+											<div className='data-title'>
+												<h1>Board Games</h1>
+											</div>
+											<div className=' data-description'>
+												<p>
+													Evening sessions of strategic and intellectual games
+												</p>
+											</div>
+											<img src={board} alt='Board Games' />
+										</div>
+									</div>
+									<div className='thumbnail-container col-12 col-md-4'>
+										<div className='thumbnail'>
+											<div className='data-title'>
+												<h1>Sport Activities</h1>
+											</div>
+											<div className=' data-description'>
+												<p>To stay healthy and strong we do sports</p>
+											</div>
+											<img src={sports} alt='Sport Activities' />
+										</div>
+									</div>
+									<div className='thumbnail-container col-12 col-md-4'>
+										<div className='thumbnail'>
+											<div className='data-title'>
+												<h1>Campsite Activities</h1>
+											</div>
+											<div className='data-description'>
+												<p>Taking the best advantage of the campsite</p>
+											</div>
+											<img src={campsite} alt='Campsite Activities' />
+										</div>
+									</div>
+								</div>
 								<p>
 									All indoor and outdoor activities are led by our professional,
 									friendly and energetic group leaders and animators.
 								</p>
 
-								<p>
-									Team Abroad offers its participants 10 days of action, fun and
-									adventure in a safe, secure and healthy environment.
-								</p>
 								<p>
 									All groups are accompanied by our Team Abroad Group Assistants
 									and the city tours are led by a native, qualified guide.

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { NavLink, Link, withRouter } from "react-router-dom";
 import { compose } from "redux";
 import { connect } from "react-redux";
@@ -7,9 +7,6 @@ import SignedInLinks from "../auth/SignedInLinks";
 import SignedOutLinks from "../auth/SignedOutLinks";
 import Logo from "../../assets/images/loguna.png";
 import { signOut } from "../../store/actions/authActions";
-
-const scrollToRef = ref => window.scrollTo(0, ref.current.offsetTop);
-const useMountEffect = fun => useEffect(fun, []);
 
 class NavigationBar extends React.Component {
 	constructor(props) {
@@ -50,24 +47,25 @@ class NavigationBar extends React.Component {
 	};
 
 	handleScroll = () => {
-		const { prevScrollpos } = this.state;
+		//const { prevScrollpos } = this.state;
 		const currentScrollpos = window.pageYOffset;
-		const visible = prevScrollpos > currentScrollpos;
-		const { location } = this.props;
+		// const visible = prevScrollpos > currentScrollpos;
+		// const { location } = this.props;
 		if (!this.state.collapse) {
 			this.setState({
 				collapse: true
 			});
 		} else if (
-			currentScrollpos > 100 &&
-			window.innerHeight < window.innerWidth &&
-			location.pathname !== "/signup" &&
-			location.pathname !== "/signin" &&
-			(this.state.visible || !this.state.visible)
+			currentScrollpos > 100
+			// this code is is for navbar collapse
+			// && window.innerHeight < window.innerWidth &&
+			// location.pathname !== "/signup" &&
+			// location.pathname !== "/signin" &&
+			// (this.state.visible || !this.state.visible)
 		) {
 			this.setState({
 				prevScrollpos: currentScrollpos,
-				visible,
+				//visible,
 				dropdown: false
 			});
 		}
@@ -88,24 +86,24 @@ class NavigationBar extends React.Component {
 	};
 
 	showProgramInfo = name => {
-		const mqs = window.matchMedia("(max-width: 500px)");
-		const mqm = window.matchMedia("(max-width: 600px)");
-		const mqm2 = window.matchMedia("(max-width: 768px)");
+		// const mqs = window.matchMedia("(max-width: 500px)");
+		// const mqm = window.matchMedia("(max-width: 600px)");
+		// const mqm2 = window.matchMedia("(max-width: 768px)");
 		//const orientation = window.matchMedia("(orientation: landscape)");
 
-		setTimeout(() => {
-			if (mqs.matches && !window.orientation) {
-				window.scroll(0, 1500);
-			} else if (mqm.matches && !window.orientation) {
-				window.scroll(0, 1627);
-			} else if (mqm2.matches && !window.orientation) {
-				window.scroll(0, 1720);
-			} else if (window.orientation === 90) {
-				window.scroll(0, 1870);
-			} else {
-				window.scroll(0, 880);
-			}
-		}, 500);
+		// setTimeout(() => {
+		// 	if (mqs.matches && !window.orientation) {
+		// 		window.scroll(0, 1640);
+		// 	} else if (mqm.matches && !window.orientation) {
+		// 		window.scroll(0, 1640);
+		// 	} else if (mqm2.matches && !window.orientation) {
+		// 		window.scroll(0, 1760);
+		// 	} else if (window.orientation === 90) {
+		// 		window.scroll(0, 1830);
+		// 	} else {
+		// 		window.scroll(0, 820);
+		// 	}
+		// }, 500);
 
 		//  else if (window.innerHeight < window.innerWidth) {
 		// 	setTimeout(() => {
@@ -114,21 +112,28 @@ class NavigationBar extends React.Component {
 		// }
 
 		this.props.showProgramInfo(name);
+		setTimeout(() => {
+			this.props.ProgramScrollRef.current.scrollIntoView({
+				behavior: "smooth",
+				block: "start",
+				inline: "nearest"
+			});
+		}, 500);
 	};
 
 	showServiceInfo = name => {
 		const mqs = window.matchMedia("(max-width: 500px)");
-		const mqm = window.matchMedia("(max-width: 600px)");
+		const mqm = window.matchMedia("(max-width: 576px)");
 		const mqm2 = window.matchMedia("(max-width: 768px)");
 		setTimeout(() => {
 			if (mqs.matches && !window.orientation) {
-				window.scroll(0, 270);
+				window.scroll(0, 350);
 			} else if (mqm.matches && !window.orientation) {
-				window.scroll(0, 270);
+				window.scroll(0, 320);
 			} else if (mqm2.matches && !window.orientation) {
-				window.scroll(0, 320);
+				window.scroll(0, 300);
 			} else if (window.orientation === 90) {
-				window.scroll(0, 320);
+				window.scroll(0, 300);
 			} else {
 				window.scroll(0, 300);
 			}

@@ -8,25 +8,6 @@ import internship from "../../assets/images/internship.jpg";
 import { FaRegSmileWink } from "react-icons/fa";
 
 class OurPrograms extends React.Component {
-	// constructor(props) {
-	// 	super(props);
-	// 	this.state = this.initialState;
-	// 	this.scrollToDiv = React.createRef();
-	// 	this.scrollToTop = React.createRef();
-	// 	this.myRef = React.createRef();
-	// }
-
-	// get initialState() {
-	//   return {
-	//     englishInfo: false,
-	//     frenchInfo: false,
-	//     internInfo: false
-	//   };
-	// }
-	// reset() {
-	//   this.setState(this.initialState);
-	// }
-
 	componentDidMount() {
 		setTimeout(() => {
 			window.scroll(0, 0);
@@ -45,48 +26,31 @@ class OurPrograms extends React.Component {
 	//   }));
 	// };
 
-	scrollToMyRef = () => window.scrollTo(0, this.myRef.current.offsetTop);
-
 	showInfo = name => {
 		this.props.showInfo(name);
-		const mqs = window.matchMedia("(max-width: 500px)");
-		const mqm = window.matchMedia("(max-width: 600px)");
-		const mqm2 = window.matchMedia("(max-width: 768px)");
+
 		setTimeout(() => {
-			if (mqs.matches) {
-				window.scroll(0, 1500);
-			} else if (mqm.matches && !window.orientation) {
-				window.scroll(0, 1627);
-			} else if (mqm2.matches && !window.orientation) {
-				window.scroll(0, 1720);
-			} else if (window.orientation === 90) {
-				console.log(window.orientation);
-				window.scroll(0, 1870);
-			} else {
-				window.scroll(0, 880);
-			}
-		}, 200);
-		//window.scrollTo(0, this.myRef.current.offsetTop);
-		//this.myRef.current.scrollIntoView({ behavior: "smooth", block: 100 });
+			this.props.ProgramScrollRef.current.scrollIntoView({
+				behavior: "smooth",
+				block: "start",
+				inline: "nearest"
+			});
+		}, 500);
 	};
 
 	hideInfo = name => {
 		this.props.hideInfo(name);
-		window.scroll(0, 880);
 		setTimeout(() => {
 			window.scroll(0, 0);
 		}, 300);
-		//this.props.hideInfo(name);
-		//this.scrollToTop.current.scrollIntoView({ behavior: "smooth" });
 	};
 
 	render() {
-		// const { englishInfo, frenchInfo, internInfo } = this.state;
 		const { englishInfo, frenchInfo, internInfo } = this.props.programInfo;
 
 		return (
 			<div className='our-programs container-fluid'>
-				<h2>Our Programs</h2>
+				<h2>Our programs</h2>
 				<hr />
 				<p>
 					Team Abroad welcomes students to choose one of our amazing programs
@@ -130,11 +94,12 @@ class OurPrograms extends React.Component {
 				</div>
 
 				<div className='program-info'>
+					<div ref={this.props.ProgramScrollRef} className='scroll'></div>
 					<div className={`english-program ${englishInfo ? "" : "hidden"}`}>
 						<span className='close' onClick={() => this.hideInfo()}>
 							&times;
 						</span>
-						<h2 ref={this.myRef}>English Program</h2>
+						<h2>English Program</h2>
 						<p>
 							Throughout their stay at the English program Camp, our students
 							are completely immersed in English. They are looked after and

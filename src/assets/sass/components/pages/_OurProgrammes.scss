@@ -33,7 +33,7 @@
 		color: #000000ab;
 		text-align: justify;
 		padding-top: 1rem;
-		line-height: normal;
+		line-height: 1.5rem;
 	}
 
 	.programs-links {
@@ -92,6 +92,13 @@
 
 	.program-info {
 		margin: 0 auto 8rem;
+		position: relative;
+		.scroll {
+			position: absolute;
+			height: 50px;
+			width: 100px;
+			top: -106px;
+		}
 		.hidden {
 			display: none;
 		}
@@ -107,7 +114,7 @@
 			}
 			p {
 				font-size: 17px;
-				line-height: normal;
+				line-height: 1.5rem;
 			}
 			.close {
 				right: 0;
@@ -126,6 +133,7 @@
 					font-size: 18px;
 					font-weight: 600;
 					color: #d61717;
+					text-align: center;
 				}
 			}
 
@@ -162,6 +170,14 @@
 			svg {
 				color: #9e16a8;
 			}
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.our-programs {
+		h2 {
+			font-size: 2.5rem;
 		}
 	}
 }

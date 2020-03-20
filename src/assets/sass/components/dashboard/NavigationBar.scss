@@ -4,27 +4,28 @@
 	.nav-content {
 		position: fixed;
 		z-index: 2000;
-		//in case you want to collapse navbar on scroll use this code
-		top: 0;
-		transition: transform 0.2s ease-out;
-		height: auto;
-		transform: scaleY(1);
-		transform-origin: top;
+		min-width: 350px;
 		width: 100%;
 		background-color: #5d415f;
 		white-space: nowrap;
 		font-size: 1.2rem;
 		font-weight: 600;
 		padding: 0 0;
+		//in case you want to collapse navbar on scroll use this code
+		//top: 0;
+		// transition: transform 0.2s ease-out;
+		// height: auto;
+		// transform: scaleY(1);
+		// transform-origin: top;
 
 		.toggle-button {
 			margin-right: 10px;
 		}
 		//in case you want to collapse navbar on scroll use this code
-		&.nav-hidden {
-			transition: transform 0.3s ease-out;
-			transform: scaleY(0);
-		}
+		// &.nav-hidden {
+		// 	transition: transform 0.3s ease-out;
+		// 	transform: scaleY(0);
+		// }
 		.Logo {
 			width: 9rem;
 		}
@@ -108,9 +109,9 @@
 			@media only screen and (min-width: 767px) {
 				.dropdown-content {
 					visibility: hidden;
-					width: 179px;
+					width: 184px;
 					position: absolute;
-					top: 54px;
+					top: 56px;
 					transition: all 0.2s ease;
 					background-color: #f7efef;
 					box-shadow: 0px 2px 4px rgba(175, 51, 51, 0.19);
@@ -166,9 +167,25 @@
 	}
 }
 
+@media only screen and (max-width: 832px) {
+	.nav-container {
+		height: 71.58px;
+		background-color: #5d415f;
+		.nav-content {
+			font-size: 1rem;
+			.dropdown-content {
+				width: 175px !important;
+				font-size: 0.9rem !important;
+				top: 54px !important;
+			}
+		}
+	}
+}
+
 @media only screen and (max-width: 767.5px) {
 	.nav-container {
 		.nav-content {
+			font-size: 1.2rem;
 			.navigation-link {
 				width: 10px;
 			}
@@ -176,7 +193,7 @@
 				.arrow-container {
 					display: inline-block;
 					width: 29px;
-					margin-left: 10px;
+					margin-left: 26px;
 					i {
 						border: solid #9eb8af;
 						border-width: 0 3px 3px 0;
