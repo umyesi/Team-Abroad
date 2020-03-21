@@ -22,7 +22,7 @@ import food from "../../assets/images/outdoor-activities/food.jpg";
 import paintball from "../../assets/images/outdoor-activities/paintball.jpg";
 import lake from "../../assets/images/outdoor-activities/lake-trip.jpg";
 import karaoke from "../../assets/images/outdoor-activities/karaoke.jpg";
-import board from "../../assets/images/outdoor-activities/board.jpg";
+import board from "../../assets/images/outdoor-activities/board-games.jpg";
 import sports from "../../assets/images/outdoor-activities/sport-activities.jpg";
 import campsite from "../../assets/images/outdoor-activities/campsite-activities.jpg";
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

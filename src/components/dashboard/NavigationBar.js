@@ -86,31 +86,6 @@ class NavigationBar extends React.Component {
 	};
 
 	showProgramInfo = name => {
-		// const mqs = window.matchMedia("(max-width: 500px)");
-		// const mqm = window.matchMedia("(max-width: 600px)");
-		// const mqm2 = window.matchMedia("(max-width: 768px)");
-		//const orientation = window.matchMedia("(orientation: landscape)");
-
-		// setTimeout(() => {
-		// 	if (mqs.matches && !window.orientation) {
-		// 		window.scroll(0, 1640);
-		// 	} else if (mqm.matches && !window.orientation) {
-		// 		window.scroll(0, 1640);
-		// 	} else if (mqm2.matches && !window.orientation) {
-		// 		window.scroll(0, 1760);
-		// 	} else if (window.orientation === 90) {
-		// 		window.scroll(0, 1830);
-		// 	} else {
-		// 		window.scroll(0, 820);
-		// 	}
-		// }, 500);
-
-		//  else if (window.innerHeight < window.innerWidth) {
-		// 	setTimeout(() => {
-		// 		window.scroll(0, 880);
-		// 	}, 500);
-		// }
-
 		this.props.showProgramInfo(name);
 		setTimeout(() => {
 			this.props.ProgramScrollRef.current.scrollIntoView({
