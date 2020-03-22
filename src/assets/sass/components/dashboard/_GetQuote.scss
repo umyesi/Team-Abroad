@@ -1,87 +1,95 @@
 .get-quote-container {
-  width: 100%;
-  position: relative;
-  text-align: center;
-  // width: 100%;
-  //   overflow: hidden;
-  //max-height: 670px;
-  img {
-    //filter: blur(1px);
+	width: 100%;
+	position: relative;
+	text-align: center;
+	// width: 100%;
+	//   overflow: hidden;
+	//max-height: 670px;
+	img {
+		//filter: blur(1px);
 
-    filter: brightness(50%);
-  }
-  .get-quote-content {
-    position: absolute;
-    top: 31%;
+		filter: brightness(50%);
+	}
+	.get-quote-content {
+		position: absolute;
+		top: 31%;
 
-    .get-quote-header {
-      h2 {
-        color: #eef5f1;
-        display: inline-block;
-        font-size: 3rem;
-        font-weight: 600;
-        width: 100%;
-        z-index: 100;
-        padding-bottom: 1rem;
-      }
-    }
+		.get-quote-header {
+			h2 {
+				color: #eef5f1;
+				display: inline-block;
+				font-size: 3rem;
+				font-weight: 600;
+				width: 100%;
+				z-index: 100;
+				padding-bottom: 1rem;
+			}
+		}
 
-    .get-quote-buttons {
-      margin: auto;
-      max-width: 36rem;
-    }
-  }
+		.get-quote-buttons {
+			margin: auto;
+			max-width: 36rem;
+		}
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	.get-quote-container {
+		.get-quote-content {
+			top: 37%;
+		}
+	}
 }
 
 @media screen and (max-width: 920px) {
-  .get-quote-container {
-    .get-quote-content {
-      .get-quote-header {
-        h2 {
-          font-size: 2rem;
-          padding-bottom: 1rem;
-        }
-      }
+	.get-quote-container {
+		.get-quote-content {
+			.get-quote-header {
+				h2 {
+					font-size: 2rem;
+					padding-bottom: 1rem;
+				}
+			}
 
-      .get-quote-button {
-        padding-top: 4rem;
-      }
-    }
-  }
+			.get-quote-button {
+				padding-top: 4rem;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 630px) {
-  .get-quote-container {
-    .get-quote-content {
-      .get-quote-header {
-        h2 {
-          font-size: 1.5rem;
-          padding-bottom: 1rem;
-        }
-      }
+	.get-quote-container {
+		.get-quote-content {
+			.get-quote-header {
+				h2 {
+					font-size: 1.5rem;
+					padding-bottom: 1rem;
+				}
+			}
 
-      .get-quote-button {
-        padding-top: 3rem;
-      }
-    }
-  }
+			.get-quote-button {
+				padding-top: 3rem;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 470px) {
-  .get-quote-container {
-    .get-quote-content {
-      .get-quote-header {
-        h2 {
-          font-size: 1rem;
-          padding-bottom: 1rem;
-        }
-      }
+	.get-quote-container {
+		.get-quote-content {
+			.get-quote-header {
+				h2 {
+					font-size: 1rem;
+					padding-bottom: 1rem;
+				}
+			}
 
-      .get-quote-button {
-        width: 100%;
-        display: inline-block;
-        padding-top: 2rem;
-      }
-    }
-  }
+			.get-quote-button {
+				width: 100%;
+				display: inline-block;
+				padding-top: 2rem;
+			}
+		}
+	}
 }

@@ -396,6 +396,23 @@
 	}
 }
 
+@media screen and (min-width: 1600px) {
+	.activities {
+		.thumbnail-gallery {
+			.data-title {
+				h1 {
+					font-size: 22px;
+				}
+			}
+			.data-description {
+				p {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}
+
 @media screen and (max-width: 767.5px) {
 	.service-container {
 		h2 {

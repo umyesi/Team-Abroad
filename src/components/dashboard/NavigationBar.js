@@ -153,8 +153,9 @@ class NavigationBar extends React.Component {
 		const { auth } = this.props;
 		const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
 		return (
-			<div ref={node => (this.node = node)} className='nav-container'>
+			<div className='nav-container'>
 				<Navbar
+					fixed='top'
 					expand='md'
 					className={`nav-content  ${this.state.visible ? "" : "nav-hidden"}`}
 				>
@@ -163,7 +164,6 @@ class NavigationBar extends React.Component {
 							<img className='Logo' src={Logo} alt='logo' />
 						</Navbar.Brand>
 					</Link>
-
 					<button
 						className='navbar-toggler toggle-button ml-auto collapsed'
 						id='toggle-button'

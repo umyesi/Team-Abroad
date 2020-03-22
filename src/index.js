@@ -13,25 +13,25 @@ import "./assets/sass/base/customBootstrap.scss";
 import "./main.scss";
 
 const store = createStore(
-  rootReducer,
-  compose(
-    applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
-    reactReduxFirebase(fbConfig, {
-      userProfile: "users",
-      useFirestoreForProfile: true,
-      attachAuthIsReady: true
-    }),
-    reduxFirestore(fbConfig)
-  )
+	rootReducer,
+	compose(
+		applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
+		reactReduxFirebase(fbConfig, {
+			userProfile: "users",
+			useFirestoreForProfile: true,
+			attachAuthIsReady: true
+		}),
+		reduxFirestore(fbConfig)
+	)
 );
 
 store.firebaseAuthIsReady.then(() => {
-  ReactDOM.render(
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>,
-    document.getElementById("root")
-  );
+	ReactDOM.render(
+		<Provider store={store}>
+			<BrowserRouter>
+				<App />
+			</BrowserRouter>
+		</Provider>,
+		document.getElementById("root")
+	);
 });

@@ -53,7 +53,6 @@ class ResetPassword extends Component {
 		} else {
 			return (
 				<div>
-					<Navbar className='reset-password-navbar'></Navbar>
 					<div className='container-fluid reset-password-container'>
 						<div className='row justify-content-center  reset-content'>
 							<Form className='form-container' onSubmit={this.handleSubmit}>

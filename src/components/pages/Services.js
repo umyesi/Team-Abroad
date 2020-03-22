@@ -81,10 +81,10 @@ class Services extends React.Component {
 				<h2>Services</h2>
 				<hr />
 				<p>
-					To make the experience of the students unforgettable, The British
-					International School offers complementary services such as
-					accommodation, meals and transport. All of our services are listed
-					below.
+					Our services are designed and arranged to make students' experience
+					more comfortable and convenient. We will provide services like
+					accomodation, meals, transfer, and others that you can check below,
+					without any extra cost.
 				</p>
 				<div className='row service-content '>
 					<div className='col-12 col-sm-3  service-navigation'>

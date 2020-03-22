@@ -1,22 +1,35 @@
 .nav-container {
-	height: 71.58px;
-	background-color: #5d415f;
+	height: 73.49px;
+	//	max-width: 1400px;
 	.nav-content {
-		position: fixed;
-		z-index: 2000;
+		z-index: 9999;
 		min-width: 350px;
-		width: 100%;
 		background-color: #5d415f;
 		white-space: nowrap;
 		font-size: 1.2rem;
 		font-weight: 600;
 		padding: 0 0;
+		//max-width: 1400px;
+		//margin: auto;
 		//in case you want to collapse navbar on scroll use this code
 		//top: 0;
 		// transition: transform 0.2s ease-out;
 		// height: auto;
 		// transform: scaleY(1);
 		// transform-origin: top;
+		// div {
+		// 			max-width: 1400px;
+		// 	margin: auto;
+		// 	white-space: nowrap;
+		// 	font-size: 1.2rem;
+		// 	font-weight: 600;
+		// 	padding: 0 0;
+		// 	flex-flow: row nowrap;
+		// 	justify-content: flex-start;
+		// 	display: flex;
+		// 	flex-wrap: wrap;
+		// 	align-items: center;
+		// }
 
 		.toggle-button {
 			margin-right: 10px;
@@ -30,7 +43,8 @@
 			width: 9rem;
 		}
 		.collapse-container {
-			width: 1000px;
+			//width: 1000px;
+			width: 100%;
 			.collapse:not(.show) {
 				display: block;
 			}
@@ -169,8 +183,7 @@
 
 @media only screen and (max-width: 832px) {
 	.nav-container {
-		height: 71.58px;
-		background-color: #5d415f;
+		height: 73.49px;
 		.nav-content {
 			font-size: 1rem;
 			.dropdown-content {
