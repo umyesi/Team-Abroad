@@ -127,7 +127,7 @@
 					list-style: square;
 					max-width: 50rem;
 					padding: 0 0 2rem 1rem;
-					font-size: 17px;
+					font-size: 14px;
 
 					li {
 						padding-bottom: 0.5rem;
@@ -416,7 +416,7 @@
 @media screen and (max-width: 767.5px) {
 	.service-container {
 		h2 {
-			font-size: 3rem;
+			font-size: 4rem;
 		}
 		p {
 			font-size: 17px;
@@ -488,6 +488,9 @@
 
 @media screen and (max-width: 575.5px) {
 	.service-container {
+		h2 {
+			font-size: 3rem;
+		}
 		.service-content {
 			.service-info {
 				padding-left: 0;

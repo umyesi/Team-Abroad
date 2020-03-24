@@ -50,8 +50,16 @@
 			}
 		}
 
+		.nav-link {
+			padding: 0;
+			margin: 0.5rem 1rem;
+		}
+
 		.navigation-link {
 			color: #c1edd3bd; //before hover
+			&:hover {
+				color: #599079;
+			}
 
 			.active {
 				color: #599079; //on active
@@ -125,7 +133,7 @@
 					visibility: hidden;
 					width: 184px;
 					position: absolute;
-					top: 56px;
+					top: 48px;
 					transition: all 0.2s ease;
 					background-color: #f7efef;
 					box-shadow: 0px 2px 4px rgba(175, 51, 51, 0.19);
@@ -189,7 +197,7 @@
 			.dropdown-content {
 				width: 175px !important;
 				font-size: 0.9rem !important;
-				top: 54px !important;
+				top: 46px !important;
 			}
 		}
 	}

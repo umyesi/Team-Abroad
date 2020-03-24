@@ -37,26 +37,21 @@ class ResetPassword extends Component {
 		if (resetSent === "success") {
 			return (
 				<div>
-					<div className='container-fluid reset-password-container'>
-						<div className='row justify-content-center'>
-							<Form
-								className='sent-form-container'
-								onSubmit={this.handleSubmit}
-							>
-								<img className='email-sent' src={emailsent} alt='email-sent' />
-								<p>Reset instructions has been sent to your email address</p>
-							</Form>
-						</div>
+					<div className='reset-password-container'>
+						<Form className='sent-form-container' onSubmit={this.handleSubmit}>
+							<img className='email-sent' src={emailsent} alt='email-sent' />
+							<p>Reset instructions has been sent to your email address</p>
+						</Form>
 					</div>
 				</div>
 			);
 		} else {
 			return (
 				<div>
-					<div className='container-fluid reset-password-container'>
-						<div className='row justify-content-center  reset-content'>
+					<div className='reset-password-container'>
+						<div className='reset-content'>
 							<Form className='form-container' onSubmit={this.handleSubmit}>
-								<h3>Forgot Your Password?</h3>
+								<h2>Forgot your password?</h2>
 								<Form.Group className='signin-form-group'>
 									<Form.Label htmlFor='email' className='signin-form-label'>
 										Email address

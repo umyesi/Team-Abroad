@@ -11,7 +11,7 @@ class SignIn extends Component {
 	};
 	componentDidMount() {
 		setTimeout(() => {
-			window.scroll(0, 50);
+			window.scroll(0, 0);
 		}, 200);
 	}
 
@@ -34,51 +34,53 @@ class SignIn extends Component {
 		const { authError, auth } = this.props;
 		if (auth.uid) return <Redirect to='/' />;
 		return (
-			<div>
-				<div className='container-fluid signin-container'>
-					<div className='row justify-content-center signin-content'>
-						<Form className='form-container' onSubmit={this.handleSubmit}>
-							<h2>Login</h2>
-							<Form.Group className='form-group forgot-password-input'>
-								<Form.Label htmlFor='email' className='form-label'>
-									Email address
-								</Form.Label>
-								<div>
-									<Form.Control
-										type='email'
-										id='email'
-										className='form-control'
-										onChange={this.handleChange}
-									/>
-
-									<Link to='/reset-password' className='forgot-password'>
-										Forgot Password?
-									</Link>
-								</div>
-							</Form.Group>
-
-							<Form.Group>
-								<Form.Label htmlFor='password' className='form-label'>
-									Password
-								</Form.Label>
+			<div className='signin-container'>
+				<div className='signin-content'>
+					<Form className='form-container' onSubmit={this.handleSubmit}>
+						<h2>Sign in</h2>
+						<Form.Group className='form-group forgot-password-input'>
+							<Form.Label htmlFor='email' className='form-label'>
+								Email address
+							</Form.Label>
+							<div>
 								<Form.Control
-									type='password'
-									id='password'
+									type='email'
+									id='email'
 									className='form-control'
 									onChange={this.handleChange}
 								/>
-							</Form.Group>
-							<Button variant='success' type='submit' className='btn btn-block'>
-								Submit
-							</Button>
-							<div className='text-center text-danger mt-3'>
-								{authError ? <p>{authError}</p> : null}
+
+								<Link to='/reset-password' className='forgot-password'>
+									Forgot Password?
+								</Link>
 							</div>
-							<div className='create-account'>
-								<Link to='/signup'>Don't have an Account? Sign Up</Link>
-							</div>
-						</Form>
-					</div>
+						</Form.Group>
+
+						<Form.Group>
+							<Form.Label htmlFor='password' className='form-label'>
+								Password
+							</Form.Label>
+							<Form.Control
+								type='password'
+								id='password'
+								className='form-control'
+								onChange={this.handleChange}
+							/>
+						</Form.Group>
+						<Button
+							variant='success'
+							type='submit'
+							className='btn btn-block submit-button'
+						>
+							Submit
+						</Button>
+						<div className='text-center text-danger mt-3'>
+							{authError ? <p>{authError}</p> : null}
+						</div>
+						<div className='create-account'>
+							<Link to='/signup'>Don't have an Account? Sign Up</Link>
+						</div>
+					</Form>
 				</div>
 			</div>
 		);

@@ -14,7 +14,7 @@ class SignUp extends Component {
 
 	componentDidMount() {
 		setTimeout(() => {
-			window.scroll(0, 50);
+			window.scroll(0, 0);
 		}, 200);
 	}
 	componentWillUnmount() {
@@ -36,75 +36,66 @@ class SignUp extends Component {
 		const { auth, authError } = this.props;
 		if (auth.uid) return <Redirect to='/' />;
 		return (
-			<div>
-				{/* <Navbar className="signup-navbar">
-          <Link to="/">
-            <Navbar.Brand>
-              <img className="Logo" src={Logo} alt="logo" />
-            </Navbar.Brand>
-          </Link>
-        </Navbar> */}
-				<div className='container-fluid signup-container'>
-					<div className='row justify-content-center signup-content'>
-						<Form className='form-container' onSubmit={this.handleSubmit}>
-							<h2>Sign Up </h2>
-							<Form.Group>
-								<Form.Label htmlFor='Email' className='floatLabel'>
-									Email address
-								</Form.Label>
-								<Form.Control
-									type='email'
-									id='email'
-									className='form-control'
-									onChange={this.handleChange}
-								/>
-							</Form.Group>
+			<div className='signup-container'>
+				<div className='signup-content'>
+					<Form className='form-container' onSubmit={this.handleSubmit}>
+						<h2>Sign up </h2>
+						<Form.Group>
+							<Form.Label htmlFor='Email' className='floatLabel'>
+								Email address
+							</Form.Label>
+							<Form.Control
+								type='email'
+								id='email'
+								className='form-control'
+								onChange={this.handleChange}
+							/>
+						</Form.Group>
 
-							<Form.Group>
-								<Form.Label htmlFor='Password' className='floatLabel'>
-									{" "}
-									Password{" "}
-								</Form.Label>
-								<Form.Control
-									type='password'
-									id='password'
-									className='form-control'
-									onChange={this.handleChange}
-								/>
-							</Form.Group>
-							<Form.Group>
-								<Form.Label htmlFor='firstname' className='floatLabel'>
-									First Name
-								</Form.Label>
-								<Form.Control
-									type='text'
-									className='form-control'
-									id='firstName'
-									onChange={this.handleChange}
-								/>
-							</Form.Group>
-							<Form.Group>
-								<Form.Label htmlFor='lastname' className='floatLabel'>
-									Last Name
-								</Form.Label>
-								<Form.Control
-									type='text'
-									id='lastName'
-									className='form-control'
-									onChange={this.handleChange}
-								/>
-							</Form.Group>
-							<Button variant='success' type='submit' className='btn btn-block'>
-								Create My Account
-							</Button>
-							<div className='text-center text-danger mt-3'>
-								{authError ? <p>{authError}</p> : null}
-							</div>
-							<div className='already-member'>
-								<Link to='/signin'>Already a member? Sign In</Link>
-							</div>
-						</Form>
-					</div>
+						<Form.Group>
+							<Form.Label htmlFor='Password' className='floatLabel'>
+								{" "}
+								Password{" "}
+							</Form.Label>
+							<Form.Control
+								type='password'
+								id='password'
+								className='form-control'
+								onChange={this.handleChange}
+							/>
+						</Form.Group>
+						<Form.Group>
+							<Form.Label htmlFor='firstname' className='floatLabel'>
+								First Name
+							</Form.Label>
+							<Form.Control
+								type='text'
+								className='form-control'
+								id='firstName'
+								onChange={this.handleChange}
+							/>
+						</Form.Group>
+						<Form.Group>
+							<Form.Label htmlFor='lastname' className='floatLabel'>
+								Last Name
+							</Form.Label>
+							<Form.Control
+								type='text'
+								id='lastName'
+								className='form-control'
+								onChange={this.handleChange}
+							/>
+						</Form.Group>
+						<Button variant='success' type='submit' className='btn btn-block'>
+							Create My Account
+						</Button>
+						<div className='text-center text-danger mt-3'>
+							{authError ? <p>{authError}</p> : null}
+						</div>
+						<div className='already-member'>
+							<Link to='/signin'>Already a member? Sign In</Link>
+						</div>
+					</Form>
 				</div>
 			</div>
 		);

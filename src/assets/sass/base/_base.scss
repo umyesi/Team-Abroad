@@ -9,13 +9,19 @@ body {
 	background-color: #f5eef5;
 	scroll-behavior: smooth;
 	margin: 0 auto;
-	overflow: unset;
+	//overflow: unset;
 	padding: 0;
 	font-family: Verdana, Geneva, sans-serif;
 	line-height: normal;
 	box-sizing: border-box;
 	font-size: 100%;
 }
+// html,
+// body,
+// #app,
+// #app > div {
+// 	height: 100%;
+// }
 
 a {
 	outline: none;

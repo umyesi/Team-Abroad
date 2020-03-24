@@ -1,18 +1,30 @@
 .signed-in-links {
-  .icon {
-    color: #4ab376b8;
-  }
+	font-weight: 300;
+	.icon {
+		color: #4ab376b8;
+	}
+	.dropdown.show:after {
+		content: "";
+		position: absolute;
+		width: 88px;
+		height: 67px;
+		top: 6px;
+		right: 12px;
+	}
 
-  .dropdown-menu {
-    top: 0px;
-    left: 0px;
-    transform: translate3d(-116px, 44px, 0px);
-  }
+	.dropdown-menu {
+		transform: translate3d(-97px, 56px, 0px) !important;
+	}
 
-  .dropdown-item:hover,
-  .dropdown-item:focus {
-    color: #16181b;
-    text-decoration: none;
-    background-color: #3f5d513d;
-  }
+	.dropdown-item {
+		padding: 0.25rem 1rem;
+	}
+
+	.dropdown-item:hover,
+	.dropdown-item:focus {
+		border-style: outset;
+		color: #16181b;
+		text-decoration: none;
+		background-color: #3f5d513d;
+	}
 }

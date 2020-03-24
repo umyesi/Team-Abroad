@@ -1,7 +1,20 @@
 .signed-out-links {
 	font-weight: 300;
+
 	.icon {
 		color: #606d66b8;
+	}
+
+	.dropdown.show:after {
+		content: "";
+		position: absolute;
+		width: 88px;
+		height: 67px;
+		top: 6px;
+		right: 12px;
+	}
+	.dropdown-menu {
+		transform: translate3d(-97px, 56px, 0px) !important;
 	}
 
 	.auth-link {

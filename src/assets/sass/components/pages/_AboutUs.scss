@@ -20,7 +20,7 @@
 	p {
 		margin: 2rem auto;
 		max-width: 48rem;
-		font-size: 19px;
+		font-size: 17px;
 		color: #000000ab;
 		text-align: justify;
 		text-justify: inter-word;
@@ -53,5 +53,11 @@
 				}
 			}
 		}
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.about-us-container h2 {
+		font-size: 3rem;
 	}
 }
