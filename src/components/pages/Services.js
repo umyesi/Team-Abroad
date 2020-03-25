@@ -83,7 +83,7 @@ class Services extends React.Component {
 				<p>
 					Our services are designed and arranged to make students' experience
 					more comfortable and convenient. We will provide services like
-					accomodation, meals, transfer, and others that you can check below,
+					accommodation, meals, transfer, and others that you can check below,
 					without any extra cost.
 				</p>
 				<div className='row service-content '>
@@ -102,7 +102,7 @@ class Services extends React.Component {
 									onClick={() => this.showInfo("accomodation")}
 									className={` ${accomodation ? "active" : ""}`}
 								>
-									Accomodation{" "}
+									Accommodation{" "}
 								</h4>
 							</li>
 							<li>
@@ -164,7 +164,7 @@ class Services extends React.Component {
 								/>
 							</div>
 							<div className={`accomodation ${accomodation ? "" : "hidden"}`}>
-								<h2>Accomodation</h2>
+								<h2>Accommodation</h2>
 								<p>
 									Our participants will stay at 'Camping International de
 									Maisons-Laffitte' , four star child-friendly campsite located

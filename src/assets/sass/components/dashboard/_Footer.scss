@@ -1,11 +1,9 @@
-.footer-wrapper {
-	//height: 102px;
-}
 .footer-container {
 	position: absolute;
 	left: 0;
 	right: 0;
 	background-color: #5d415f;
+	min-width: 350px;
 	.footer-content {
 		height: 102px;
 		display: flex;
@@ -58,9 +56,9 @@
 	}
 }
 
-@media screen and (orientation: landscape) {
-	.footer-container {
-		//background-color: #321833;
-		background-color: #5d415f;
-	}
-}
+// @media screen and (orientation: landscape) {
+// 	.footer-container {
+// 		//background-color: #321833;
+// 		background-color: #5d415f;
+// 	}
+// }

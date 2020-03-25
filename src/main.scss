@@ -1,7 +1,10 @@
 /**BASE - Base styles, variables, mixins, etc */
 
+@import url("https://fonts.googleapis.com/css?family=Marck+Script&display=swap");
+
 @import "./assets/sass/base/reset";
 @import "./assets/sass/base/base";
+@import "./assets/sass/components/dashboard/Dashboard";
 @import "./assets/sass/components/dashboard/NavigationBar";
 @import "./assets/sass/components/auth/SignIn";
 @import "./assets/sass/components/auth/SignInModal";

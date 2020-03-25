@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { resetPassword } from "../../store/actions/authActions";
 import emailsent from "../../assets/images/emailsent.png";
 import { Redirect } from "react-router-dom";
-import { Navbar, Form, Button } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 class ResetPassword extends Component {
 	state = {
@@ -52,6 +52,10 @@ class ResetPassword extends Component {
 						<div className='reset-content'>
 							<Form className='form-container' onSubmit={this.handleSubmit}>
 								<h2>Forgot your password?</h2>
+								<p>
+									Don't worry. Resetting your password is easy, just tell us the
+									email address you registered with Team Abroad
+								</p>
 								<Form.Group className='signin-form-group'>
 									<Form.Label htmlFor='email' className='signin-form-label'>
 										Email address

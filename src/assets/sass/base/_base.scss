@@ -5,7 +5,8 @@ html {
 body {
 	max-width: 1400px;
 	min-width: 350px;
-	min-height: 100vh;
+	height: 100vh;
+	min-height: 800px;
 	background-color: #f5eef5;
 	scroll-behavior: smooth;
 	margin: 0 auto;
@@ -16,11 +17,10 @@ body {
 	box-sizing: border-box;
 	font-size: 100%;
 }
-// html,
-// body,
-// #app,
-// #app > div {
-// 	height: 100%;
+
+// .App {
+// 	position: relative;
+// 	height: 100vh;
 // }
 
 a {

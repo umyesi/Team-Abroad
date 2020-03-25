@@ -156,7 +156,7 @@
 						text-align: center;
 						text-transform: uppercase;
 						font-size: 32px;
-						font-family: "Fredericka the Great", cursive;
+						font-family: Cursive;
 						width: 100%;
 						bottom: 45%;
 						display: block;
@@ -428,7 +428,7 @@
 					text-align: left;
 					li {
 						h4 {
-							font-size: 17px;
+							font-size: 15px;
 							&.active {
 								&:after {
 									left: 2px;
@@ -529,7 +529,7 @@
 							font-size: 15px;
 							background-color: #f5d367;
 							font-weight: bold;
-							width: 150px;
+							width: 164px;
 							&:hover {
 								color: #599079;
 							}

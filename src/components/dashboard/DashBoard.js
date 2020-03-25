@@ -5,22 +5,22 @@ import GetQuote from "./GetQuote";
 import Location from "./Location";
 
 class DashBoard extends Component {
-  componentDidMount() {
-    setTimeout(() => {
-      window.scroll(0, 0);
-    }, 200);
-  }
+	componentDidMount() {
+		setTimeout(() => {
+			window.scroll(0, 0);
+		}, 200);
+	}
 
-  render() {
-    return (
-      <div>
-        <Carousel />
-        <Welcome />
-        <GetQuote />
-        <Location />
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div className='dashboard'>
+				<Carousel />
+				<Welcome />
+				<GetQuote />
+				<Location />
+			</div>
+		);
+	}
 }
 
 export default DashBoard;
