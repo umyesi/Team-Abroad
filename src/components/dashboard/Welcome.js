@@ -1,5 +1,4 @@
 import React from "react";
-import image from "../../assets/images/paris3.png";
 import paris from "../../assets/images/paris-background2.png";
 
 const Welcome = () => {
@@ -49,10 +48,7 @@ const Welcome = () => {
 						<img className='paris-background' src={paris} alt='background' />
 
 						<div className='paris-header'>
-							<h2>You will see the best of </h2>
-
-							<img className='paris' src={image} alt='quote' />
-
+							<h2>You will see the best of Paris </h2>
 							<h2>
 								{" "}
 								with <span className='team'>Team</span>{" "}

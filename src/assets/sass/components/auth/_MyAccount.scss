@@ -1,0 +1,30 @@
+.my-account {
+	min-height: 100vh;
+	padding: 4rem 1rem;
+	//background-image: url("../../../images/background-trial.svg");
+}
+.my-account .profile-header {
+	width: 100%;
+	position: relative;
+	.profile-image {
+		display: inline-block;
+		position: relative;
+		width: 150px;
+		height: 150px;
+		overflow: hidden;
+		border-radius: 50%;
+	}
+	.profile-image img {
+		width: 100%;
+	}
+	svg {
+		position: absolute;
+		top: 108px;
+		cursor: pointer;
+		color: #45464b;
+	}
+	h2 {
+		padding: 0.5rem 1.6rem;
+		font-size: 1rem;
+	}
+}

@@ -9,9 +9,7 @@ import {
 	DropdownMenu,
 	DropdownItem
 } from "reactstrap";
-//import { FaUser } from "react-icons/fa";
 import { AiOutlineUser } from "react-icons/ai";
-import { NavItem } from "react-bootstrap";
 
 class SignedInLinks extends React.Component {
 	state = {
@@ -43,32 +41,23 @@ class SignedInLinks extends React.Component {
 					toggle={this.toggle}
 				>
 					<DropdownToggle tag='a' className='nav-link'>
-						{/* <FaUser size={24} className="icon" /> */}
 						<AiOutlineUser size={28} className='icon' />
 					</DropdownToggle>
 					<DropdownMenu right>
-						<DropdownItem>
-							<Link className='nav-link' to='/'>
-								My Account
-							</Link>
-						</DropdownItem>
+						<Link className='auth-link' to='/my-account'>
+							<DropdownItem>My Account</DropdownItem>
+						</Link>
+						<Link className='auth-link' to='/contact'>
+							<DropdownItem>Help</DropdownItem>
+						</Link>
 
-						<DropdownItem>
-							<Link className='nav-link' to='/contact'>
-								Help
-							</Link>
-						</DropdownItem>
+						<Link className='auth-link' to='/contact'>
+							<DropdownItem> contact</DropdownItem>
+						</Link>
 
-						<DropdownItem>
-							<Link className='nav-link' to='/contact'>
-								Contact
-							</Link>
-						</DropdownItem>
 						<DropdownItem divider />
-						<DropdownItem>
-							<NavItem className='nav-link' onClick={this.props.signOut}>
-								Log Out
-							</NavItem>
+						<DropdownItem className='auth-link' onClick={this.props.signOut}>
+							Log Out
 						</DropdownItem>
 					</DropdownMenu>
 				</Dropdown>

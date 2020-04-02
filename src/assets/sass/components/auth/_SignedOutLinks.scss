@@ -14,19 +14,20 @@
 		right: 12px;
 	}
 	.dropdown-menu {
-		transform: translate3d(-97px, 56px, 0px) !important;
+		transform: translate3d(-88px, 59px, 0px) !important;
 	}
 
 	.auth-link {
-		//font-weight: 600;
 		color: rgba(0, 0, 0, 0.5);
 		width: 100%;
-		&:hover {
-			//background-color: #3f5d513d;
-			color: #725b74;
-			transition: 0.3s;
-			// padding-left: 10px;
-		}
+	}
+	.auth-link:hover {
+		color: #725b74;
+		transition: 0.3s;
+	}
+
+	.dropdown-item {
+		padding: 0.7rem 1.7rem;
 	}
 
 	.dropdown-item:hover,
@@ -35,12 +36,8 @@
 		color: #16181b;
 		text-decoration: none;
 		background-color: #3f5d513d;
-		//padding-left: 26px;
-		//transition: 0.3s;
 	}
-	.dropdown-signup-button {
-		outline: none;
-	}
+
 	.dropdown-login-button {
 		padding: 0.5rem 0rem;
 		display: block;

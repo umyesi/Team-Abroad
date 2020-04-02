@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { logIn } from "../../store/actions/authActions";
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+// import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+// import firebase from "firebase/app";
 
 class SignInModal extends Component {
 	constructor() {
@@ -14,6 +16,19 @@ class SignInModal extends Component {
 			password: ""
 		};
 	}
+	// uiConfig = {
+	// 	// Popup signin flow rather than redirect flow.
+	// 	signInFlow: "popup",
+	// 	// We will display Google and Facebook as auth providers.
+	// 	signInOptions: [
+	// 		//firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+	// 		firebase.auth.FacebookAuthProvider.PROVIDER_ID
+	// 	],
+	// 	callbacks: {
+	// 		// Avoid redirects after sign-in.
+	// 		signInSuccessWithAuthResult: () => false
+	// 	}
+	// };
 
 	componentDidMount() {
 		if (this.props.showModal) {
@@ -49,17 +64,19 @@ class SignInModal extends Component {
 	render() {
 		const { authError, onHide, switchModal, showModal } = this.props;
 
-		//const isMobile = window.innerWidth < 720;
-
 		if (showModal) {
 			return (
 				<div
 					className='container-fluid signin-modal-container'
 					onClick={onHide}
 				>
-					<div className='form-container' onClick={e => e.stopPropagation()}>
-						<Form onSubmit={this.handleSubmit}>
-							<h2>Sign In</h2>
+					<div
+						className='modal-form-container'
+						onClick={e => e.stopPropagation()}
+					>
+						<Form className='signin-form' onSubmit={this.handleSubmit}>
+							<h2 className='signin-header'>Sign in</h2>
+
 							<Form.Group className='forgot-password-input'>
 								<Form.Label htmlFor='email' className='floatLabel'>
 									Email address
@@ -105,6 +122,10 @@ class SignInModal extends Component {
 								{authError ? <p>{authError}</p> : null}
 							</div>
 						</Form>
+						{/* <StyledFirebaseAuth
+							uiConfig={this.uiConfig}
+							firebaseAuth={firebase.auth()}
+						/> */}
 						<div className='create-account'>
 							<h5>Don't have an Account?</h5>
 

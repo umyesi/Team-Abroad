@@ -75,10 +75,10 @@ class OurPrograms extends React.Component {
 					</div>
 
 					<div
-						className={`french-courses  col-md-4 ${frenchInfo ? "active" : ""}`}
+						className={`french-program  col-md-4 ${frenchInfo ? "active" : ""}`}
 						onClick={() => this.showInfo("frenchInfo")}
 					>
-						<img src={fflag} alt='Fnglish Flag' />
+						<img src={fflag} alt='French Flag' />
 						<h3>
 							Program held in French <br /> Language
 						</h3>

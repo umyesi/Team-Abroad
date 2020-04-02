@@ -33,382 +33,355 @@
 		text-align: justify;
 		line-height: 1.5rem;
 	}
+}
 
-	.service-content {
-		padding: 5rem 0 10rem;
-		//justify-content: space-around;
-		.service-navigation {
-			ul {
-				text-align: right;
-				&:after {
-					content: "";
-					background: #e5e5e5;
-					position: absolute;
-					left: auto;
-					right: 0;
-					width: 1px;
-					height: 100%;
-					top: 0;
-				}
-				li {
-					h4 {
-						display: inline-block;
-						color: #5a6069;
-						cursor: pointer;
-						padding-top: 14px;
-						padding-bottom: 14px;
-						font-weight: 400;
-						font-size: 20px;
-						&:hover {
-							color: #599079;
-						}
-						&.active {
-							color: #599079;
-							&:after {
-								content: "";
-								background: #bc0f0f;
-								position: absolute;
-								left: auto;
-								right: 0;
-								width: 1px;
-								height: 22px;
-								z-index: 1;
-							}
-						}
-					}
-				}
-			}
+.service-content {
+	padding: 5rem 0 10rem;
+}
+
+.service-navigation {
+	ul {
+		text-align: right;
+	}
+	ul:after {
+		content: "";
+		background: #e5e5e5;
+		position: absolute;
+		left: auto;
+		right: 0;
+		width: 1px;
+		height: 100%;
+		top: 0;
+	}
+
+	li h4 {
+		display: inline-block;
+		color: #5a6069;
+		cursor: pointer;
+		padding-top: 14px;
+		padding-bottom: 14px;
+		font-weight: 400;
+		font-size: 20px;
+		&:hover {
+			color: #599079;
 		}
-		.service-info {
-			padding-left: 3rem;
-			.hidden {
-				display: none;
-			}
-			h2 {
-				text-align: left;
-				color: #d61717;
-				font-size: 1.5rem;
-				padding-bottom: 1rem;
-			}
-			p {
-				font-size: 17px;
-				line-height: 1.5rem;
-				padding-bottom: 1rem;
-			}
+		&.active {
+			color: #599079;
 		}
-
-		.school {
-			.school-gallery {
-				display: flex;
-
-				div {
-					max-height: 100px;
-					flex-grow: 1;
-				}
-				img {
-					//width: 100%;
-					height: 100%;
-				}
-			}
+		&.active:after {
+			content: "";
+			background: #bc0f0f;
+			position: absolute;
+			left: auto;
+			right: 0;
+			width: 1px;
+			height: 22px;
+			z-index: 1;
 		}
+	}
+}
+.service-info {
+	padding-left: 3rem;
+	.hidden {
+		display: none;
+	}
+	h2 {
+		text-align: left;
+		color: #d61717;
+		font-size: 1.5rem;
+		padding-bottom: 1rem;
+	}
+	p {
+		font-size: 17px;
+		line-height: 1.5rem;
+		padding-bottom: 1rem;
+	}
+}
 
-		.accomodation {
-			.campsite-services {
-				text-align: left;
-				margin-top: 13rem;
-				color: #000000ab;
-				h3 {
-					font-size: 18px;
-					font-weight: bold;
+// This is inside Accomodation
+.service-info .campsite-services {
+	text-align: left;
+	margin-top: 13rem;
+	color: #000000ab;
+	h3 {
+		font-size: 18px;
+		font-weight: bold;
 
-					padding-bottom: 1rem;
-				}
-				ul {
-					list-style: square;
-					max-width: 50rem;
-					padding: 0 0 2rem 1rem;
-					font-size: 14px;
+		padding-bottom: 1rem;
+	}
+	ul {
+		list-style: square;
+		max-width: 50rem;
+		padding: 0 0 2rem 1rem;
+		font-size: 14px;
+	}
+	li {
+		padding-bottom: 0.5rem;
+	}
+}
 
-					li {
-						padding-bottom: 0.5rem;
-					}
-				}
-			}
+.service-info .transfers {
+	img {
+		border-radius: 146px;
+	}
+}
+.service-info .meals {
+	img {
+		max-width: 20rem;
+		top: 14%;
+		position: absolute;
+		left: 35%;
+		opacity: 0.1;
+	}
+}
+
+// activities
+
+.service-info .activities .thumbnail-gallery-title {
+	margin: 30px 0 17px;
+
+	.container-anim {
+		color: #260119;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 32px;
+		font-family: Cursive;
+		width: 100%;
+		bottom: 45%;
+		display: block;
+	}
+	.switch-heritages {
+		height: 70px;
+		overflow: hidden;
+		padding-top: 1.4rem;
+	}
+	.switch-heritages::after {
+		content: "";
+		animation: show-heritages;
+		-webkit-animation: show-heritages;
+		white-space: nowrap;
+		animation-name: show-heritages;
+		-webkit-animation-name: show-heritages;
+		animation-duration: 15s;
+		-webkit-animation-duration: 15s;
+		//animation-timing-function: linear;
+		animation-timing-function: steps(1, end);
+		-webkit-animation-timing-function: steps(1, end);
+		animation-iteration-count: infinite;
+		-webkit-animation-iteration-count: infinite;
+	}
+	.switch-activities {
+		height: 70px;
+		overflow: hidden;
+		padding-top: 1.4rem;
+	}
+	.switch-activities::after {
+		content: "";
+		animation: show-activities;
+		-webkit-animation: show-activities;
+		white-space: nowrap;
+		animation-name: show-activities;
+		-webkit-animation-name: show-activities;
+		animation-duration: 15s;
+		//animation-timing-function: linear;
+		animation-timing-function: steps(1, end);
+		animation-iteration-count: infinite;
+	}
+
+	@keyframes show-heritages {
+		0% {
+			content: ":)";
+			background: #f3f705;
+			//background: #f2911b;
 		}
-		.agenda-link {
-			a {
-				color: #d61717;
-				font-weight: 600;
-				text-decoration: underline;
-			}
+		10% {
+			content: "Eiffel Tower";
+			background: #3df106;
 		}
-		.activities {
-			.thumbnail-gallery {
-				margin-right: 0;
-				margin-left: 0;
-				margin: 0 0 3rem 0;
-
-				.thumbnail-gallery-title {
-					margin: 30px 0 17px;
-
-					.container-anim {
-						color: #260119;
-						text-align: center;
-						text-transform: uppercase;
-						font-size: 32px;
-						font-family: Cursive;
-						width: 100%;
-						bottom: 45%;
-						display: block;
-					}
-					.switch-heritages {
-						height: 70px;
-						overflow: hidden;
-						padding-top: 1.4rem;
-
-						&::after {
-							content: "";
-							animation: show-heritages;
-							white-space: nowrap;
-							animation-name: show-heritages;
-							animation-duration: 15s;
-							//animation-timing-function: linear;
-							animation-timing-function: steps(1, end);
-							animation-iteration-count: infinite;
-						}
-					}
-					.switch-activities {
-						height: 70px;
-						overflow: hidden;
-						padding-top: 1.4rem;
-
-						&::after {
-							content: "";
-							animation: show-activities;
-							white-space: nowrap;
-							animation-name: show-activities;
-							animation-duration: 15s;
-							//animation-timing-function: linear;
-							animation-timing-function: steps(1, end);
-							animation-iteration-count: infinite;
-						}
-					}
-
-					@keyframes show-heritages {
-						0% {
-							content: ":)";
-							background: #f3f705;
-							//background: #f2911b;
-						}
-						10% {
-							content: "Eiffel Tower";
-							background: #3df106;
-						}
-						20% {
-							content: "Notre-Dame de Paris";
-							background: #dca5f1;
-						}
-						30% {
-							content: "Sacré-Coeur";
-							background: #f2911b;
-						}
-						40% {
-							content: "Sorbonne University";
-							background: #f21bce;
-						}
-						50% {
-							content: "Triumphal Arch";
-							background: #e9fa02;
-						}
-						60% {
-							content: "Champs-Élysées";
-							background: #f50404;
-						}
-						70% {
-							content: "Louvre Museum";
-							background: #1bf2bc;
-						}
-						80% {
-							content: "Disneyland";
-							background: #1b8af2;
-						}
-						90% {
-							content: "Palace of Versailles";
-
-							background: #b9f21b;
-						}
-						100% {
-							content: "";
-							background: #b51bf2;
-						}
-					}
-					@keyframes show-activities {
-						0% {
-							content: ":)";
-							background: #f3f705;
-							//background: #f2911b;
-						}
-						10% {
-							content: "Seine River Cruise";
-							background: #3df106;
-						}
-						20% {
-							content: "Bowling Party";
-							background: #dca5f1;
-						}
-						30% {
-							content: "Paris By Mouth Food tours";
-							background: #f2911b;
-						}
-						40% {
-							content: "Paintball";
-							background: #f21bce;
-						}
-						50% {
-							content: "Vincennes Lake Trip";
-							background: #e9fa02;
-						}
-						60% {
-							content: "Karaoke Evening";
-							background: #f50404;
-						}
-						70% {
-							content: "Board Games";
-							background: #1bf2bc;
-						}
-						80% {
-							content: "Sport Activities";
-							background: #1b8af2;
-						}
-						90% {
-							content: "Campsite Activities";
-
-							background: #b9f21b;
-						}
-						100% {
-							content: "";
-							background: #b51bf2;
-						}
-					}
-				}
-				.thumbnail-container {
-					padding: 0 2px 2px 0;
-					margin: 0;
-				}
-
-				.thumbnail {
-					backface-visibility: hidden;
-					display: inline-block;
-					position: relative;
-					overflow: hidden;
-					background: #000;
-					height: 100%;
-					//box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
-					height: 100%;
-				}
-				.thumbnail img {
-					display: block;
-					width: 100%;
-					height: 100%;
-					transition: opacity 0.2s ease-in-out;
-				}
-				.data-title,
-				.data-description {
-					position: absolute;
-					z-index: 1;
-					width: 100%;
-					height: 50%;
-					transition: transform 0.4s ease-out;
-				}
-				.data-title {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					top: 0;
-					left: 0;
-					transform: translateY(-100%) scale(0.8);
-					background: rgba(0, 0, 0, 0.4);
-					font-family: Merriweather, serif;
-					visibility: hidden;
-
-					h1 {
-						font-size: 2vw;
-						font-weight: 300;
-						color: #fff;
-					}
-				}
-				.data-description {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					top: 50%;
-					left: 0;
-					padding: 0 2%;
-					transform: translateY(100%) scale(0.8);
-					background: rgba(107, 38, 68, 0.6);
-					backdrop-filter: blur(10px);
-					visibility: hidden;
-					p {
-						font-size: 1vw;
-						line-height: 1.1;
-						color: #f1f1f1;
-						text-align: center;
-						//text-align-last: center;
-						//height: 38px;
-					}
-				}
-				.paintball,
-				// .karaoke .data-description {
-				// 	svg {
-				// 		display: inline-block;
-				// 		position: absolute;
-				// 		margin-left: 0.5rem;
-				// 		font-size: 21px;
-				// 		color: #fbb61b;
-				// 	}
-				// }
-				.thumbnail:hover .data-title,
-				.thumbnail:hover .data-description {
-					visibility: visible;
-					transform: translateY(0%) scale(1);
-					z-index: 1000;
-				}
-
-				.thumbnail:hover img {
-					opacity: 0.5;
-				}
-			}
+		20% {
+			content: "Notre-Dame de Paris";
+			background: #dca5f1;
 		}
-		.transfers {
-			img {
-				border-radius: 146px;
-			}
+		30% {
+			content: "Sacré-Coeur";
+			background: #f2911b;
 		}
-		.meals {
-			img {
-				max-width: 20rem;
-				top: 14%;
-				position: absolute;
-				left: 35%;
-				opacity: 0.1;
-			}
+		40% {
+			content: "Sorbonne University";
+			background: #f21bce;
+		}
+		50% {
+			content: "Triumphal Arch";
+			background: #e9fa02;
+		}
+		60% {
+			content: "Champs-Élysées";
+			background: #f50404;
+		}
+		70% {
+			content: "Louvre Museum";
+			background: #1bf2bc;
+		}
+		80% {
+			content: "Disneyland";
+			background: #1b8af2;
+		}
+		90% {
+			content: "Palace of Versailles";
+
+			background: #b9f21b;
+		}
+		100% {
+			content: "";
+			background: #b51bf2;
+		}
+	}
+
+	@keyframes show-activities {
+		0% {
+			content: ":)";
+			background: #3df106;
+		}
+		10% {
+			content: "Seine River Cruise";
+			background: #f3f705;
+		}
+		20% {
+			content: "Bowling Party";
+			background: #f21bce;
+		}
+		30% {
+			content: "Paris By Mouth Food tours";
+
+			background: #f50404;
+		}
+		40% {
+			content: "Paintball";
+			background: #dca5f1;
+		}
+		50% {
+			content: "Vincennes Lake Trip";
+			background: #1b8af2;
+		}
+		60% {
+			content: "Karaoke Evening";
+			background: #f2911b;
+		}
+		70% {
+			content: "Board Games";
+			background: #b9f21b;
+		}
+		80% {
+			content: "Sport Activities";
+			background: #e9fa02;
+		}
+		90% {
+			content: "Campsite Activities";
+			background: #1bf2bc;
+		}
+		100% {
+			content: "";
+			background: #b51bf2;
 		}
 	}
 }
 
+.service-info .activities .thumbnail-gallery {
+	margin-right: 0;
+	margin-left: 0;
+	margin: 0 0 3rem 0;
+
+	.thumbnail-container {
+		padding: 0 2px 2px 0;
+		margin: 0;
+	}
+	.thumbnail {
+		backface-visibility: hidden;
+		display: inline-block;
+		position: relative;
+		overflow: hidden;
+		background: #000;
+		height: 100%;
+		//box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+		height: 100%;
+	}
+
+	.thumbnail img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		transition: opacity 0.2s ease-in-out;
+	}
+	.data-title,
+	.data-description {
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		height: 50%;
+		transition: transform 0.4s ease-out;
+	}
+	.data-title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 0;
+		left: 0;
+		transform: translateY(-100%) scale(0.8);
+		background: rgba(0, 0, 0, 0.4);
+		font-family: Merriweather, serif;
+		visibility: hidden;
+
+		h1 {
+			font-size: 2vw;
+			font-weight: 300;
+			color: #fff;
+		}
+	}
+	.data-description {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 50%;
+		left: 0;
+		padding: 0 2%;
+		transform: translateY(100%) scale(0.8);
+		background: rgba(107, 38, 68, 0.6);
+		backdrop-filter: blur(10px);
+		visibility: hidden;
+		p {
+			font-size: 1vw;
+			line-height: 1.1;
+			color: #f1f1f1;
+			text-align: center;
+		}
+	}
+	.paintball,
+	.thumbnail:hover .data-title,
+	.thumbnail:hover .data-description {
+		visibility: visible;
+		transform: translateY(0%) scale(1);
+		z-index: 1000;
+	}
+
+	.thumbnail:hover img {
+		opacity: 0.5;
+	}
+}
+
+// pdf version of 10 days program at the end of Activities page
+.service-info .agenda-link a {
+	color: #d61717;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
 @media screen and (min-width: 1600px) {
-	.activities {
-		.thumbnail-gallery {
-			.data-title {
-				h1 {
-					font-size: 22px;
-				}
-			}
-			.data-description {
-				p {
-					font-size: 14px;
-				}
-			}
+	.activities .thumbnail-gallery {
+		.data-title h1 {
+			font-size: 22px;
+		}
+		.data-description p {
+			font-size: 14px;
 		}
 	}
 }
@@ -421,67 +394,55 @@
 		p {
 			font-size: 17px;
 		}
-		.service-content {
-			.service-navigation {
-				ul {
-					font-size: 13px;
-					text-align: left;
-					li {
-						h4 {
-							font-size: 15px;
-							&.active {
-								&:after {
-									left: 2px;
-								}
-							}
-						}
-					}
-				}
-			}
-			.service-info {
-				padding-left: 1rem;
-				.hidden {
-					display: none;
-				}
-				h2 {
-					font-size: 1.5rem;
-				}
-				p {
-					font-size: 15px;
-				}
-				.transfers {
-					img {
-						height: 100%;
-						min-width: 190px;
-					}
-				}
-				.meals {
-					img {
-						max-width: 20rem;
-						top: 14%;
-						position: absolute;
-						left: 35%;
-						opacity: 0.1;
-					}
-				}
-			}
-			.activities {
-				.thumbnail-gallery {
-					.thumbnail-gallery-title .container-anim {
-						font-size: 27px;
-					}
-					.data-title {
-						h1 {
-							font-size: 6vw;
-						}
-					}
-					.data-description {
-						p {
-							font-size: 3vw;
-						}
-					}
-				}
-			}
+	}
+
+	.service-navigation {
+		padding: 5px;
+		ul {
+			font-size: 13px;
+			text-align: left;
+		}
+		h4 {
+			font-size: 15px;
+		}
+
+		h4.active:after {
+			left: 2px;
+		}
+	}
+	.service-info {
+		padding-left: 1rem;
+		.hidden {
+			display: none;
+		}
+		h2 {
+			font-size: 1.5rem;
+		}
+		p {
+			font-size: 15px;
+		}
+		.transfers img {
+			height: 100%;
+			min-width: 190px;
+		}
+		.meals img {
+			max-width: 20rem;
+			top: 14%;
+			position: absolute;
+			left: 35%;
+			opacity: 0.1;
+		}
+	}
+
+	.activities .thumbnail-gallery {
+		.thumbnail-gallery-title .container-anim {
+			font-size: 27px;
+		}
+		.data-title h1 {
+			font-size: 6vw;
+		}
+		.data-description p {
+			font-size: 3vw;
 		}
 	}
 }
@@ -489,60 +450,66 @@
 @media screen and (max-width: 575.5px) {
 	.service-container {
 		h2 {
-			font-size: 3rem;
+			font-size: 2rem;
 		}
-		.service-content {
-			.service-info {
-				padding-left: 0;
+		.service-info {
+			padding-left: 0;
+		}
+
+		.activities .thumbnail-gallery {
+			.data-title h1 {
+				font-size: 10vw;
 			}
-			.activities {
-				.thumbnail-gallery {
-					.data-title {
-						h1 {
-							font-size: 10vw;
-						}
-					}
-					.data-description {
-						p {
-							font-size: 4.5vw;
-						}
-					}
-				}
-			}
-			.service-navigation {
-				ul {
-					display: flex;
-					flex-wrap: wrap;
-					margin-bottom: 2rem;
-					margin: 0 auto 2rem;
-					justify-content: space-around;
-					text-align: center;
-					&:after {
-						display: none;
-					}
-					li {
-						padding: 5px 4px;
-						h4 {
-							border-radius: 0.25rem;
-							color: #599079;
-							padding: 0.5rem 1rem;
-							font-size: 15px;
-							background-color: #f5d367;
-							font-weight: bold;
-							width: 164px;
-							&:hover {
-								color: #599079;
-							}
-							&.active {
-								color: #d73b1e;
-								&:after {
-									display: none;
-								}
-							}
-						}
-					}
-				}
+			.data-description p {
+				font-size: 4.5vw;
 			}
 		}
+	}
+
+	.service-navigation {
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 2rem;
+			margin: 0 auto 2rem;
+			justify-content: space-around;
+			text-align: center;
+		}
+		ul:after {
+			display: none;
+		}
+		li {
+			padding: 5px 4px;
+		}
+		li h4 {
+			border-radius: 0.25rem;
+			color: #599079;
+			padding: 0.5rem 1rem;
+			font-size: 15px;
+			background-color: #f5d367;
+			font-weight: bold;
+			width: 164px;
+		}
+		li h4:hover {
+			color: #599079;
+		}
+		li h4.active {
+			color: #d73b1e;
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 368.5px) {
+	.service-container .service-content .service-navigation ul li h4 {
+		border-radius: 0.25rem;
+		color: #599079;
+		padding: 0.5rem 1rem;
+		font-size: 13px;
+		background-color: #f5d367;
+		font-weight: bold;
+		width: 147px;
 	}
 }

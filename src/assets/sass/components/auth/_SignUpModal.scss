@@ -15,65 +15,64 @@
 		margin: 1rem auto 0;
 		box-shadow: 0 0 1em #222;
 		border-radius: 2px;
+	}
 
-		.form-label {
-			color: #767272;
-			font-size: 14px;
-			padding-bottom: 8px;
+	.form-label {
+		color: #767272;
+		font-size: 14px;
+		padding-bottom: 8px;
+	}
+
+	.form-control {
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		outline: none;
+		margin: 0;
+		padding: 1.5rem 0.75rem;
+	}
+	.form-group {
+		margin-bottom: 1.5rem;
+	}
+
+	h2 {
+		margin: 0 0 1.5rem 0;
+		text-align: center;
+		font-size: 42px;
+		color: #599079;
+		font-weight: 600;
+	}
+
+	h5 {
+		text-align: center;
+	}
+
+	.create-account-btn {
+		padding: 0.7rem;
+	}
+
+	.already-member {
+		text-align: center;
+	}
+	.already-member button {
+		background: none;
+		border: none;
+		padding: 0;
+		color: #626365;
+		cursor: pointer;
+		padding-top: 1rem;
+
+		&:hover {
+			color: #1c1a1a;
 		}
-
-		.form-control {
-			display: block;
-			box-sizing: border-box;
-			width: 100%;
-			outline: none;
-			margin: 0;
-			padding: 1.5rem 0.75rem;
+		&:active {
+			color: #d0b7b7;
+			border: none;
+			background-color: #ff000000;
+			box-shadow: none !important;
 		}
-		.form-group {
-			margin-bottom: 1.5rem;
-		}
-
-		h2 {
-			margin: 0 0 1.5rem 0;
-			text-align: center;
-			font-size: 42px;
-			color: #599079;
-			font-weight: 600;
-		}
-
-		h5 {
-			text-align: center;
-		}
-
-		.create-account-btn {
-			padding: 0.7rem;
-		}
-
-		.already-member {
-			text-align: center;
-
-			button {
-				background: none;
-				border: none;
-				padding: 0;
-				color: #626365;
-				cursor: pointer;
-				padding-top: 1rem;
-
-				&:hover {
-					color: #1c1a1a;
-				}
-				&:active {
-					color: #d0b7b7;
-					border: none;
-					background-color: #ff000000;
-					box-shadow: none !important;
-				}
-				&:focus {
-					box-shadow: none;
-				}
-			}
+		&:focus {
+			box-shadow: none;
 		}
 	}
 }

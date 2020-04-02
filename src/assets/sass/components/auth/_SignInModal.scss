@@ -1,76 +1,103 @@
 .signin-modal-container {
 	position: absolute;
+	width: 100%;
+	min-height: 100vh;
 	top: 0;
 	left: 0;
 	background-color: #99636375;
 	font-size: 10px;
-	width: 100%;
-	min-height: 100vh;
 	z-index: 100;
 
-	.form-container {
+	.modal-form-container {
+		width: 29rem;
+		margin: 15px auto 0;
 		background: #fff;
-		width: 465px;
-		margin: 50px auto 0;
 		box-shadow: 0 0 1em #222;
 		border-radius: 2px;
+	}
 
-		form {
-			padding: 4em 4em 2em;
-		}
+	.signin-form {
+		padding: 4em 4em 2em;
+	}
 
-		.form-label {
-			color: #767272;
-			font-size: 14px;
-			padding-bottom: 8px;
-		}
+	.form-label {
+		color: #767272;
+		font-size: 14px;
+		padding-bottom: 8px;
+	}
 
-		.form-control {
-			display: block;
-			box-sizing: border-box;
-			width: 100%;
-			outline: none;
-			margin: 0;
-			padding: 1.5rem 0.75rem;
-			.create-account {
-				text-align: center;
-			}
-		}
-		.form-group {
-			margin-bottom: 1.5rem;
-		}
-
-		h2 {
-			margin: 0 0 1.5rem 0;
-			text-align: center;
-			font-size: 42px;
-			color: #599079;
-			font-weight: 600;
-		}
-
-		.forgot-password-input {
-			position: relative;
-
-			a {
-				color: #242727b0;
-				position: absolute;
-				font-size: 12px;
-				top: 41px;
-				right: 9px;
-				&:hover {
-					color: #599079;
-				}
-			}
-		}
-
+	.form-control {
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		outline: none;
+		margin: 0;
+		padding: 1.5rem 0.75rem;
 		.create-account {
-			background-color: #d6efd0;
-			height: 10rem;
-			padding: 1rem 2.5rem 0 2.5rem;
-			h5 {
-				text-align: center;
-				padding-bottom: 1rem;
-			}
+			text-align: center;
 		}
 	}
+	.form-group {
+		margin-bottom: 1.5rem;
+	}
+
+	.signin-header {
+		margin: 0 0 1.5rem 0;
+		text-align: center;
+		font-size: 42px;
+		color: #599079;
+		font-weight: 600;
+	}
+
+	.forgot-password-input {
+		position: relative;
+	}
+
+	.forgot-password-input a {
+		color: #242727b0;
+		position: absolute;
+		font-size: 12px;
+		top: 43px;
+		right: 11px;
+		&:hover {
+			color: #599079;
+		}
+	}
+
+	.create-account {
+		background-color: #d6efd0;
+		height: 10rem;
+		padding: 1.7rem 2.5rem 0 2.5rem;
+	}
+	.create-account h5 {
+		text-align: center;
+		padding-bottom: 1rem;
+	}
+	// .firebaseui-container.mdl-card {
+	// 	/* overflow: scroll; */
+	// 	position: absolute;
+	// 	top: 20%;
+	// 	left: 32%;
+	// 	right: 32%;
+	// 	/* margin: auto; */
+	// 	/* left: 13px; */
+	// }
+	// .firebaseui-text {
+	// 	color: rgba(0, 0, 0, 0.87);
+	// 	direction: ltr;
+	// 	font-size: 12px;
+	// 	line-height: 24px;
+	// 	text-align: left;
+	// 	white-space: pre-wrap;
+	// }
+	// .firebaseui-container {
+	// 	margin: 0;
+	// }
+	// .firebaseui-idp-list {
+	// 	display: flex;
+	// }
+	// .firebaseui-card-content,
+	// .firebaseui-card-footer {
+	// 	padding: 0;
+	// }
 }

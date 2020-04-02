@@ -58,8 +58,11 @@ const Slider = () => {
 						Team Abroad offers various types of certificated programs during the
 						whole year
 					</p>
-					<Link to='/ourprograms' className=''>
-						<Button variant='outline-light px-md-5 py-md-3 mt-2 mt-sm-3 mt-md-4'>
+					<Link to='/ourprograms'>
+						<Button
+							className='programs-link'
+							variant='outline-light px-md-5 py-md-3 mt-2 mt-sm-3 mt-md-4'
+						>
 							See Programs
 						</Button>
 					</Link>

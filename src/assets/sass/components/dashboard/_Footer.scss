@@ -3,7 +3,7 @@
 	left: 0;
 	right: 0;
 	background-color: #5d415f;
-	min-width: 350px;
+	min-width: 320px;
 	.footer-content {
 		height: 102px;
 		display: flex;
@@ -25,15 +25,15 @@
 		display: flex;
 		justify-content: space-between;
 		width: 100px;
-		.facebook-icon {
-			color: #4267b2;
-		}
-		.instagram-icon {
-			color: #cf4466;
-		}
-		.twitter-icon {
-			color: #09a0e9;
-		}
+	}
+	.facebook-icon {
+		color: #4267b2;
+	}
+	.instagram-icon {
+		color: #cf4466;
+	}
+	.twitter-icon {
+		color: #09a0e9;
 	}
 }
 
@@ -45,20 +45,29 @@
 
 @media screen and (max-width: 495px) {
 	.footer-container {
-		//background-color: #321833;
 		background-color: #5d415f;
 		.Logo {
-			width: 6rem;
+			width: 5rem;
 		}
 		p {
-			font-size: 10px;
+			font-size: 8px;
+		}
+		.social-media {
+			display: flex;
+			justify-content: space-between;
+			width: 69px;
+		}
+		.facebook-icon {
+			color: #4267b2;
+			width: 11px;
+		}
+		.instagram-icon {
+			color: #cf4466;
+			width: 17px;
+		}
+		.twitter-icon {
+			color: #09a0e9;
+			width: 17px;
 		}
 	}
 }
-
-// @media screen and (orientation: landscape) {
-// 	.footer-container {
-// 		//background-color: #321833;
-// 		background-color: #5d415f;
-// 	}
-// }

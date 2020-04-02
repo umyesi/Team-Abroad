@@ -1,11 +1,18 @@
 /**BASE - Base styles, variables, mixins, etc */
-
 @import url("https://fonts.googleapis.com/css?family=Marck+Script&display=swap");
-
 @import "./assets/sass/base/reset";
 @import "./assets/sass/base/base";
-@import "./assets/sass/components/dashboard/Dashboard";
+
+// Dashboard
 @import "./assets/sass/components/dashboard/NavigationBar";
+@import "./assets/sass/components/dashboard/Carousel";
+@import "./assets/sass/components/dashboard/Welcome";
+@import "./assets/sass/components/dashboard/GetQuote";
+@import "./assets/sass/components/dashboard/Location";
+@import "./assets/sass/components/dashboard/Dashboard";
+@import "./assets/sass/components/dashboard/Footer";
+
+// Auth
 @import "./assets/sass/components/auth/SignIn";
 @import "./assets/sass/components/auth/SignInModal";
 @import "./assets/sass/components/auth/SignUp";
@@ -13,13 +20,10 @@
 @import "./assets/sass/components/auth/ResetPassword";
 @import "./assets/sass/components/auth/SignedOutLinks";
 @import "./assets/sass/components/auth/SignedInLinks";
-@import "./assets/sass/components/dashboard/Carousel";
-@import "./assets/sass/components/dashboard/Welcome";
-@import "./assets/sass/components/dashboard/Highlights";
-@import "./assets/sass/components/dashboard/GetQuote";
-@import "./assets/sass/components/dashboard/Location";
-@import "./assets/sass/components/dashboard/Footer";
-@import "./assets/sass/components/pages/OurProgrammes";
+@import "./assets/sass/components/auth/MyAccount";
+
+// Pages
+@import "./assets/sass/components/pages/OurPrograms";
 @import "./assets/sass/components/pages/Services";
 @import "./assets/sass/components/pages/Contact";
 @import "./assets/sass/components/pages/Quote";

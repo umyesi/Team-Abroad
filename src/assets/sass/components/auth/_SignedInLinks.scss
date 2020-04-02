@@ -13,11 +13,21 @@
 	}
 
 	.dropdown-menu {
-		transform: translate3d(-97px, 56px, 0px) !important;
+		transform: translate3d(-88px, 59px, 0px) !important;
+	}
+
+	.auth-link {
+		color: rgba(0, 0, 0, 0.5);
+		width: 100%;
+	}
+	.auth-link:hover {
+		color: #725b74;
+		transition: 0.3s;
 	}
 
 	.dropdown-item {
-		padding: 0.25rem 1rem;
+		padding: 0.7rem 1.7rem;
+		color: rgba(0, 0, 0, 0.5);
 	}
 
 	.dropdown-item:hover,

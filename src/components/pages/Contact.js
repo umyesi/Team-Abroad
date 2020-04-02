@@ -105,28 +105,6 @@ class Contact extends React.Component {
 					</a>
 				</div>
 
-				{/* <div className='contact-info pl-1'>
-					<FaPhone size={23} className='' />
-					<a href='tel:+33 605 88 96 28' className='pt-1'>
-						<p>+33 7 82 73 64 27</p>
-					</a>
-
-					<MdLocationOn size={28} className='' />
-					<div className=''>
-						<a
-							href='https://www.google.fr/maps/place/21+Avenue+Gabriel+P%C3%A9ri,+95100+Argenteuil/@48.9436951,2.2489764,17z/data=!3m1!4b1!4m5!3m4!1s0x47e666774cdf0bbf:0xbc4439b05f0d4e42!8m2!3d48.9436916!4d2.2511651'
-							target='_blank'
-							rel='noopener noreferrer'
-							className='pt-1'
-						>
-							<p>21 Avenue Gabriel Péri,</p>{" "}
-							<p className='pt-1'> 95100 Argenteuil, France</p>
-						</a>
-					</div>
-					<MdEmail size={26} />
-					<p className='pt-1'>umyesigiorgi@gmail.com</p>
-				</div> */}
-
 				{messageSent ? (
 					<div className='message-sent'>
 						<img className='email-sent' src={emailsent} alt='message-sent' />

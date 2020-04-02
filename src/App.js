@@ -5,6 +5,7 @@ import Footer from "./components/dashboard/Footer";
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import ResetPassword from "./components/auth/ResetPassword";
+import MyAccount from "./components/auth/MyAccount";
 import DashBoard from "./components/dashboard/DashBoard";
 import OurPrograms from "./components/pages/OurPrograms";
 import Services from "./components/pages/Services";
@@ -12,7 +13,6 @@ import Contact from "./components/pages/Contact";
 import Quote from "./components/pages/Quote";
 import AboutUs from "./components/pages/AboutUs";
 import NoMatch from "./components/pages/NoMatch";
-//import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
 	constructor(props) {
@@ -33,6 +33,7 @@ class App extends Component {
 					<Route path='/signin' component={SignIn} />
 					<Route path='/signup' component={SignUp} />
 					<Route path='/reset-password' component={ResetPassword} />
+					<Route path='/my-account' component={MyAccount} />
 					<Route
 						path='/ourprograms'
 						render={props => (

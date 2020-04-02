@@ -28,7 +28,7 @@ class Location extends Component {
 							<hr className='' />
 							<div className='contact-info '>
 								<FaPhone size={23} className='' />
-								<a href='tel:+33 605 88 96 28' className='pt-1'>
+								<a href='tel:+33 605 88 96 28' className='pt-1 contact-link'>
 									+33 7 82 73 64 27
 								</a>
 								<div className='location-icon'>
@@ -39,7 +39,7 @@ class Location extends Component {
 										href='https://www.google.fr/maps/place/21+Avenue+Gabriel+P%C3%A9ri,+95100+Argenteuil/@48.9436951,2.2489764,17z/data=!3m1!4b1!4m5!3m4!1s0x47e666774cdf0bbf:0xbc4439b05f0d4e42!8m2!3d48.9436916!4d2.2511651'
 										target='_blank'
 										rel='noopener noreferrer'
-										className='pt-1'
+										className='pt-1 contact-link'
 									>
 										<p>21 Avenue Gabriel Péri,</p>{" "}
 										<p className='pt-1'> 95100 Argenteuil, France</p>
@@ -53,7 +53,7 @@ class Location extends Component {
 									href={`mailto:${"teamabroad2019@gmail.com"}`}
 									target='_blank'
 									rel='noopener noreferrer'
-									className='pt-1'
+									className='pt-1 contact-link'
 								>
 									teamabroad2019@gmail.com
 								</a>
@@ -67,46 +67,3 @@ class Location extends Component {
 }
 
 export default Location;
-
-// import React, { Component } from "react";
-// import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
-
-// class Location extends Component {
-//   render() {
-//     const mapStyles = {
-//       width: "40%",
-//       height: "50%",
-//       "min-width": "300px",
-//       "margin-top": "5rem",
-//       //"background-color": "red"
-//     };
-//     return (
-//       <div className="map-container container-fluid">
-//         <Map
-//           className="location "
-//           google={this.props.google}
-//           zoom={11}
-//           style={mapStyles}
-//           initialCenter={{ lat: 48.947907, lng: 2.24818 }}
-//         >
-//           <Marker position={{ lat: 48.0, lng: -122.0 }} />
-//         </Map>
-
-/* <div className="contact-info">
-          <h3>Contact Us</h3>
-          <hr/>
-           <p>+33 6 05 88 96 28</p>
-           <p>63, rue de la fosse aux bergers</p>
-           <p>Villemomble, France</p>
-           <p>umyesigiorgi@gmail.com</p>
-          </div> */
-
-//       </div>
-//<div/>
-//     );
-//   }
-// }
-
-// export default GoogleApiWrapper({
-//   apiKey: "AIzaSyAeq4GF6PPA4MkYK2ephjOo9vBrBJjzWm4"
-// })(Location);

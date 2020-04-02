@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { resetPassword } from "../../store/actions/authActions";
 import emailsent from "../../assets/images/emailsent.png";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 
 class ResetPassword extends Component {
@@ -47,39 +47,36 @@ class ResetPassword extends Component {
 			);
 		} else {
 			return (
-				<div>
-					<div className='reset-password-container'>
-						<div className='reset-content'>
-							<Form className='form-container' onSubmit={this.handleSubmit}>
-								<h2>Forgot your password?</h2>
-								<p>
-									Don't worry. Resetting your password is easy, just tell us the
-									email address you registered with Team Abroad
-								</p>
-								<Form.Group className='signin-form-group'>
-									<Form.Label htmlFor='email' className='signin-form-label'>
-										Email address
-									</Form.Label>
-									<Form.Control
-										type='email'
-										id='email'
-										className='signin-form-control'
-										onChange={this.handleChange}
-									/>
-								</Form.Group>
+				<div className='reset-password-container'>
+					<div className='reset-content'>
+						<Form className='form-container' onSubmit={this.handleSubmit}>
+							<h2>Forgot your password?</h2>
+							<p>
+								Don't worry. Resetting your password is easy, just tell us the
+								email address you registered with Team Abroad
+							</p>
+							<Form.Group className='signin-form-group'>
+								<Form.Label htmlFor='email' className='signin-form-label'>
+									Email address
+								</Form.Label>
+								<Form.Control
+									type='email'
+									id='email'
+									className='signin-form-control'
+									onChange={this.handleChange}
+								/>
+							</Form.Group>
 
-								<Button
-									variant='success'
-									type='submit'
-									className='btn btn-block'
-								>
-									SEND RESET INSTRUCTIONS
-								</Button>
-								<div className='text-center text-danger mt-3'>
-									{authError ? <p>{authError}</p> : null}
-								</div>
-							</Form>
-						</div>
+							<Button variant='success' type='submit' className='btn btn-block'>
+								SEND RESET INSTRUCTIONS
+							</Button>
+							<div className='text-center text-danger mt-3'>
+								{authError ? <p>{authError}</p> : null}
+							</div>
+							<div className='go-back'>
+								<Link to='/signin'>Go back to to sign in</Link>
+							</div>
+						</Form>
 					</div>
 				</div>
 			);

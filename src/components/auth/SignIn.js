@@ -3,19 +3,35 @@ import { connect } from "react-redux";
 import { logIn } from "../../store/actions/authActions";
 import { Redirect, Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
+// import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+// import firebase from "firebase/app";
 
 class SignIn extends Component {
 	state = {
 		email: "",
 		password: ""
 	};
+
+	// uiConfig = {
+	// 	// Popup signin flow rather than redirect flow.
+	// 	signInFlow: "popup",
+	// 	// We will display Google and Facebook as auth providers.
+	// 	signInOptions: [
+	// 		firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+	// 		firebase.auth.FacebookAuthProvider.PROVIDER_ID
+	// 	],
+	// 	callbacks: {
+	// 		// Avoid redirects after sign-in.
+	// 		signInSuccessWithAuthResult: () => false
+	// 	}
+	// };
 	componentDidMount() {
 		setTimeout(() => {
 			window.scroll(0, 0);
 		}, 200);
 	}
 
-	componentWillUnmount(dispatch) {
+	componentWillUnmount() {
 		this.props.resetAuth();
 	}
 
@@ -74,9 +90,14 @@ class SignIn extends Component {
 						>
 							Submit
 						</Button>
+
 						<div className='text-center text-danger mt-3'>
 							{authError ? <p>{authError}</p> : null}
 						</div>
+						{/* <StyledFirebaseAuth
+							uiConfig={this.uiConfig}
+							firebaseAuth={firebase.auth()}
+						/> */}
 						<div className='create-account'>
 							<Link to='/signup'>Don't have an Account? Sign Up</Link>
 						</div>

@@ -51,7 +51,6 @@ class SignedOutLinks extends React.Component {
 					toggle={this.toggle}
 				>
 					<DropdownToggle tag='a' className='nav-link'>
-						{/* <FaUser size={24} className="icon" /> */}
 						<AiOutlineUser size={28} className='icon' />
 					</DropdownToggle>
 					<DropdownMenu right>
@@ -62,36 +61,17 @@ class SignedOutLinks extends React.Component {
 							Sign In
 						</div>
 						<DropdownItem divider />
-						<DropdownItem
-							className='dropdown-signup-button'
-							onClick={event => this.handleModalOpen(event, 1)}
-						>
-							<div className='nav-link auth-link'>Sign Up</div>
+						<DropdownItem onClick={event => this.handleModalOpen(event, 1)}>
+							<div className='auth-link'>Sign Up</div>
 						</DropdownItem>
 
-						<DropdownItem>
-							<Link
-								className='nav-link auth-link'
-								to={{
-									pathname: "/contact",
-									state: { modal: true }
-								}}
-							>
-								Contact
-							</Link>
-						</DropdownItem>
+						<Link to='/contact'>
+							<DropdownItem className='auth-link'>Contact</DropdownItem>
+						</Link>
 
-						<DropdownItem>
-							{" "}
-							<Link
-								className='nav-link auth-link'
-								to={{
-									pathname: "/contact"
-								}}
-							>
-								Help
-							</Link>
-						</DropdownItem>
+						<Link to='/contact'>
+							<DropdownItem className='auth-link'> Help</DropdownItem>
+						</Link>
 					</DropdownMenu>
 				</Dropdown>
 			</Nav>

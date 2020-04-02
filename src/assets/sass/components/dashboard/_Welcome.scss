@@ -7,12 +7,12 @@
 		font-size: 3rem;
 		font-weight: 700;
 		color: #706b67;
-		.team {
-			color: #f8d747;
-		}
-		.abroad {
-			color: #79cba9;
-		}
+	}
+	.team {
+		color: #f8d747;
+	}
+	.abroad {
+		color: #79cba9;
 	}
 	hr {
 		width: 14rem;
@@ -31,76 +31,72 @@
 		line-height: 1.5em;
 		font-size: 18px;
 	}
-	.paris-container {
-		margin: 4rem 0 4rem;
-		@media screen and (min-width: 765px) {
-			margin: 7rem 0 7rem;
-		}
-
-		.paris-content {
-			padding: 0 20px;
-
-			iframe {
-				border-radius: 0.3rem;
-				width: 100%;
-				padding-top: 36px;
-				z-index: 2000;
-			}
-
-			.paris-text {
-				font-size: 1.1rem;
-				position: relative;
-				.paris-background {
-					position: absolute;
-					width: 96%;
-					opacity: 0.2;
-					bottom: 0;
-				}
-				.paris-header {
-					padding-bottom: 1rem;
-
-					h2 {
-						display: inline;
-						font-size: 2.5rem;
-						font-weight: 600;
-						color: #1105058c;
-						text-align: left;
-						font-weight: 600;
-						display: inline;
-					}
-					.team {
-						color: #f8d747;
-					}
-					.abroad {
-						color: #79cba9;
-					}
-
-					img {
-						width: 117px;
-						vertical-align: text-bottom;
-						margin-bottom: -9px;
-					}
-				}
-
-				p {
-					color: #595963;
-					line-height: 1.5em;
-					font-size: 18px;
-					text-align: justify;
-				}
-			}
-		}
+}
+.paris-container {
+	margin: 4rem 0 4rem;
+	@media screen and (min-width: 765px) {
+		margin: 7rem 0 7rem;
 	}
 
-	@media screen and (max-width: 500px) {
-		.highlights {
-			.paris-content {
-				.highlight-description {
-					h2 {
-						font-size: 2rem;
-					}
-				}
-			}
+	.paris-content {
+		padding: 0 20px;
+	}
+	iframe {
+		border-radius: 0.3rem;
+		width: 100%;
+		padding-top: 36px;
+		z-index: 2000;
+	}
+
+	.paris-text {
+		font-size: 1.1rem;
+		position: relative;
+	}
+	.paris-background {
+		position: absolute;
+		width: 96%;
+		opacity: 0.2;
+		bottom: 0;
+	}
+	.paris-header {
+		padding-bottom: 1rem;
+		text-align: left;
+	}
+	.paris-header h2 {
+		display: inline;
+		font-size: 2rem;
+		font-weight: 600;
+		color: #1105058c;
+		font-weight: 600;
+		display: inline;
+	}
+	.team {
+		color: #f8d747;
+	}
+	.abroad {
+		color: #79cba9;
+	}
+
+	img {
+		width: 117px;
+		vertical-align: text-bottom;
+		margin-bottom: -9px;
+	}
+
+	p {
+		color: #595963;
+		line-height: 1.5em;
+		font-size: 18px;
+		text-align: justify;
+	}
+}
+
+@media screen and (max-width: 960px) {
+	.paris-container .paris-header {
+		text-align: center;
+		padding: 0 4% 1.5rem;
+		h2 {
+			font-size: 1.5rem;
 		}
 	}
 }

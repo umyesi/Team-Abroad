@@ -297,7 +297,7 @@ class NavigationBar extends React.Component {
 												this.props.serviceInfo.accomodation ? "active" : ""
 											} `}
 										>
-											Accomodation
+											Accommodation
 										</Link>
 									</div>
 									<div>
@@ -401,8 +401,8 @@ class NavigationBar extends React.Component {
 								{auth.uid ? (
 									<div>
 										<NavLink
-											to='/signin'
-											className='nav-link toggle-signin clicked'
+											to='/my-account'
+											className='nav-link navigation-link  clicked'
 										>
 											My Account
 										</NavLink>
@@ -460,4 +460,3 @@ export default compose(
 	withRouter,
 	connect(mapStateToProps, mapDispatchToProps)
 )(NavigationBar);
-//export default connect(mapStateToProps, mapDispatchToProps)(NavigationBar);

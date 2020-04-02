@@ -25,7 +25,6 @@ class SignUpModal extends Component {
 	}
 
 	componentDidUpdate() {
-		console.log(this.props);
 		if (this.props.showModal) {
 			document.body.style.overflow = "hidden";
 		} else {
@@ -61,7 +60,7 @@ class SignUpModal extends Component {
 						onClick={e => e.stopPropagation()}
 						onSubmit={this.handleSubmit}
 					>
-						<h2>Sign Up </h2>
+						<h2>Sign up </h2>
 						<Form.Group>
 							<Form.Label htmlFor='Email' className='floatLabel'>
 								Email address

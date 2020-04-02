@@ -4,90 +4,114 @@
 	text-align: center;
 
 	img {
-		//filter: blur(1px);
-
 		filter: brightness(50%);
 	}
 	.get-quote-content {
 		position: absolute;
+		right: 1%;
+		left: 1%;
 		top: 31%;
+	}
 
-		.get-quote-header {
-			h2 {
-				color: #eef5f1;
-				display: inline-block;
-				font-size: 3rem;
-				font-weight: 600;
-				width: 100%;
-				z-index: 100;
-				padding-bottom: 1rem;
-			}
-		}
+	.get-quote-header {
+		padding-bottom: 4.5rem;
+	}
 
-		.get-quote-buttons {
-			margin: auto;
-			max-width: 36rem;
-		}
+	.get-quote-header h2 {
+		color: #eef5f1;
+		display: inline-block;
+		font-size: 3.5vw;
+		font-weight: 600;
+		width: 100%;
+		z-index: 100;
+		line-height: 1.6;
+	}
+
+	.get-quote-buttons {
+		margin: auto;
+		max-width: 36rem;
+		white-space: nowrap;
+	}
+	.get-quote-buttons a button {
+		padding: 1rem 2rem;
+		width: 182px;
 	}
 }
 
 @media screen and (min-width: 1400px) {
-	.get-quote-container {
-		.get-quote-content {
-			top: 37%;
-		}
+	.get-quote-container .get-quote-content {
+		top: 37%;
+	}
+	.get-quote-container .get-quote-header h2 {
+		font-size: 3.5rem;
 	}
 }
 
 @media screen and (max-width: 920px) {
 	.get-quote-container {
-		.get-quote-content {
-			.get-quote-header {
-				h2 {
-					font-size: 1.8rem;
-					padding-bottom: 1rem;
-				}
-			}
+		.get-quote-header {
+			padding-bottom: 0.5rem;
+		}
+		.get-quote-header h2 {
+			font-size: 1.8rem;
+		}
 
-			.get-quote-button {
-				padding-top: 4rem;
-			}
+		.get-quote-buttons {
+			padding-top: 2.5rem;
+		}
+		.get-quote-buttons a button {
+			padding: 0.7rem 1.5rem;
+			width: 160px;
+			font-size: 16px;
 		}
 	}
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 665px) {
 	.get-quote-container {
-		.get-quote-content {
-			.get-quote-header {
-				h2 {
-					font-size: 1.3rem;
-					padding-bottom: 1rem;
-				}
-			}
+		.get-quote-header {
+			padding-bottom: 0rem;
+		}
+		.get-quote-header h2 {
+			font-size: 1.2rem;
+		}
 
-			.get-quote-button {
-				padding-top: 3rem;
-			}
+		.get-quote-buttons {
+			padding-top: 2.5rem;
+		}
+		.get-quote-buttons a button {
+			padding: 0.7rem 1.5rem;
+			width: 160px;
+			font-size: 14px;
 		}
 	}
 }
 
 @media screen and (max-width: 470px) {
 	.get-quote-container {
-		.get-quote-content {
-			.get-quote-header {
-				h2 {
-					font-size: 1rem;
-					padding-bottom: 1rem;
-				}
-			}
+		.get-quote-header h2 {
+			font-size: 1rem;
+		}
 
-			.get-quote-button {
-				width: 100%;
-				display: inline-block;
-				padding-top: 2rem;
-			}
+		.get-quote-buttons {
+			width: 100%;
+
+			padding-top: 2rem;
+			white-space: nowrap;
+		}
+		.get-quote-buttons a button {
+			padding: 0.5rem;
+			width: 100px;
+			font-size: 12px;
+		}
+	}
+}
+
+@media screen and (max-width: 370px) {
+	.get-quote-container {
+		.get-quote-header h2 {
+			font-size: 0.89rem;
+			white-space: nowrap;
 		}
 	}
 }
