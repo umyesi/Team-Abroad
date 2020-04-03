@@ -386,7 +386,7 @@
 	}
 }
 
-@media screen and (max-width: 767.5px) {
+@media screen and (max-width: 766.5px) {
 	.service-container {
 		h2 {
 			font-size: 4rem;
@@ -402,12 +402,8 @@
 			font-size: 13px;
 			text-align: left;
 		}
-		h4 {
-			font-size: 15px;
-		}
-
-		h4.active:after {
-			left: 2px;
+		li h4 {
+			font-size: 17px;
 		}
 	}
 	.service-info {
@@ -434,34 +430,62 @@
 		}
 	}
 
-	.activities .thumbnail-gallery {
-		.thumbnail-gallery-title .container-anim {
-			font-size: 27px;
-		}
+	.service-container .activities .thumbnail-gallery {
 		.data-title h1 {
 			font-size: 6vw;
 		}
 		.data-description p {
-			font-size: 3vw;
+			font-size: 2.5vw;
 		}
+	}
+	.service-info .activities .thumbnail-gallery-title .container-anim {
+		font-size: 25px;
+	}
+	.service-info .activities .thumbnail-gallery-title .switch-heritages::after {
+		font-size: 21px;
+	}
+	.service-info .activities .thumbnail-gallery-title .switch-activities::after {
+		font-size: 21px;
 	}
 }
 
 @media screen and (max-width: 575.5px) {
 	.service-container {
 		h2 {
-			font-size: 2rem;
+			font-size: 3rem;
 		}
 		.service-info {
 			padding-left: 0;
 		}
+		.service-info h2 {
+			font-size: 1.5rem;
+		}
 
 		.activities .thumbnail-gallery {
 			.data-title h1 {
-				font-size: 10vw;
+				font-size: 7vw;
 			}
 			.data-description p {
-				font-size: 4.5vw;
+				font-size: 3.3vw;
+			}
+		}
+		.service-info .activities .thumbnail-gallery-title {
+			margin: 23px 0 0px;
+		}
+		.service-info .activities .thumbnail-gallery-title .container-anim {
+			//font-size: 22px;
+			font-size: 5vw;
+		}
+		.service-info .activities .thumbnail-gallery-title .switch-heritages {
+			padding-top: 0.6rem;
+			&:after {
+				font-size: 5vw;
+			}
+		}
+		.service-info .activities .thumbnail-gallery-title .switch-activities {
+			padding-top: 0.6rem;
+			&:after {
+				font-size: 5vw;
 			}
 		}
 	}
@@ -504,12 +528,7 @@
 
 @media screen and (max-width: 368.5px) {
 	.service-container .service-content .service-navigation ul li h4 {
-		border-radius: 0.25rem;
-		color: #599079;
-		padding: 0.5rem 1rem;
 		font-size: 13px;
-		background-color: #f5d367;
-		font-weight: bold;
 		width: 147px;
 	}
 }

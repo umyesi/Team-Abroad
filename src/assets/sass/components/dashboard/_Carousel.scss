@@ -13,7 +13,6 @@
 	.carousel-caption {
 		top: 31%;
 		text-align: center;
-		min-width: 255px;
 		line-height: 1;
 	}
 
@@ -32,9 +31,9 @@
 		line-height: normal;
 	}
 
-	.first-image img {
-		filter: brightness(71%);
-	}
+	// .first-image img {
+	// 	filter: brightness(71%);
+	// }
 }
 
 @media screen and (min-width: 1400px) {
@@ -60,8 +59,8 @@
 
 @media screen and (min-width: 2000px) {
 	.carousel.slide {
-		.carousel-item {
-			max-height: 700px;
+		.carousel-inner .carousel-item {
+			max-height: 800px;
 		}
 		.carousel-caption {
 			top: 30%;
@@ -114,7 +113,7 @@
 @media screen and (max-width: 430px) {
 	.carousel.slide {
 		.carousel-caption {
-			top: 21%;
+			top: 16%;
 			line-height: 1;
 		}
 		h3 {

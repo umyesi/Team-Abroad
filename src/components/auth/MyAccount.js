@@ -93,6 +93,7 @@ class MyAccount extends Component {
 }
 
 const mapStateToProps = state => {
+	console.log(state);
 	return {
 		profile: state.firebase.profile,
 		auth: state.firebase.auth,
@@ -110,33 +111,33 @@ const mapDispatchToProps = dispatch => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyAccount);
 
-//	console.log(storage);
+// //	console.log(storage);
 
-//const firebase = getFirebase();
-//const user = firebase.auth().currentUser;
-//const storageRef = firebase.storage().ref();
+// //const firebase = getFirebase();
+// //const user = firebase.auth().currentUser;
+// //const storageRef = firebase.storage().ref();
 
-// 	user
-// 		.updateProfile({
-// 			displayName: "Jane Q. User",
-// 			photoURL: "gs://teamabroad-p.appspot.com/paris3.png"
-// 		})
-// 		.then(function() {
-// 			// Update successful.
-// 		})
-// 		.catch(function(error) {
-// 			// An error happened.
-// 		});
+// // 	user
+// // 		.updateProfile({
+// // 			displayName: "Jane Q. User",
+// // 			photoURL: "gs://teamabroad-p.appspot.com/paris3.png"
+// // 		})
+// // 		.then(function() {
+// // 			// Update successful.
+// // 		})
+// // 		.catch(function(error) {
+// // 			// An error happened.
+// // 		});
 
-//const { selectedFile } = this.state;
-//const upload = storage.ref;
-// const firestore = getFirestore();
-// const user = this.props.firebase.auth.uid;
-// console.log(user);
-// firestore
-// 	.collection("users")
-// 	.doc(user)
-// 	.set({
-// 		// we use doc() and not add() because add would generate new id, but we need the id from auth
-// 		firstName: "raisrame"
-// 	});
+// //const { selectedFile } = this.state;
+// //const upload = storage.ref;
+// // const firestore = getFirestore();
+// // const user = this.props.firebase.auth.uid;
+// // console.log(user);
+// // firestore
+// // 	.collection("users")
+// // 	.doc(user)
+// // 	.set({
+// // 		// we use doc() and not add() because add would generate new id, but we need the id from auth
+// // 		firstName: "raisrame"
+// // 	});
